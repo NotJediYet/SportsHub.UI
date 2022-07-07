@@ -1,0 +1,15 @@
+:root {
+    --margin-value: 300px;
+}
+
+.content-area {
+    position: absolute;
+    margin: var(--margin-value);
+    height: calc(100% - var(--margin-value));
+    width: calc(100% - 2 * var(--margin-value));
+    border: 1px dashed #B2B2B2;
+    background: rgba(237, 237, 237, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

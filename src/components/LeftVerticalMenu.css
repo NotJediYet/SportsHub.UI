@@ -1,0 +1,10 @@
+
+
+.vertical-menu {
+    top: 249px;
+    width: 87px;
+    background-color: #ECD3E5;
+    height: 100%;
+    position: fixed;
+    padding: 40px 20px;
+}
