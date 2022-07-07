@@ -1,12 +1,14 @@
 import './App.css';
+import Header from './components/Header.js';
+import LeftVerticalMenu from './components/LeftVerticalMenu.js';
+import ContentArea from './components/ContentArea';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
+    <div>
+      <Header />
+      <LeftVerticalMenu />
+      <ContentArea />
     </div>
   );
 }
-
-export default App;
