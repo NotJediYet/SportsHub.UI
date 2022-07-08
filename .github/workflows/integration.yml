@@ -25,17 +25,14 @@ jobs:
         cache-name: sports-hub-ui-cache
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+        key: ${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: ${{ env.cache-name }}-
 
     - name: Install dependencies
       run: npm install
 
     - name: Build
-      run: npm build
+      run: npm run build
 
     - name: Test
       run: npm test
