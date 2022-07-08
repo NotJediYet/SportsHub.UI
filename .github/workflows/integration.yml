@@ -17,16 +17,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-        
-    - name: Cache node modules
-      id: cache-npm
-      uses: actions/cache@v3
-      env:
-        cache-name: sports-hub-ui-cache
-      with:
-        path: ~/.npm
-        key: ${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: ${{ env.cache-name }}-
 
     - name: Install dependencies
       run: npm install
