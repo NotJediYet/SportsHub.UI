@@ -1,10 +1,12 @@
-
+:root {
+    --header-height: 249px;
+}
 
 .vertical-menu {
-    top: 249px;
-    width: 87px;
-    background-color: #ECD3E5;
-    height: 100%;
+    top: var(--header-height);
     position: fixed;
     padding: 40px 20px;
+    width: 87px;
+    height: 100%;
+    background-color: #ECD3E5;
 }
