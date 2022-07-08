@@ -1,7 +1,7 @@
 import './App.css';
-import Header from './components/Header.js';
-import LeftVerticalMenu from './components/LeftVerticalMenu.js';
-import ContentArea from './components/ContentArea';
+import Header from './components/Header/Header.js';
+import LeftVerticalMenu from './components/LeftVerticalMenu/LeftVerticalMenu.js';
+import ContentArea from './components/ContentArea/ContentArea';
 
 export default function App() {
   return (
