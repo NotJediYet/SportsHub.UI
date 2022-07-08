@@ -27,11 +27,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: sports-hub-ui
-          path: |
-            ./public
-            ./src
-            package.json
-            package-lock.json
+          path: ./build
 
   deploy:
     runs-on: ubuntu-latest
