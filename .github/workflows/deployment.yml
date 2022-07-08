@@ -26,8 +26,12 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: node-app
-          path: release.zip
+          name: sports-hub-ui
+          path: |
+            ./public
+            ./src
+            package.json
+            package-lock.json
 
   deploy:
     runs-on: ubuntu-latest
@@ -40,7 +44,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: node-app
+          name: sports-hub-ui
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
