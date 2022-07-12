@@ -1,14 +1,15 @@
 import './App.css';
-import Header from './components/Header/Header.js';
-import LeftVerticalMenu from './components/LeftVerticalMenu/LeftVerticalMenu.js';
-import ContentArea from './components/ContentArea/ContentArea';
+import AdminLayout from './components/AdminLayout/AdminLayout.js';
+import Header from './components/AdminLayout/Header/Header.js';
+import LeftVerticalMenu from './components/AdminLayout/LeftVerticalMenu/LeftVerticalMenu.js';
+import ContentArea from './components/AdminLayout/ContentArea/ContentArea';
 
 export default function App() {
   return (
-    <div>
+    <AdminLayout>
       <Header />
       <LeftVerticalMenu />
       <ContentArea />
-    </div>
+    </AdminLayout>
   );
 }
