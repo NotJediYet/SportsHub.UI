@@ -6,6 +6,4 @@ test('Renders App Component', () => {
   
   // act
   render(<App />);
-
-  //assert
 });
