@@ -1,0 +1,52 @@
+:root {
+    --header-row-height: 83px;
+}
+
+.header {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
+
+.header--navbar, .header--page-name, .header--horisontal-menu {
+    display: flex;
+    height: var(--header-row-height);
+}   
+
+.header--page-name, .header--horisontal-menu {
+    justify-content: center;
+    align-items: center;
+}
+
+.header--navbar {
+    background-color: #F8F3A7;
+}   
+
+.header--page-name {
+    background-color: #D7E4F1;
+}
+
+.header--horisontal-menu {
+    background-color: #DFE9BE;
+}
+
+.navbar--logo, .navbar--switch, .navbar--profile {
+    display: flex;
+    align-items: center;
+}
+
+.navbar--logo {
+    padding: 0 70px;
+    margin-right: auto; 
+    background-color: #FBE7C4;
+}
+
+.navbar--switch {
+    padding: 0 30px;
+    background-color: #ECD3E5;
+}
+
+.navbar--profile {
+    padding: 0 100px;
+    background-color: #FBF7D5;
+}
