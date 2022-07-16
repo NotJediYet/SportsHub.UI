@@ -11,7 +11,8 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
     "@tippyjs/react": "^4.2.6",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "react-icons": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
