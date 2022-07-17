@@ -63,10 +63,12 @@ export default function LeftVerticalMenu() {
     );
 };
 
-const SideBarIcon = ({ icon, tooltip }) => (
-    <Tippy content={tooltip} placement="right" offset={[0,22]} theme={'myThemeTooltip'}>
-        <div className="sidebar-icon">
-            {icon}
-        </div>
-    </Tippy>
-);
+export const SideBarIcon = ({ icon, tooltip }) => {
+    return (
+        <Tippy content={tooltip} placement="right" offset={[0,22]} theme={'myThemeTooltip'}>
+            <div aria-label="icons-div" className="sidebar-icon" >
+                {icon}
+            </div>
+        </Tippy>
+    );
+};
