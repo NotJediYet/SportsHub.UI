@@ -1,15 +1,18 @@
 import './App.css';
-import AdminLayout from './components/AdminLayout/AdminLayout.js';
-import Header from './components/AdminLayout/Header/Header.js';
-import LeftVerticalMenu from './components/AdminLayout/LeftVerticalMenu/LeftVerticalMenu.js';
-import ContentArea from './components/AdminLayout/ContentArea/ContentArea';
+import Header from './components/UserLayout/Header/Header.js';
+import Footer from './components/UserLayout/Footer/Footer.js';
+import LeftSideBar from './components/UserLayout/LeftSideBar/LeftSideBar.js';
+import RightSideBar from "./components/UserLayout/RightSideBar/RightSideBar";
+import MainContentArea from "./components/UserLayout/MainContentArea/MainContentArea";
 
 export default function App() {
-  return (
-    <AdminLayout>
-      <Header />
-      <LeftVerticalMenu />
-      <ContentArea />
-    </AdminLayout>
-  );
+    return (
+        <div>
+            <Header />
+            <LeftSideBar />
+            <RightSideBar />
+            <MainContentArea />
+            <Footer />
+        </div>
+    );
 }
