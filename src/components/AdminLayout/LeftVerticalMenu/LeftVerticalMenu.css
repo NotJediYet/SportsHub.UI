@@ -43,15 +43,24 @@
     color: #D72130;
 }
 
-.tippy-box[data-theme~='myThemeTooltip']{
-    background-color: #313541;
-    color: white;
-}
-
 .sidebar-tooltip{
     font-family: 'Open Sans';
     font-style: normal;
     font-size: 14px;
-    padding: 5px;
+    padding: 10px;
     line-height: 35px;
+    background-color: #313541;
+    color: white;
+    border-radius: 3px;
 }
+
+.sidebar-tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #313541 transparent transparent;
+  }
