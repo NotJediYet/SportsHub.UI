@@ -3,7 +3,7 @@ import Header from './Header/Header.js';
 import LeftVerticalMenu from './LeftVerticalMenu/LeftVerticalMenu.js';
 import {Outlet} from "react-router-dom"
 
-export default function MainPageAdmin(props) {
+export default function AdminLayout(props) {
     return (
         <div >
             <Header />
