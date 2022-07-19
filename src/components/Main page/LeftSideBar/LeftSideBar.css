@@ -8,8 +8,7 @@ li{
     position: absolute;
     display: flex;
     justify-content: center;
-    width:100px;
-    padding: 0 87px;
+    width:253px;
     overflow: hidden;
     background-color: white;
 
@@ -20,7 +19,7 @@ li{
     list-style: none;
     display: inline-block;
     background-color: #ecd3e5;
-    padding: 0 87px;
+    width: 100%;
     height: var(--menu--size);
     align-items: stretch;
     justify-content: center;
@@ -32,8 +31,8 @@ li{
     display: flex;
     align-items: center;
     background-color: #d7e4f1;
-    width: 100px;
-    padding: 0 87px;
+    justify-content: center;
+    width:253px;
     min-height:var(--icon--size);
 
 }

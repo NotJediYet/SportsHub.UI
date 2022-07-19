@@ -17,6 +17,7 @@ a:visited {
     display: flex;
     height: var(--header-row-height);
     background-color: #f9f3a7;
+    justify-content: space-between;
 }
 
 
@@ -28,28 +29,35 @@ a:visited {
 }
 
 .navbar--logo {
-    padding: 0 100px;
+    justify-content:center;
+    width:253px;
     margin-right: auto;
     background-color: #FBE7C4;
     text-decoration: none;
 }
 
 .navbar--profile {
-    padding: 0 140px;
+    justify-content:center;
+    width:262px;
     background-color: #FBF7D5;
 }
 
 .navbar--languages{
-    padding: 0 90px;
+    justify-content:center;
+    width:150px;
     background-color: #d7e5f1;
 }
 
 .navbar--search{
-    padding: 0 305px;
+    border-right:1px solid #EDEDED;
+    justify-content:center;
+    width:456px;
     background-color: #f9f3a7;
 }
 
 .navbar--social-media{
-    padding: 0 160px;
+    border-right:1px solid #EDEDED;
+    justify-content:center;
+    width:317px;
     background-color: #dee9bf;
 }
