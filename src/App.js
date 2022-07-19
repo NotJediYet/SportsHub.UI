@@ -10,15 +10,12 @@ export default function App(){
     return(
         <div>
             <Routes>
-
                 <Route path={"/"} element={<MainPage />} >
                     <Route index element={<MainContent />}/>
                 </Route>
-
                 <Route path={"/admin"} element={<MainPageAdmin />} >
                     <Route index element={<ContentArea />}/>
                 </Route>
-
             </Routes>
         </div>
     )
