@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="newsletter">Newsletter</div>
             </nav>
             <nav className="footer--navbar--bottom">
-                <a href="#" className="footer--logo">Logo</a>
+                <a href="/#" className="footer--logo">Logo</a>
             </nav>
         </footer>
     );

@@ -9,7 +9,7 @@ export default function AdditionalContentArea() {
         <div className="additional-Content-Area">
 
             <div className="photo-of-the-day-box">
-                <a href="#" className="photo-of-the-day-box-text">{SampleText}</a>
+                <a href="/#" className="photo-of-the-day-box-text">{SampleText}</a>
             </div>
 
             <div className="Additional-small-new-box">
@@ -18,15 +18,15 @@ export default function AdditionalContentArea() {
 
                     <div className="additional-small-new">
                         <img src={SampleImg}  alt="#" className="additional-small-new-photo"></img>
-                        <a href="#" alt="#" className="additional-small-new-text">{SampleText}</a>
+                        <a href="/#" className="additional-small-new-text">{SampleText}</a>
                     </div>
                     <div className="additional-small-new">
                         <img src={SampleImg}  alt="#" className="additional-small-new-photo"></img>
-                        <a href="#" alt="#" className="additional-small-new-text">{SampleText}</a>
+                        <a href="/#" className="additional-small-new-text">{SampleText}</a>
                     </div>
                     <div className="additional-small-new">
                         <img src={SampleImg}  alt="#" className="additional-small-new-photo"></img>
-                        <a href="#" alt="#" className="additional-small-new-text">{SampleText}</a>
+                        <a href="/#" className="additional-small-new-text">{SampleText}</a>
                     </div>
 
                 </div>
@@ -35,15 +35,15 @@ export default function AdditionalContentArea() {
 
                     <div className="additional-small-new">
                         <img src={SampleImg}  alt="#" className="additional-small-new-photo"></img>
-                        <a href="#" alt="#" className="additional-small-new-text">{SampleText}</a>
+                        <a href="/#" className="additional-small-new-text">{SampleText}</a>
                     </div>
                     <div className="additional-small-new">
                         <img src={SampleImg}  alt="#" className="additional-small-new-photo"></img>
-                        <a href="#" alt="#" className="additional-small-new-text">{SampleText}</a>
+                        <a href="/#" className="additional-small-new-text">{SampleText}</a>
                     </div>
                     <div className="additional-small-new">
                         <img src={SampleImg}  alt="#" className="additional-small-new-photo"></img>
-                        <a href="#" alt="#" className="additional-small-new-text">{SampleText}</a>
+                        <a href="/#" className="additional-small-new-text">{SampleText}</a>
                     </div>
 
                     </div>

@@ -12,14 +12,14 @@ export default function SecondaryContentArea() {
 
                 <div className="secondary-big-new">
                     <img src={SampleImg} alt="#" className="secondary-big-new-picture"></img>
-                    <a href="#" className="secondary-big-new-text">{SampleText}</a>
+                    <a href="/#" className="secondary-big-new-text">{SampleText}</a>
                 </div>
 
                 <div className="new-split"></div>
 
                 <div className="secondary-big-new">
                     <img src={SampleImg} alt="#" className="secondary-big-new-picture"></img>
-                    <a href="#" className="secondary-big-new-text">{SampleText}</a>
+                    <a href="/#" className="secondary-big-new-text">{SampleText}</a>
                 </div>
 
             </div>
@@ -29,30 +29,30 @@ export default function SecondaryContentArea() {
                 <div className="secondary-small-new-part">
                     <div className="secondary-small-new">
                         <img src={SampleImg} alt="#" className="secondary-small-new-picture"></img>
-                        <a href="#" className="secondary-small-new-text">{SampleText}</a>
+                        <a href="/#" className="secondary-small-new-text">{SampleText}</a>
                     </div>
                     <div className="secondary-small-new">
                         <img src={SampleImg} alt="#" className="secondary-small-new-picture"></img>
-                        <a href="#" className="secondary-small-new-text">{SampleText}</a>
+                        <a href="/#" className="secondary-small-new-text">{SampleText}</a>
                     </div>
                     <div className="secondary-small-new">
                         <img src={SampleImg} alt="#" className="secondary-small-new-picture"></img>
-                        <a href="#" className="secondary-small-new-text">{SampleText}</a>
+                        <a href="/#" className="secondary-small-new-text">{SampleText}</a>
                     </div>
                 </div>
 
                 <div className="secondary-small-new-part">
                     <div className="secondary-small-new">
                         <img src={SampleImg} alt="#" className="secondary-small-new-picture"></img>
-                        <a href="#" className="secondary-small-new-text">{SampleText}</a>
+                        <a href="/#" className="secondary-small-new-text">{SampleText}</a>
                     </div>
                     <div className="secondary-small-new">
                         <img src={SampleImg} alt="#" className="secondary-small-new-picture"></img>
-                        <a href="#" className="secondary-small-new-text">{SampleText}</a>
+                        <a href="/#" className="secondary-small-new-text">{SampleText}</a>
                     </div>
                     <div className="secondary-small-new">
                         <img src={SampleImg} alt="#" className="secondary-small-new-picture"></img>
-                        <a href="#" className="secondary-small-new-text">{SampleText}</a>
+                        <a href="/#" className="secondary-small-new-text">{SampleText}</a>
                     </div>
                 </div>
 
