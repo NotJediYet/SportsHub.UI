@@ -1,0 +1,38 @@
+li{
+    width:130px;
+}
+
+.left-sidebar-menu{
+    top: 83px;
+    height: var(--menu--size);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width:253px;
+    overflow: hidden;
+    background-color: white;
+
+}
+
+.left-sidebar-list-style{
+    margin-top: auto;
+    list-style: none;
+    display: inline-block;
+    background-color: #ecd3e5;
+    width: 100%;
+    height: var(--menu--size);
+    align-items: stretch;
+    justify-content: center;
+}
+
+.left-sidebar-icons{
+    top: var(--icon--placing);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: #d7e4f1;
+    justify-content: center;
+    width:253px;
+    min-height:var(--icon--size);
+
+}
