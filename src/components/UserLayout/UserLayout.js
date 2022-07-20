@@ -6,19 +6,15 @@ import RightSideBar from "../RightSideBar/RightSideBar";
 import PrimaryContentArea from "../PrimaryContentArea/PrimaryContentArea";
 import SecondaryContentArea from "../SecondaryContentArea/SecondaryContentArea";
 import AdditionalContentArea from "../AdditionalContentArea/AdditionalContentArea";
+import {Outlet} from "react-router-dom";
 
 export default function UserLayout(){
     return(
         <div>
             <UserHeader/>
-            <PrimaryContentArea />
-            <SecondaryContentArea />
-            <AdditionalContentArea />
             <LeftSideBar/>
-            <RightSideBar/>
-            <Footer/>
+            <Outlet/>
         </div>
     )
 }
-
 
