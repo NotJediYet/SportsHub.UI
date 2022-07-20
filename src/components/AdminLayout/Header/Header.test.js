@@ -5,7 +5,7 @@ import Header from "./Header";
 
 test("logo or identity should be rendered", () => {
     render(<Header />);
-    const logoElement = screen.getByText("Logo or identity");
+    const logoElement = screen.getByText("Sports Hub");
     expect(logoElement).toBeInTheDocument();
 });
 

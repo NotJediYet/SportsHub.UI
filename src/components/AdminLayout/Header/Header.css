@@ -36,9 +36,21 @@
 }
 
 .navbar--logo {
-    padding: 0 70px;
-    margin-right: auto; 
-    background-color: #FBE7C4;
+    width:253px;
+    margin-right: auto;
+}
+
+.button-sport-hub{
+    background: #D72130;
+    width: 253px;
+    height: 83px;
+    font-family: 'Open Sans', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: #FFFBFB;
+    border:0;
 }
 
 .navbar--switch {

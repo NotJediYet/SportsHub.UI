@@ -1,15 +1,16 @@
 import './App.css';
-import AdminLayout from './components/AdminLayout/AdminLayout.js';
-import Header from './components/AdminLayout/Header/Header.js';
-import LeftVerticalMenu from './components/AdminLayout/LeftVerticalMenu/LeftVerticalMenu.js';
-import ContentArea from './components/AdminLayout/ContentArea/ContentArea';
+import React from "react";
+import {Route, Routes} from "react-router-dom";
+import UserLayout from "./components/UserLayout/UserLayout";
+import AdminLayout from "./components/AdminLayout/AdminLayout";
 
-export default function App() {
-  return (
-    <AdminLayout>
-      <Header />
-      <LeftVerticalMenu />
-      <ContentArea />
-    </AdminLayout>
-  );
+export default function App(){
+    return(
+        <div>
+            <Routes>
+                <Route path={"/"} element={<UserLayout />} ></Route>
+                <Route path={"/admin"} element={<AdminLayout />} ></Route>
+            </Routes>
+        </div>
+    )
 }

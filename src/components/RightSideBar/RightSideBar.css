@@ -1,0 +1,26 @@
+:root {
+    --site-height: 2500px;
+    --header-height: 83px;
+    --menu--size:calc(var(--site-height) * 0.45);
+    --icon--size:calc(var(--site-height)*0.06);
+    --icon--placing:calc(83px + var(--menu--size));
+}
+
+.right-sidebar{
+    top: var(--icon--placing);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    right:0;
+    width:100px;
+    padding: 0 87px;
+    height: calc(0.7 * var(--site-height));
+    overflow: hidden;
+}
+
+.right-sidebar-info-box{
+    margin-bottom: auto;
+    display: flex;
+    background-color: #fbf7d5;
+    padding: 180px 100%;
+}
