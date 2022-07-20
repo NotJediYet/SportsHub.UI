@@ -1,7 +1,7 @@
 import React from "react"
-import "./HeaderUser.css"
+import "./UserHeader.css"
 
-export default function HeaderUser() {
+export default function UserHeader() {
     return (
         <header className="header-user">
             <nav className="header-navbar-user">

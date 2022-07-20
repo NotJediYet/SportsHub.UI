@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderUser from "../Header/HeaderUser"
+import UserHeader from "../Header/UserHeader"
 import LeftSideBar from '../LeftSideBar/LeftSideBar.js';
 import Footer from "../Footer/Footer";
 import RightSideBar from "../RightSideBar/RightSideBar";
@@ -10,7 +10,7 @@ import AdditionalContentArea from "../AdditionalContentArea/AdditionalContentAre
 export default function UserLayout(){
     return(
         <div>
-            <HeaderUser/>
+            <UserHeader/>
             <PrimaryContentArea />
             <SecondaryContentArea />
             <AdditionalContentArea />

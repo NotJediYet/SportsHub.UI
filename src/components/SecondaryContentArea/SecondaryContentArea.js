@@ -6,7 +6,7 @@ const SampleImg ="https://www.beelights.gr/assets/images/empty-image.png"
 
 export default function SecondaryContentArea() {
     return (
-        <div className="Secondary-Content-Area">
+        <div className="secondary-content-area">
 
             <div className="secondary-big-new-box">
 

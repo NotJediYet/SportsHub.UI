@@ -1,4 +1,4 @@
-.additional-Content-Area{
+.additional-content-area{
     position: absolute;
     top: calc(var(--secondary--area-placing) + 800px );
     margin-left:350px;
