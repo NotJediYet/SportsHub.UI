@@ -1,14 +1,14 @@
 import React from "react"
 import Header from './Header/Header.js';
-import LeftVerticalMenu from './LeftVerticalMenu/LeftVerticalMenu.js';
-import {Outlet} from "react-router-dom"
+import LeftVerticalMenu from './LeftVerticalMenu/LeftVerticalMenu.js'
+import ContentArea from "./ContentArea/ContentArea";
 
-export default function AdminLayout(props) {
+export default function AdminLayout() {
     return (
         <div >
             <Header />
             <LeftVerticalMenu />
-            <Outlet />
+            <ContentArea />
         </div>
     );
 }

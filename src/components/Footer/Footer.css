@@ -14,7 +14,7 @@ a:visited {
     align-items: center;
 }
 
-.footer--navbar--top {
+.footer-navbar-top {
     z-index: 998;
     display: flex;
     height: var(--footer-row-height-top);
@@ -23,7 +23,7 @@ a:visited {
     justify-content: center;
 }
 
-.footer--navbar--bottom {
+.footer-navbar-bottom {
     z-index: 999;
     display: flex;
     height: var(--footer-row-height-bottom);
@@ -31,7 +31,7 @@ a:visited {
     align-items: center;
 }
 
-.footer--logo{
+.footer-logo{
     padding: 0 100px;
     margin-right: auto;
     background-color: #FBE7C4;

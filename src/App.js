@@ -1,21 +1,15 @@
 import './App.css';
 import React from "react";
 import {Route, Routes} from "react-router-dom";
-import MainPage from "./components/UserLayout/MainPage";
-import MainContent from "./components/UserLayout/MainContent";
+import UserLayout from "./components/UserLayout/UserLayout";
 import AdminLayout from "./components/AdminLayout/AdminLayout";
-import ContentArea from "./components/AdminLayout/ContentArea/ContentArea";
 
 export default function App(){
     return(
         <div>
             <Routes>
-                <Route path={"/"} element={<MainPage />} >
-                    <Route index element={<MainContent />}/>
-                </Route>
-                <Route path={"/admin"} element={<AdminLayout />} >
-                    <Route index element={<ContentArea />}/>
-                </Route>
+                <Route path={"/"} element={<UserLayout />} ></Route>
+                <Route path={"/admin"} element={<AdminLayout />} ></Route>
             </Routes>
         </div>
     )

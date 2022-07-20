@@ -5,7 +5,11 @@ export default function Header() {
     return (
         <header className="header">
             <nav className="header--navbar">
-                <div className="navbar--logo">Logo or identity</div>
+                <div className="navbar--logo">
+                    <button className="button-sport-hub">
+                        Sports Hub
+                    </button>
+                </div>
                 <div className="navbar--switch">Switch</div>
                 <div className="navbar--profile">Profile</div>
             </nav>

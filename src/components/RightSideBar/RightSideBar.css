@@ -6,13 +6,7 @@
     --icon--placing:calc(83px + var(--menu--size));
 }
 
-@media only screen and (max-width: 1280px) {
-    #HideMe {
-        display: none;
-    }
-}
-
-.right--sidebar{
+.right-sidebar{
     top: var(--icon--placing);
     position: absolute;
     display: flex;

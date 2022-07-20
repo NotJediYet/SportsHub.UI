@@ -14,7 +14,7 @@ export default function AdditionalContentArea() {
 
             <div className="Additional-small-new-box">
 
-                <div className="additional-small-new-row">
+                <div className="row-for-small-news">
 
                     <div className="additional-small-new">
                         <img src={SampleImg}  alt="#" className="additional-small-new-photo"></img>
@@ -31,7 +31,7 @@ export default function AdditionalContentArea() {
 
                 </div>
 
-                <div className="additional-small-new-row">
+                <div className="row-for-small-news">
 
                     <div className="additional-small-new">
                         <img src={SampleImg}  alt="#" className="additional-small-new-photo"></img>

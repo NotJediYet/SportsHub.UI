@@ -26,7 +26,7 @@ export default function SecondaryContentArea() {
 
             <div className="secondary-small-new-box">
 
-                <div className="secondary-small-new-part">
+                <div className="column-small-new">
                     <div className="secondary-small-new">
                         <img src={SampleImg} alt="#" className="secondary-small-new-picture"></img>
                         <a href="/#" className="secondary-small-new-text">{SampleText}</a>
@@ -41,7 +41,7 @@ export default function SecondaryContentArea() {
                     </div>
                 </div>
 
-                <div className="secondary-small-new-part">
+                <div className="column-small-new">
                     <div className="secondary-small-new">
                         <img src={SampleImg} alt="#" className="secondary-small-new-picture"></img>
                         <a href="/#" className="secondary-small-new-text">{SampleText}</a>

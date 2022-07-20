@@ -50,7 +50,7 @@ a:visited {
 
 }
 
-.additional-small-new-row{
+.row-for-small-news{
     flex-direction: column;
     height: 100%;
     display: flex;

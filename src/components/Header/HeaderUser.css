@@ -9,7 +9,7 @@ a:visited {
     top:0;
 }
 
-.header--navbar-user {
+.header-navbar-user {
     display: flex;
     height: 83px;
     background-color: #f9f3a7;
@@ -17,14 +17,14 @@ a:visited {
 }
 
 
-.navbar--logo-user, .navbar--profile-user,
-.navbar--languages-user, .navbar--search-user,
-.navbar--social-media-user {
+.navbar-logo-user, .navbar-profile-user,
+.navbar-languages-user, .navbar-search-user,
+.navbar-social-media-user {
     display: flex;
     align-items: center;
 }
 
-.navbar--logo-user {
+.navbar-logo-user {
     justify-content:center;
     width:253px;
     margin-right: auto;
@@ -32,26 +32,26 @@ a:visited {
     text-decoration: none;
 }
 
-.navbar--profile-user {
+.navbar-profile-user {
     justify-content:center;
     width:262px;
     background-color: #FBF7D5;
 }
 
-.navbar--languages-user{
+.navbar-languages-user{
     justify-content:center;
     width:150px;
     background-color: #d7e5f1;
 }
 
-.navbar--search-user{
+.navbar-search-user{
     border-right:1px solid #EDEDED;
     justify-content:center;
     width:456px;
     background-color: #f9f3a7;
 }
 
-.navbar--social-media-user{
+.navbar-social-media-user{
     border-right:1px solid #EDEDED;
     justify-content:center;
     width:317px;
