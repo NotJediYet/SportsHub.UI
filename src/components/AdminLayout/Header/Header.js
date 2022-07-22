@@ -1,5 +1,6 @@
 import React from "react"
 import "./Header.css"
+import SwitchViewButton from "./switch-view-admin.js"
 
 export default function Header() {
     return (
@@ -10,7 +11,9 @@ export default function Header() {
                         Sports Hub
                     </button>
                 </div>
-                <div className="navbar--switch">Switch</div>
+                <div className="navbar--switch">
+                    <SwitchViewButton tooltip={"Switch to user view"} />  
+                </div>
                 <div className="navbar--profile">Profile</div>
             </nav>
             <div className="header--page-name">
