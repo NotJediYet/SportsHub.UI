@@ -1,5 +1,7 @@
 import React from "react"
 import "./Header.css"
+import ProfileComponent from './ProfileComponents/ProfileComponent';
+
 
 export default function Header() {
     return (
@@ -11,10 +13,10 @@ export default function Header() {
                     </button>
                 </div>
                 <div className="navbar--switch">Switch</div>
-                <div className="navbar--profile">Profile</div>
+                <ProfileComponent/>
             </nav>
             <div className="header--page-name">
-               Active configuration page name, CTA
+                Active configuration page name, CTA
             </div>
             <div className="header--horisontal-menu">
                 Horisontal menu with static items
