@@ -1,0 +1,64 @@
+:root {
+    --header-row-height: 83px;
+}
+
+.header {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
+
+.header--navbar, .header--page-name, .header--horisontal-menu {
+    display: flex;
+    height: var(--header-row-height);
+}   
+
+.header--page-name, .header--horisontal-menu {
+    justify-content: center;
+    align-items: center;
+}
+
+.header--navbar {
+    background-color: #F8F3A7;
+}   
+
+.header--page-name {
+    background-color: #D7E4F1;
+}
+
+.header--horisontal-menu {
+    background-color: #DFE9BE;
+}
+
+.navbar--logo, .navbar--switch, .navbar--profile {
+    display: flex;
+    align-items: center;
+}
+
+.navbar--logo {
+    width:253px;
+    margin-right: auto;
+}
+
+.button-sport-hub{
+    background: #D72130;
+    width: 253px;
+    height: 83px;
+    font-family: 'Open Sans', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: #FFFBFB;
+    border:0;
+}
+
+.navbar--switch {
+    padding: 0 30px;
+    background-color: #ECD3E5;
+}
+
+.navbar--profile {
+    padding: 0 100px;
+    background-color: #FBF7D5;
+}
