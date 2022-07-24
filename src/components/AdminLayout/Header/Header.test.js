@@ -15,11 +15,6 @@ test("logo or identity should be rendered", () => {
     expect(switchElement).toBeInTheDocument();
 });
 
-test("logo or identity should be rendered", () => {
-    render(<Header />);
-    const profileElement = screen.getByText("Profile");
-    expect(profileElement).toBeInTheDocument();
-});
 
 test("logo or identity should be rendered", () => {
     render(<Header />);
