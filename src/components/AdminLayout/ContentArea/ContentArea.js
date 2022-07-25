@@ -1,5 +1,5 @@
 import React from "react"
-import "./ContentArea.css"
+import "./ContentArea.scss"
 
 export default function ContentArea() {
     return (

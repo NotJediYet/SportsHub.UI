@@ -1,5 +1,5 @@
 import React from "react"
-import "./UserHeader.css"
+import "./UserHeader.scss"
 import SwitchViewButton from "../AdminLayout/Header/switch-view-button.js"
 
 export default function UserHeader() {

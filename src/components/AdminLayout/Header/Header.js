@@ -1,5 +1,5 @@
 import React from "react"
-import "./Header.css"
+import "./Header.scss"
 import SwitchViewButton from "./switch-view-button.js"
 
 export default function Header() {

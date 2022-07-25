@@ -1,7 +1,7 @@
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import {useNavigate} from "react-router-dom";
-import "./Header.css"
+import "./Header.scss"
 
 export const SwitchViewButton = ({ tooltip }) => {
     const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import React from "react"
-import "./PrimaryContentArea.css"
+import "./PrimaryContentArea.scss"
 
 
 const SampleText ="Lorem ipsum dolor sit amet. Id possimus deleniti cum sapiente blanditiis ad autem Quis"
