@@ -7,7 +7,7 @@ export const SwitchViewButton = ({ tooltip }) => {
     const navigate = useNavigate();
     
     let navigateToPage;
-    if (tooltip=="Switch to admin view"){
+    if (tooltip==="Switch to admin view"){
         navigateToPage = () => {
             navigate('/admin');
         };
