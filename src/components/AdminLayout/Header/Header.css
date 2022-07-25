@@ -5,6 +5,7 @@
 }
 
 .header {
+    z-index: 999;
     position: fixed;
     width: 100%;
 }
@@ -92,4 +93,5 @@
 
 .overlayCustomStyles{
     position: absolute;
+    z-index: 1000;
 }

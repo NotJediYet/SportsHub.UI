@@ -1,6 +1,6 @@
 import React from "react"
 import "./Header.css"
-import SwitchViewButton from "./switch-view-admin.js"
+import SwitchViewButton from "./switch-view-button.js"
 
 export default function Header() {
     return (

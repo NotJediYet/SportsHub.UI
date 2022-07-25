@@ -6,20 +6,23 @@ import "./Header.css"
 export const SwitchViewButton = ({ tooltip }) => {
     const navigate = useNavigate();
     
-    const navigateToAdmin = () => {
-        navigate('/admin');
-    };
-
-    const navigateToUser = () => {
-        navigate('/');
-    };
+    let navigateToPage;
+    if (tooltip=="Switch to admin view"){
+        navigateToPage = () => {
+            navigate('/admin');
+        };
+    } else {
+        navigateToPage = () => {
+            navigate('/');
+        };
+    }
     return (
         <OverlayTrigger offset={[-7,15]} placement={"bottom"} overlay={
             <Tooltip className='overlayCustomStyles'>
                 <span className="switch-view-tooltip">{tooltip}</span>
             </Tooltip>
             }>
-            <div aria-label="switcher-div" className="switch-button" onClick={navigateToUser}>
+            <div aria-label="switcher-div" className="switch-button" onClick={navigateToPage}>
                 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17 34C26.3888 34 34 26.3888 34 17C34 7.61116 26.3888 0 17 0C7.61116 0 0 7.61116 0 17C0 
                     26.3888 7.61116 34 17 34Z" fill="#D72130"/>
