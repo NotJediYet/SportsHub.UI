@@ -1,0 +1,102 @@
+.options {
+    box-sizing: border-box;
+    height: 39px;
+    width: 759px;
+    display: flex;
+    margin-top: 79px;
+    flex-direction: row;
+    z-index: 4;
+
+}
+
+.profilepages-conatiner {
+    margin-top: 83px;
+    margin-left: 253px;
+    width: 1027px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options-personal{
+    height: 100%;
+    width: 169px;
+    border-left: 1px solid #EDEDED;
+    border-right: 1px solid #EDEDED;
+    text-decoration: none;
+    color: black;
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: Open Sans;
+    text-align: center;
+    line-height: 19px;
+    font-weight: 601;
+    z-index: 5;
+}
+
+.options-chngpass{
+    height: 100%;
+    width: 229px;
+    border-right: 1px solid #EDEDED;
+    text-decoration: none;
+    color: black;
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: Open Sans;
+    text-align: center;
+    line-height: 19px;
+    font-weight: 601;
+    z-index: 5;
+}
+
+.options-surveys{
+    height: 100%;
+    width: 185px;
+    border-right: 1px solid #EDEDED;
+    text-decoration: none;
+    color: black;
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: Open Sans;
+    text-align: center;
+    line-height: 19px;
+    font-weight: 601;
+    z-index: 5;
+}
+
+.options-teamHub{
+    height: 100%;
+    width: 176px;
+    border-right: 1px solid #EDEDED;
+    text-decoration: none;
+    color: black;
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: Open Sans;
+    text-align: center;
+    line-height: 19px;
+    font-weight: 601;
+    z-index: 5;
+}
+
+.options > a:hover {
+    color: #D72130;
+    cursor: pointer;
+}

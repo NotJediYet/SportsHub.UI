@@ -1,0 +1,122 @@
+
+.profileInformation {
+    margin-top: 45px;
+    width: 389px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileInformation-photo {
+    margin: 0;
+    height: 120px;
+    width: 120px;
+}
+
+.profileInformation-photo > img {
+    border-radius: 50%;
+}
+
+input {
+    box-sizing: border-box;
+}
+
+.profileInformation-addPhoto {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    margin-left: 80px;
+    margin-top: -44px;
+    border-radius: 50%;
+    background: #D72130;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileInformation-addPhoto:hover {
+    cursor: pointer;
+}
+
+.profileInformation-addPhoto > img:nth-child(1) {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -8px;
+}
+
+.profileInformation-addPhoto > img:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -2.9px;
+    margin-top: -3px;
+    z-index: 3;
+}
+
+#profileInformation-FirNameInput {
+    width: 389px;
+    height: 42px;
+
+}
+
+.profileInformation-inputs > form {
+    display: flex;
+    flex-direction: column;
+}
+
+#profileInformation-LasNameInput {
+    width: 389px;
+    height: 42px;
+}
+
+#profileInformation-EmailInput {
+    width: 389px;
+    height: 42px;
+}
+
+.profileInformation-inputs{
+    width: 389px;
+    margin: 27px auto;
+}
+
+.profileInformation-inputs > form > label {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.9px;
+    color: #434C5D;
+    text-transform: uppercase;
+    line-height: 11px;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+
+.profileInformation-inputs > form > label:first-child {
+    margin-top: 0;
+}
+
+.profileInformation-inputs > form > label:last-child {
+    margin-bottom: 0;
+}
+
+.profileInformation-inputs > form > input {
+    border: 1px solid #D4D9E2;
+}
+
+.profileInformation-inputs > form>  button {
+    margin-top: 35px;
+    width: 389px;
+    height: 42px;
+    cursor: pointer;
+    background: #D72130;
+    border: 1px solid #D72130;
+    color: #FFFFFF;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+}
