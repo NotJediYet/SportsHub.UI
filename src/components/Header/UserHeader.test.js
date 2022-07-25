@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import UserHeader from "./UserHeader";
-import SwitchViewButton from "../AdminLayout/Header/switch-view-button.js"
+import LayoutSwitch from "../AdminLayout/Header/switch-view-button.js"
 
 test("logo or identity item should be rendered", () => {
     render(
@@ -54,7 +54,7 @@ test("Switch button should be rendered", () => {
     const { getAllByLabelText } = render(
         <BrowserRouter>
             <Routes>
-                <Route path="*" element= {<SwitchViewButton tooltip={tooltips} />}/>
+                <Route path="*" element= {<LayoutSwitch tooltip={tooltips} />}/>
             </Routes>
         </BrowserRouter>
     );

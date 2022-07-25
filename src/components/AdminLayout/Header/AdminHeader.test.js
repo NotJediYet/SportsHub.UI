@@ -2,14 +2,26 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Header from "./Header";
-import SwitchViewButton from "./switch-view-button.js"
+import AdminHeader from "./AdminHeader";
+import LayoutSwitch from "./switch-view-button.js"
+
+test("Sports Hub item should be rendered", () => {
+    render(
+        <BrowserRouter>
+            <Routes>
+                <Route path="*" element= {<AdminHeader />}/>
+            </Routes>
+        </BrowserRouter>
+    );
+    const logoElement = screen.getByText("Sports Hub");
+    expect(logoElement).toBeInTheDocument();
+});
 
 test("Switch button should be rendered", () => {
     render(
         <BrowserRouter>
             <Routes>
-                <Route path="*" element= {<Header />}/>
+                <Route path="*" element= {<AdminHeader />}/>
             </Routes>
         </BrowserRouter>
     );
@@ -18,7 +30,7 @@ test("Switch button should be rendered", () => {
     const { getAllByLabelText } = render(
         <BrowserRouter>
             <Routes>
-                <Route path="*" element= {<SwitchViewButton tooltip={tooltips} />}/>
+                <Route path="*" element= {<LayoutSwitch tooltip={tooltips} />}/>
             </Routes>
         </BrowserRouter>
     );
@@ -31,7 +43,7 @@ test("Profile should be rendered", () => {
     render(
         <BrowserRouter>
             <Routes>
-                <Route path="*" element= {<Header />}/>
+                <Route path="*" element= {<AdminHeader />}/>
             </Routes>
         </BrowserRouter>
     );
@@ -43,7 +55,7 @@ test("Active configuration page name, CTA should be rendered", () => {
     render(
         <BrowserRouter>
             <Routes>
-                <Route path="*" element= {<Header />}/>
+                <Route path="*" element= {<AdminHeader />}/>
             </Routes>
         </BrowserRouter>
     );
@@ -55,7 +67,7 @@ test("Horisontal menu with static item should be rendered", () => {
     render(
         <BrowserRouter>
             <Routes>
-                <Route path="*" element= {<Header />}/>
+                <Route path="*" element= {<AdminHeader />}/>
             </Routes>
         </BrowserRouter>
     );
