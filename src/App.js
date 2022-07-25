@@ -1,9 +1,9 @@
-import './App.css';
+import './App.scss';
 import React from "react";
 import {Route, Routes} from "react-router-dom";
 import UserLayout from "./components/UserLayout/UserLayout";
 import AdminLayout from "./components/AdminLayout/AdminLayout";
-import {profilePagesRoutes} from "./components/ProfileMenu/ProfilePages.js"
+import {profileMenuRoutes} from "./components/ProfileMenu/ProfileMenu.js"
 
 
 export default function App(){
@@ -11,7 +11,7 @@ export default function App(){
         <div>
             <Routes>
                 <Route path={"/"} element={<UserLayout />} />
-                {profilePagesRoutes}
+                {profileMenuRoutes}
                 <Route path={"/admin"} element={<AdminLayout />} />
             </Routes>
         </div>

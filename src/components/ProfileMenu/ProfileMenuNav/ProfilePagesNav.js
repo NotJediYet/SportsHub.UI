@@ -1,7 +1,7 @@
 import React from "react";
-import './ProfilePagesNav.css'
+import './ProfilePagesNav.scss'
 import {NavLink, Outlet} from "react-router-dom";
-import './ActiveButtons.css'
+import './ActiveButtons.scss'
 
 export default function ProfilePagesNav() {
 

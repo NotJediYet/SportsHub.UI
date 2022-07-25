@@ -1,5 +1,5 @@
 import React from "react";
-import './TeamHub.css'
+import './TeamHub.scss'
 
 
 export default function TeamHub(){

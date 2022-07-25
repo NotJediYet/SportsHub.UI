@@ -1,4 +1,4 @@
-import './Surveys.css'
+import './Surveys.scss'
 import React from "react";
 import {FaChevronDown} from 'react-icons/fa';
 

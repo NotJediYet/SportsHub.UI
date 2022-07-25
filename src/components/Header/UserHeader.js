@@ -1,5 +1,5 @@
 import React from "react"
-import "./UserHeader.css"
+import "./UserHeader.scss"
 
 export default function UserHeader() {
     return (

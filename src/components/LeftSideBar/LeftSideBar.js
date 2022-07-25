@@ -1,5 +1,5 @@
 import React from "react"
-import "./LeftSideBar.css"
+import "./LeftSideBar.scss"
 
 export default function LeftSideBar() {
     return (

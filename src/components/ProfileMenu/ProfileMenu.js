@@ -9,7 +9,7 @@ import UserHeader from "../Header/UserHeader"
 import LeftSideBar from "../LeftSideBar/LeftSideBar"
 
 
-export const profilePagesRoutes = (
+export const profileMenuRoutes = (
         <Route path={"/profile"} element={
             <div>
                 <UserHeader/>

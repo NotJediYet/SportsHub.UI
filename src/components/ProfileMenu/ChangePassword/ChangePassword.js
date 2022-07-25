@@ -1,5 +1,5 @@
 import React from "react";
-import './ChangePassword.css'
+import './ChangePassword.scss'
 
 export default function ChangePassword (){
     const [firstPasswordIsShown, firstPasswordsetIsShown] = React.useState(false)

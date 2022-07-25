@@ -1,5 +1,5 @@
 import React from "react"
-import "./LeftVerticalMenu.css"
+import "./LeftVerticalMenu.scss"
 import VerticalMenuElements from "./LeftVerticalMenuData.js"
 
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
