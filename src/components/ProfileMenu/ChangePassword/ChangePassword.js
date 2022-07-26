@@ -1,5 +1,6 @@
 import React from "react";
 import './ChangePassword.scss'
+import {FaEye} from 'react-icons/fa';
 
 export default function ChangePassword (){
     const [firstPasswordIsShown, firstPasswordsetIsShown] = React.useState(false)
@@ -16,17 +17,12 @@ export default function ChangePassword (){
                     <p>
                         <label htmlFor="changePasswordOption-SecondInput">NEW PASSWORD</label>
                         <input id={"changePasswordOption-SecondInput"} type={firstPasswordIsShown ? "text" : "password"}/>
-                        <img onClick={() => {firstPasswordsetIsShown(!firstPasswordIsShown)}}
-                            src={"../images/hidePasswordIcon.svg"} alt=""
-                        />
+                        <FaEye onClick={() => {firstPasswordsetIsShown(!firstPasswordIsShown)}}/>
                     </p>
                     <p>
                         <label htmlFor="changePasswordOption-ThirdInput">PASSWORD CONFIRMATION</label>
                         <input id={"changePasswordOption-ThirdInput"} type={secondPasswordIsShown ? "text" : "password"}/>
-
-                        <img onClick={() => {secondPasswordsetIsShown(!secondPasswordIsShown)}}
-                             src={"../images/hidePasswordIcon.svg"} alt=""
-                        />
+                        <FaEye onClick={() => {secondPasswordsetIsShown(!secondPasswordIsShown)}}/>
                     </p>
                     <button type={"submit"}>CHANGE PASSWORD</button>
                 </form>

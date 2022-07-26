@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import ProfilePagesNav from "./ProfilePagesNav";
+import ProfileNavigation from "./ProfileNavigation";
 import {BrowserRouter, MemoryRouter, Route} from "react-router-dom";
 
 test('renders learn react link', () => {
     render(
         <BrowserRouter >
-            <ProfilePagesNav />
+            <ProfileNavigation />
         </BrowserRouter>,
     );
     const personal = screen.getByText("Personal");

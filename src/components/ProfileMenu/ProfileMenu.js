@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import ProfilePagesNav from "./ProfileMenuNav/ProfilePagesNav";
+import ProfileNavigation from "./ProfileNavigation/ProfileNavigation";
 import ProfileInformation from "./ProfileInformation/ProfileInformation";
 import ChangePassword from "./ChangePassword/ChangePassword"
 import TeamHub from "./TeamHub/TeamHub"
@@ -14,7 +14,7 @@ export const profileMenuRoutes = (
             <div>
                 <UserHeader/>
                 <LeftSideBar/>
-                <ProfilePagesNav/>
+                <ProfileNavigation/>
             </div>
         }>
             <Route path={"personal"} element={<ProfileInformation/>}/>

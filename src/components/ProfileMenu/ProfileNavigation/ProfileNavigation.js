@@ -1,9 +1,9 @@
 import React from "react";
-import './ProfilePagesNav.scss'
+import './ProfileNavigation.scss'
 import {NavLink, Outlet} from "react-router-dom";
 import './ActiveButtons.scss'
 
-export default function ProfilePagesNav() {
+export default function ProfileNavigation() {
 
     const personalActive = ({isActive}) => isActive ? "personalActive" : "options-personal";
     const passwordActive = ({isActive}) => isActive ? "passwordActive"  : "options-chngpass";
@@ -12,7 +12,7 @@ export default function ProfilePagesNav() {
 
 
     return (
-        <div className={"profilepages-conatiner"}>
+        <div className={"profilepages-container"}>
             <span className={"options"}>
             <NavLink to={"personal"} className={personalActive}>Personal</NavLink>
             <NavLink to={"password"} className={passwordActive} >Change password</NavLink>

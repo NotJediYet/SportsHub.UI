@@ -1,21 +1,21 @@
 
-.surveysOption-OpenCloseText{
+.surveys-OpenCloseText{
     display: flex;
     margin-bottom: 20px;
 }
 
-.surveysOption-OpenCloseText > button:first-child{
+.surveys-OpenCloseText > button:first-child{
     margin-right: 10px;
 }
 
-.surveysOption-container {
+.surveys-container {
     width: 1026px;
     display: flex;
     flex-direction: column;
     margin-top: 43px;
 }
 
-.surveysOption-OpenCloseButton {
+.surveys-OpenCloseButton {
     color: black;
     text-decoration: none;
     font-family: 'Roboto';
@@ -29,7 +29,7 @@
     cursor: pointer;
 }
 
-.surveysOption-OpenCloseButtonActive {
+.surveys-OpenCloseButtonActive {
     color: #D72130;
     text-decoration: underline;
     font-family: 'Roboto';
@@ -43,15 +43,15 @@
     cursor: pointer;
 }
 
-.surveysOption-OpenCloseText > p:nth-child(2){
+.surveys-OpenCloseText > p:nth-child(2){
     margin-left: 10px;
 }
 
-.surveysOption-OpenQuests, .surveysOption-ClosedQuests {
+.surveys-openQuests, .surveys-ClosedQuests {
     width: 708px;
 }
 
-.surveysOption-OpenQuests-head, .surveysOption-ClosedQuests-head{
+.surveys-openQuests-head, .surveys-ClosedQuests-head{
     display: flex;
     width: 708px;
     height: 48px;
@@ -60,12 +60,12 @@
     justify-content: space-between;
 }
 
-.surveysOption-OpenQuests-head > p:nth-child(1), .surveysOption-ClosedQuests-head > p:nth-child(1) {
+.surveys-openQuests-head > p:nth-child(1), .surveys-ClosedQuests-head > p:nth-child(1) {
     margin-left: 16px;
     text-transform: uppercase;
 }
 
-.surveysOption-OpenQuests-head > div:nth-child(2) > p{
+.surveys-openQuests-head > div:nth-child(2) > p{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -85,7 +85,7 @@
     justify-content: space-between;
 }
 
-.surveysOption-ClosedQuests-head > div:nth-child(2) > p {
+.surveys-ClosedQuests-head > div:nth-child(2) > p {
     margin: 0;
     ont-family: 'Open Sans';
     font-style: normal;
@@ -97,7 +97,7 @@
     margin-right: 64px;
 }
 
-.surveysOption-OpenQuests-head > div:nth-child(2){
+.surveys-openQuests-head > div:nth-child(2){
     cursor: pointer;
     width: 150px;
     height: 17px;
@@ -132,7 +132,7 @@
     color: #2B2F43;
 }
 
-.surveysOption-OpenQuests-head > div:nth-child(2) > p > svg {
+.surveys-openQuests-head > div:nth-child(2) > p > svg {
     font-size: 12px;
     position: absolute;
     margin: 0;
@@ -141,7 +141,7 @@
 }
 
 
-.surveysOption-OpenQuests > div:nth-child(2) {
+.surveys-openQuests > div:nth-child(2) {
     display: flex;
     flex-direction: column;
 }
@@ -195,7 +195,7 @@
     height: 55px;
     display: flex;
     align-items: center;
-    filter: drop-shadow(3px 2px 14px rgba(0, 0, 0, 0.09));
+    filter: drop-shadow(3px 2px 14px #0000001f);
     background: #FFFFFF;
     border-left: 1px solid #FFFFFF;
     border-bottom: 1px solid #FFFFFF;
