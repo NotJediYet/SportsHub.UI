@@ -1,7 +1,6 @@
 import React from "react"
 import "./UserPrimaryContentArea.scss"
 
-
 const SampleText ="Lorem ipsum dolor sit amet. Id possimus deleniti cum sapiente blanditiis ad autem Quis"
 const SampleImg ="https://www.beelights.gr/assets/images/empty-image.png"
 

@@ -1,7 +1,6 @@
 import React from "react"
 import "./UserRightSideBar.scss"
 
-
 export default function UserRightSideBar(){
     return(
         <nav className="right-sidebar">
