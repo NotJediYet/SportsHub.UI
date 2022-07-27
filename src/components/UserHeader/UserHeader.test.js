@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import UserHeader from "./UserHeader";
-import LayoutSwitch from "../AdminLayout/Header/switch-view-button.js"
+import LayoutSwitch from "../switchButton/switch-view-button.js"
 
 test("logo or identity item should be rendered", () => {
     render(

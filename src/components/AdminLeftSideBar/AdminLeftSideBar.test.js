@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen, fireEvent, getAllByLabelText } from "@testing-library/react";
 
-import LeftVerticalMenu from "./LeftVerticalMenu";
-import SideBarIcon from "./LeftVerticalMenu";
+import LeftVerticalMenu from "./AdminLeftSideBar.js";
+import SideBarIcon from "./AdminLeftSideBar.js";
 
 test("all icons should be rendered", () => {
     render(<LeftVerticalMenu />);

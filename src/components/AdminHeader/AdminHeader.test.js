@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import AdminHeader from "./AdminHeader";
-import LayoutSwitch from "./switch-view-button.js.js.js"
+import LayoutSwitch from "../switchButton/switch-view-button.js"
 
 test("Sports Hub item should be rendered", () => {
     render(
