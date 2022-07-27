@@ -1,10 +1,8 @@
 import React from "react"
 import "./AdminHeader.scss"
-import LayoutSwitch from "./switch-view-button.js"
-import SwitchLayoutTooltip from "./layoutSwitchTooltip.js";
+import LayoutSwitch from "../switchButton/switch-view-button.js"
 
 export default function AdminHeader() {
-    const switchLayoutClass = new SwitchLayoutTooltip();
 
     return (
         <header className="header">
@@ -15,7 +13,7 @@ export default function AdminHeader() {
                     </button>
                 </div>
                 <div className="navbar-switch">
-                    <LayoutSwitch role={switchLayoutClass.roleAdmin()} />
+                    <LayoutSwitch />
                 </div>
                 <div className="navbar-profile">Profile</div>
             </nav>

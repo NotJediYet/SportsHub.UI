@@ -1,7 +1,7 @@
 import React from "react"
-import "./Footer.scss"
+import "./UserFooter.scss"
 
-export default function Footer() {
+export default function UserFooter() {
     return (
         <footer className="footer">
             <nav className="footer-navbar-top">
