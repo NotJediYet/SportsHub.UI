@@ -1,6 +1,6 @@
 import React from "react"
 import "./UserHeader.scss"
-import LayoutSwitch from "../switchButton/switch-view-button.js"
+import LayoutSwitch from "../SwitchButton/SwitchViewButton.js"
 
 export default function UserHeader() {
     let isAdminLoggedIn = true;
