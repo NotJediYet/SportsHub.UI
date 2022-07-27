@@ -1,6 +1,6 @@
 import React from "react"
 import "./AdminHeader.scss"
-import LayoutSwitch from "../SwitchButton/SwitchViewButton.js"
+import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 
 export default function AdminHeader() {
 

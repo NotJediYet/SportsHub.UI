@@ -2,7 +2,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import {useNavigate} from 'react-router-dom';
 import {MdSwapHorizontalCircle} from 'react-icons/md'
-import "./SwitchViewButton.scss"
+import "./SwitchLayout.scss"
 import React from 'react';
 
 const LayoutSwitch = () => {
