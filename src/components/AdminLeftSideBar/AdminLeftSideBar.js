@@ -1,13 +1,13 @@
 import React from "react"
-import "./LeftVerticalMenu.css"
-import VerticalMenuElements from "./LeftVerticalMenuData.js"
+import "./AdminLeftSideBar.scss"
+import VerticalMenuElements from "./AdminLeftSideBarData.js"
 
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
 import { IconContext } from "react-icons";
 
-export default function LeftVerticalMenu() {
+export default function AdminLeftSideBar() {
     return (
         <div className="wrapper-vertical-menu">
             <div className="content-vertical-menu">

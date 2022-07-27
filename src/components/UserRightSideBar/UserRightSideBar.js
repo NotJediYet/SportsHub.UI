@@ -1,8 +1,7 @@
 import React from "react"
-import "./RightSideBar.css"
+import "./UserRightSideBar.scss"
 
-
-export default function RightSideBar(){
+export default function UserRightSideBar(){
     return(
         <nav className="right-sidebar">
         <div className="right-sidebar-info-box">Questions, answers, CTA, date</div>

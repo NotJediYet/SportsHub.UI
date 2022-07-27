@@ -1,11 +1,9 @@
 import React from "react"
 import "./UserHeader.scss"
-import LayoutSwitch from "../AdminHeader/switch-view-button.js.js.js"
-import SwitchLayoutTooltip from "../SwitchLayout/layoutSwitchTooltip.js.js.js"
+import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 
 export default function UserHeader() {
     let isAdminLoggedIn = true;
-    const switchLayoutClass = new SwitchLayoutTooltip();
 
     return (
         <header className="header-user">
@@ -15,7 +13,7 @@ export default function UserHeader() {
                 <div className="navbar-social-media-user">Social media</div>
                 { isAdminLoggedIn ? (
                 <div className="navbar-switch">
-                    <LayoutSwitch role={switchLayoutClass.roleUser()} />
+                    <LayoutSwitch />
                 </div>
                 ): (
                     <div></div>

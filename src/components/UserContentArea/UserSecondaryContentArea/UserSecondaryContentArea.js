@@ -1,10 +1,10 @@
 import React from "react"
-import "./SecondaryContentArea.css"
+import "./UserSecondaryContentArea.scss"
 
 const SampleText ="Lorem ipsum dolor sit amet. Id possimus deleniti cum sapiente blanditiis ad autem Quis"
 const SampleImg ="https://www.beelights.gr/assets/images/empty-image.png"
 
-export default function SecondaryContentArea() {
+export default function UserSecondaryContentArea() {
     return (
         <div className="secondary-content-area">
 

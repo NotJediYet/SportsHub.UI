@@ -1,14 +1,14 @@
 import React from "react"
-import Header from './Header/Header.js';
-import LeftVerticalMenu from './LeftVerticalMenu/LeftVerticalMenu.js'
-import ContentArea from "./ContentArea/ContentArea";
+import AdminHeader from '../AdminHeader/AdminHeader.js';
+import AdminLeftSideBar from '../AdminLeftSideBar/AdminLeftSideBar.js'
+import AdminContentArea from "../AdminContentArea/AdminContentArea";
 
 export default function AdminLayout() {
     return (
         <div >
-            <Header />
-            <LeftVerticalMenu />
-            <ContentArea />
+            <AdminHeader />
+            <AdminLeftSideBar />
+            <AdminContentArea />
         </div>
     );
 }

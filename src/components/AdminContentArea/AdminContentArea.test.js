@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import ContentArea from "./ContentArea";
+import ContentArea from "./AdminContentArea";
 
 test("content area should be rendered", () => {
     render(<ContentArea />);

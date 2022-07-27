@@ -1,7 +1,7 @@
 import React from "react"
-import "./LeftSideBar.css"
+import "./UserLeftSideBar.scss"
 
-export default function LeftSideBar() {
+export default function UserLeftSideBar() {
     return (
         <>
             <div className="left-sidebar-menu">

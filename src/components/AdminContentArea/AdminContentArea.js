@@ -1,7 +1,7 @@
 import React from "react"
-import "./ContentArea.css"
+import "./AdminContentArea.scss"
 
-export default function ContentArea() {
+export default function AdminContentArea() {
     return (
         <div className="content-area">Content area</div>
     );
