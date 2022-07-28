@@ -9,22 +9,16 @@ const LayoutSwitch = () => {
     const navigate = useNavigate();
 
     let tooltipText, navigateToPage;
-    if (window.location.pathname === '/admin'){
+    if (window.location.pathname.startsWith('/admin')) {
         tooltipText = "Switch to user view";
         navigateToPage = () => {
             navigate('/');
         };
-    } else if (window.location.pathname === '/') {
+    } else {
         tooltipText = "Switch to admin view";
         navigateToPage = () => {
             navigate('/admin');
         };
-    }
-    else {
-        tooltipText = "ERROR!";
-        navigateToPage = () => {
-        navigate('/');
-    };
     }
 
     return (
