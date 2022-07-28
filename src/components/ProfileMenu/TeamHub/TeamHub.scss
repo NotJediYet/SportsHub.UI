@@ -1,4 +1,4 @@
-.teamhub-container {
+.team-hub-container {
     margin-top: 75px;
     height: 375px;
     width: 284px;
@@ -7,7 +7,7 @@
 
 }
 
-.teamhub-container > div:nth-child(1) {
+.team-hub-container > div:nth-child(1) {
     width: 100%;
     background: #F2F2F2;
     height: 40px;
@@ -15,7 +15,7 @@
     align-items: center;
 }
 
-.teamhub-container > div:nth-child(1) > span {
+.team-hub-container > div:nth-child(1) > span {
     margin-left: 20px;
     text-transform: uppercase;
     font-family: 'Open Sans';
@@ -26,31 +26,35 @@
     color: #434C5D;
 }
 
-.teamhub-container > div:nth-child(2) {
+.team-hub-container > div:nth-child(2) {
     height: 289px;
     width: 100%;
     background: #F8F8F8;
     overflow-y: auto;
 }
 
-.teamhub-container > div:nth-child(2)::-webkit-scrollbar {
+.team-hub-container > div:nth-child(2) > div > img {
+    border-radius: 50%;
+}
+
+.team-hub-container > div:nth-child(2)::-webkit-scrollbar {
     width: 0;
 }
 
-.teamhub-container > div:nth-child(2) > div {
+.team-hub-container > div:nth-child(2) > div {
     border-bottom: 1px solid #F2F2F2;
     height: 89px;
     display: flex;
     align-items: center;
 }
 
-.teamhub-container > div:nth-child(2) > div > div {
+.team-hub-container > div:nth-child(2) > div > div {
     display: flex;
     flex-direction: column;
     margin-left: 17px;
 }
 
-.teamhub-container > div:nth-child(2) > div > div > span:nth-child(1) {
+.team-hub-container > div:nth-child(2) > div > div > span:nth-child(1) {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
@@ -60,7 +64,7 @@
     margin-bottom: 4px;
 }
 
-.teamhub-container > div:nth-child(2) > div > div > span:nth-child(2) {
+.team-hub-container > div:nth-child(2) > div > div > span:nth-child(2) {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -69,13 +73,13 @@
     color: #7F7B7B;
 }
 
-.teamhub-container > div:nth-child(2) > div > img {
+.team-hub-container > div:nth-child(2) > div > img {
     margin-left: 19px;
     height: 60px;
     width: 60px;
 }
 
-.teamhub-container > div:nth-child(3) {
+.team-hub-container > div:nth-child(3) {
     display: flex;
     align-items: center;
     height: 46px;
@@ -83,7 +87,7 @@
     background: #F8F8F8;
 }
 
-.teamhub-container > div:nth-child(3) > span {
+.team-hub-container > div:nth-child(3) > span {
     margin-left: 20px;
     font-family: 'Open Sans';
     font-style: normal;

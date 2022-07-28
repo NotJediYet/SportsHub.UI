@@ -1,5 +1,5 @@
 
-.profileInformation {
+.profile-information {
     margin-top: 45px;
     width: 389px;
     display: flex;
@@ -7,13 +7,15 @@
     align-items: center;
 }
 
-.profileInformation-photo {
+.profile-information-photo {
     margin: 0;
     height: 120px;
     width: 120px;
 }
 
-.profileInformation-photo > img {
+.profile-information-photo > img {
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
 }
 
@@ -21,7 +23,7 @@ input {
     box-sizing: border-box;
 }
 
-.profileInformation-addPhoto {
+.profile-information-add-photo {
     height: 40px;
     width: 40px;
     position: absolute;
@@ -34,55 +36,44 @@ input {
     align-items: center;
 }
 
-.profileInformation-addPhoto:hover {
+.profile-information-add-photo:hover {
     cursor: pointer;
 }
 
-.profileInformation-addPhoto > img:nth-child(1) {
-    position: absolute;
+.profile-information-add-photo > svg {
+    height: 23px;
+    width: 28px;
     z-index: 3;
-    left: 50%;
-    top: 50%;
-    margin-left: -10px;
-    margin-top: -8px;
+    color: white;
 }
 
-.profileInformation-addPhoto > img:nth-child(2) {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -2.9px;
-    margin-top: -3px;
-    z-index: 3;
-}
-
-#profileInformation-FirNameInput {
+#profile-information-first-name-input {
     width: 389px;
     height: 42px;
 
 }
 
-.profileInformation-inputs > form {
+.profile-information-inputs > form {
     display: flex;
     flex-direction: column;
 }
 
-#profileInformation-LasNameInput {
+#profile-information-last-name-input {
     width: 389px;
     height: 42px;
 }
 
-#profileInformation-EmailInput {
+#profile-information-email-input {
     width: 389px;
     height: 42px;
 }
 
-.profileInformation-inputs{
+.profile-information-inputs{
     width: 389px;
     margin: 27px auto;
 }
 
-.profileInformation-inputs > form > label {
+.profile-information-inputs > form > label {
     font-family: Roboto;
     font-weight: 500;
     font-size: 10px;
@@ -94,19 +85,19 @@ input {
     margin-top: 16px;
 }
 
-.profileInformation-inputs > form > label:first-child {
+.profile-information-inputs > form > label:first-child {
     margin-top: 0;
 }
 
-.profileInformation-inputs > form > label:last-child {
+.profile-information-inputs > form > label:last-child {
     margin-bottom: 0;
 }
 
-.profileInformation-inputs > form > input {
+.profile-information-inputs > form > input {
     border: 1px solid #D4D9E2;
 }
 
-.profileInformation-inputs > form>  button {
+.profile-information-inputs > form>  button {
     margin-top: 35px;
     width: 389px;
     height: 42px;

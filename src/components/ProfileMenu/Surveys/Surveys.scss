@@ -1,10 +1,10 @@
 
-.surveys-OpenCloseText{
+.surveys-open-close-text{
     display: flex;
     margin-bottom: 20px;
 }
 
-.surveys-OpenCloseText > button:first-child{
+.surveys-open-close-text > button:first-child{
     margin-right: 10px;
 }
 
@@ -15,7 +15,7 @@
     margin-top: 43px;
 }
 
-.surveys-OpenCloseButton {
+.surveys-open-close-button {
     color: black;
     text-decoration: none;
     font-family: 'Roboto';
@@ -29,7 +29,7 @@
     cursor: pointer;
 }
 
-.surveys-OpenCloseButtonActive {
+.surveys-open-close-button-active {
     color: #D72130;
     text-decoration: underline;
     font-family: 'Roboto';
@@ -43,15 +43,15 @@
     cursor: pointer;
 }
 
-.surveys-OpenCloseText > p:nth-child(2){
+.surveys-open-close-text > p:nth-child(2){
     margin-left: 10px;
 }
 
-.surveys-openQuests, .surveys-ClosedQuests {
+.surveys-open-quests, .surveys-closed-quests {
     width: 708px;
 }
 
-.surveys-openQuests-head, .surveys-ClosedQuests-head{
+.surveys-open-quests-head, .surveys-closed-quests-head{
     display: flex;
     width: 708px;
     height: 48px;
@@ -60,12 +60,12 @@
     justify-content: space-between;
 }
 
-.surveys-openQuests-head > p:nth-child(1), .surveys-ClosedQuests-head > p:nth-child(1) {
+.surveys-open-quests-head > p:nth-child(1), .surveys-closed-quests-head > p:nth-child(1) {
     margin-left: 16px;
     text-transform: uppercase;
 }
 
-.surveys-openQuests-head > div:nth-child(2) > p{
+.surveys-open-quests-head > div:nth-child(2) > p{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,12 +80,12 @@
     color: #D72130;
 }
 
-.closedSurveysContainer > div {
+.closed-surveys-container > div {
     display: flex;
     justify-content: space-between;
 }
 
-.surveys-ClosedQuests-head > div:nth-child(2) > p {
+.surveys-closed-quests-head > div:nth-child(2) > p {
     margin: 0;
     ont-family: 'Open Sans';
     font-style: normal;
@@ -97,7 +97,7 @@
     margin-right: 64px;
 }
 
-.surveys-openQuests-head > div:nth-child(2){
+.surveys-open-quests-head > div:nth-child(2){
     cursor: pointer;
     width: 150px;
     height: 17px;
@@ -112,7 +112,7 @@
     margin-right: 35px;
 }
 
-.surveysContainerOpened > div > p, .sContainerClosed > div > p {
+.surveys-container-opened > div > p, .closed-surveys-container > div > p {
 
     font-family: 'Open Sans';
     font-style: normal;
@@ -122,7 +122,7 @@
     color: #2B2F43;
 }
 
-.closedSurveysContainer > div > p, .sContainerClosed > div > p {
+.closed-surveys-container > div > p, .closed-surveys-container > div > p {
 
     font-family: 'Open Sans';
     font-style: normal;
@@ -132,7 +132,7 @@
     color: #2B2F43;
 }
 
-.surveys-openQuests-head > div:nth-child(2) > p > svg {
+.surveys-open-quests-head > div:nth-child(2) > p > svg {
     font-size: 12px;
     position: absolute;
     margin: 0;
@@ -141,7 +141,7 @@
 }
 
 
-.surveys-openQuests > div:nth-child(2) {
+.surveys-open-quests > div:nth-child(2) {
     display: flex;
     flex-direction: column;
 }
@@ -202,19 +202,19 @@
 }
 
 
-.surveysSectionContainerOpened, .surveysSectionContainerClosed {
+.surveys-section-container-opened, .surveys-section-container-closed {
     display: flex;
     margin-bottom: 100px;
 }
 
-.userQuiz {
+.user-quiz {
     width: 284px;
     height: 800px;
     margin-left: 34px;
     flex-direction: column;
 }
 
-.userQuiz > span {
+.user-quiz > span {
     height: 48px;
     background: #F2F2F2;
     display: flex;
@@ -222,7 +222,7 @@
     align-items: center;
 }
 
-.userQuiz > span > p:first-child{
+.user-quiz > span > p:first-child{
     margin-left: 21px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -232,7 +232,7 @@
     color: #434C5D;
 }
 
-.userQuiz > span > p:last-child {
+.user-quiz > span > p:last-child {
     margin-right: 19px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -242,7 +242,7 @@
     color: #B2B2B2;
 }
 
-.userQuiz > div > p {
+.user-quiz > div > p {
     width: 246px;
     margin-left: 25px;
     margin-top: 21px;
@@ -255,14 +255,14 @@
     color: #2B2F43;
 }
 
-.surveysPollandPoolContainer {
+.closed-surveys-poll-and-pool-container {
     min-height: 330px;
     background: #F8F8F8;
     display: flex;
     flex-direction: column;
 }
 
-.surveysReaderPoll {
+.surveys-reader-poll {
     display: flex;
     flex-direction: column;
     width: 234px;
@@ -279,25 +279,25 @@
 
 }
 
-.surveysReaderPoll > span  {
+.surveys-reader-poll > span  {
     height: 17px;
     display: flex;
     align-items: center;
 }
 
-.surveysReaderPoll > span > label  {
+.surveys-reader-poll > span > label  {
     margin-left: 24px;
 }
 
-.surveysReaderPoll > span  {
+.surveys-reader-poll > span  {
     margin-bottom: 18px;
 }
 
-.surveysReaderPoll > span:last-child  {
+.surveys-reader-poll > span:last-child  {
     margin-bottom: 0;
 }
 
-.nextSurveyButton {
+.next-survey-button {
     width: 85px;
     height: 33px;
     border: none;
@@ -312,7 +312,7 @@
     cursor: pointer;
 }
 
-.resultSwitchButton {
+.result-switch-button {
     margin-left: 13px;
     border: 1px solid #C63638;
     width: 137px;
@@ -327,7 +327,7 @@
     cursor: pointer;
 }
 
-.surveysPollNavButtons {
+.surveys-poll-navigation-buttons {
     margin-top: 15px;
     margin-bottom: 22px;
     display: flex;
@@ -338,7 +338,7 @@
     margin-right: 25px;
 }
 
-.seeTheResultsButtonActive {
+.results-button-active {
     margin-left: 98px;
     border: 1px solid #C63638;
     width: 137px;
@@ -353,12 +353,12 @@
     cursor: pointer;
 }
 
-.surveysPollNavButtons > button:nth-child(1) {
+.surveys-poll-navigation-buttons > button:nth-child(1) {
     align-items: center;
     justify-content: center;
 }
 
-.surveysReaderPool {
+.surveys-reader-pool {
     display: none;
     margin-top: 35px;
     flex-direction: column;
@@ -367,15 +367,15 @@
     margin-left: 19px;
 }
 
-.surveysReaderPool > div {
+.surveys-reader-pool > div {
     margin-bottom: 22px;
 }
 
-.surveysReaderPool > div:last-child {
+.surveys-reader-pool > div:last-child {
     margin-bottom: 0;
 }
 
-.surveysReaderPool > div > span {
+.surveys-reader-pool > div > span {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -383,7 +383,7 @@
 
 }
 
-.surveysReaderPool > div > span > p {
+.surveys-reader-pool > div > span > p {
     margin: 0;
     font-family: 'Open Sans';
     font-style: normal;
@@ -393,7 +393,7 @@
     color: #7F7B7B;
 }
 
-.yesResultsProgressBar, .noResultsProgressBar, .maybeResultsProgressBar {
+.yes-results-progress-bar, .no-results-progress-bar, .maybe-results-progress-bar {
     width: 246px;
     height: 10px;
     margin: 0;
@@ -401,7 +401,7 @@
     border-radius: 50px;
 }
 
-.closedSurveysReaderPool {
+.closed-surveys-reader-pool {
     display: flex;
     flex-direction: column;
     margin-top: 16px;
@@ -411,22 +411,22 @@
     margin-top: 16px;
 }
 
-.closedSurveysPollandPoolContainer {
+.closed-surveys-poll-and-pool-container {
     background: #F8F8F8;
 }
 
-.closedSurveysReaderPool {
+.closed-surveys-reader-pool {
     margin-bottom: 81px;
 }
 
-.closedSurveysReaderPool > div > span {
+.closed-surveys-reader-pool > div > span {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 4px;
 }
 
-.closedSurveysReaderPool > div > span > p {
+.closed-surveys-reader-pool > div > span > p {
     margin: 0;
     font-family: 'Open Sans';
     font-style: normal;
@@ -436,11 +436,11 @@
     color: #7F7B7B;
 }
 
-.closedSurveysReaderPool > div {
+.closed-surveys-reader-pool > div {
     margin-bottom: 22px;
 }
 
-.closedSurveysReaderPool > div:last-child {
+.closed-surveys-reader-pool > div:last-child {
     margin-bottom: 0;
 }
 

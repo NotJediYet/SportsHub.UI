@@ -8,20 +8,20 @@ export default function ChangePassword (){
 
     return(
         <div>
-            <div className={"changePasswordOption"}>
+            <div className={"change-password"}>
                 <form action="">
                     <p>
-                        <label htmlFor="changePasswordOption-FirstInput">OLD PASSWORD</label>
-                        <input id={"changePasswordOption-FirstInput"} type="text"/>
+                        <label htmlFor="change-password-first-input">OLD PASSWORD</label>
+                        <input id={"change-password-first-input"} type="text"/>
                     </p>
                     <p>
-                        <label htmlFor="changePasswordOption-SecondInput">NEW PASSWORD</label>
-                        <input id={"changePasswordOption-SecondInput"} type={firstPasswordIsShown ? "text" : "password"}/>
-                        <FaEye onClick={() => {firstPasswordsetIsShown(!firstPasswordIsShown)}}/>
+                        <label htmlFor="change-password-second-input">NEW PASSWORD</label>
+                        <input id={"change-password-second-input"} type={firstPasswordIsShown ? "text" : "password"}/>
+                        <FaEye size="300" onClick={() => {firstPasswordsetIsShown(!firstPasswordIsShown)}}/>
                     </p>
                     <p>
-                        <label htmlFor="changePasswordOption-ThirdInput">PASSWORD CONFIRMATION</label>
-                        <input id={"changePasswordOption-ThirdInput"} type={secondPasswordIsShown ? "text" : "password"}/>
+                        <label htmlFor="change-password-third-input">PASSWORD CONFIRMATION</label>
+                        <input id={"change-password-third-input"} type={secondPasswordIsShown ? "text" : "password"}/>
                         <FaEye onClick={() => {secondPasswordsetIsShown(!secondPasswordIsShown)}}/>
                     </p>
                     <button type={"submit"}>CHANGE PASSWORD</button>

@@ -5,8 +5,8 @@ import ProfileInformation from "./ProfileInformation/ProfileInformation";
 import ChangePassword from "./ChangePassword/ChangePassword"
 import TeamHub from "./TeamHub/TeamHub"
 import Surveys from "./Surveys/Surveys";
-import UserHeader from "../Header/UserHeader"
-import LeftSideBar from "../LeftSideBar/LeftSideBar"
+import UserHeader from "../UserHeader/UserHeader"
+import LeftSideBar from "../UserLeftSideBar/UserLeftSideBar"
 
 
 export const profileMenuRoutes = (

@@ -10,9 +10,9 @@ export default function OpenedSurveysSection (props){
     }
 
     return(
-        <div style={{display: props.isActiveOpened ? "flex" : "none" }} className={"surveysSectionContainerOpened"}>
-            <div className={"surveys-openQuests"}>
-                <div className={"surveys-openQuests-head"}>
+        <div style={{display: props.isActiveOpened ? "flex" : "none" }} className={"surveys-section-container-opened"}>
+            <div className={"surveys-open-quests"}>
+                <div className={"surveys-open-quests-head"}>
                     <p>questions</p>
                     <div>
                         <p>
@@ -21,11 +21,11 @@ export default function OpenedSurveysSection (props){
                         </p>
                     </div>
                 </div>
-                <div className={"surveysContainerOpened"}>
+                <div className={"surveys-container-opened"}>
                     {props.listOfItems}
                 </div>
             </div>
-            <div style={{display: props.SurveyId === 0 ? "none" : "flex" }} className={"userQuiz"}>
+            <div style={{display: props.SurveyId === 0 ? "none" : "flex" }} className={"user-quiz"}>
                     <span>
                         <p>
                             {isActiveShowResult ? "READER POLL" :  "READER POOL"}
@@ -34,11 +34,11 @@ export default function OpenedSurveysSection (props){
                             {props.survey===undefined ? "" : `${new Date(props.survey.date[0]).toLocaleString('en-US', {month: 'short',day:"numeric"})} - ${new Date(props.survey.date[1]).toLocaleString('en-US', {month: 'short',day:"numeric"})}`}
                         </p>
                     </span>
-                <div   className={"surveysPollandPoolContainer"}>
+                <div   className={"closed-surveys-poll-and-pool-container"}>
                     <p>
                         {props.survey===undefined ? "" : props.survey.survey}
                     </p>
-                    <div style={{display: isActiveShowResult ? "flex" : "none"}} className={"surveysReaderPoll"}>
+                    <div style={{display: isActiveShowResult ? "flex" : "none"}} className={"surveys-reader-poll"}>
                             <span>
                                 <input id={"PollCoice1"} name={"UserPoll"} value={"Yes"} type="radio"/>
                                 <label htmlFor="PollCoice1">Yes</label>
@@ -54,7 +54,7 @@ export default function OpenedSurveysSection (props){
                                 <label htmlFor="PollCoice3">Maybe</label>
                             </span>
                     </div>
-                    <div style={{display: isActiveShowResult ? "none" : "flex"}} className={"surveysReaderPool"}>
+                    <div style={{display: isActiveShowResult ? "none" : "flex"}} className={"surveys-reader-pool"}>
                         <div>
                                 <span>
                                     <p>
@@ -64,7 +64,7 @@ export default function OpenedSurveysSection (props){
                                         {`${props.survey.percentage[0]}%`}
                                     </p>
                                 </span>
-                            <div className={"yesResultsProgressBar"}>
+                            <div className={"yes-results-progress-bar"}>
                                 {props.ProgressBar(props.survey.percentage[0])}
                             </div>
                         </div>
@@ -77,7 +77,7 @@ export default function OpenedSurveysSection (props){
                                         {`${props.survey.percentage[1]}%`}
                                     </p>
                                 </span>
-                            <div className={"noResultsProgressBar"}>
+                            <div className={"no-results-progress-bar"}>
                                 {props.ProgressBar(props.survey.percentage[1])}
                             </div>
                         </div>
@@ -90,14 +90,14 @@ export default function OpenedSurveysSection (props){
                                         {`${props.survey.percentage[2]}%`}
                                     </p>
                                 </span>
-                            <div className={"maybeResultsProgressBar"}>
+                            <div className={"maybe-results-progress-bar"}>
                                 {props.ProgressBar(props.survey.percentage[2])}
                             </div>
                         </div>
                     </div>
-                    <span className={"surveysPollNavButtons"}>
-                            <button style={{display: isActiveShowResult ? "flex" : "none" }} onClick={() => { props.openedSurveysArray[(props.openedSurveysArray.indexOf(props.openedSurveysArray.find(d => d.id === props.SurveyId))+1)%props.openedSurveysArray.length] ? props.setSurveyId(props.openedSurveysArray[(props.openedSurveysArray.indexOf(props.openedSurveysArray.find(d => d.id === props.SurveyId))+1)%props.openedSurveysArray.length].id) : props.setSurveyId(props.openedSurveysArray[0].id)}} className={"nextSurveyButton"}>Next</button>
-                            <button onClick={SwitchResultButton} className={isActiveShowResult ?  "resultSwitchButton" : "seeTheResultsButtonActive"}>{isActiveShowResult ? "See the results" : "Back to survey"}</button>
+                    <span className={"surveys-poll-navigation-buttons"}>
+                            <button style={{display: isActiveShowResult ? "flex" : "none" }} onClick={() => { props.openedSurveysArray[(props.openedSurveysArray.indexOf(props.openedSurveysArray.find(d => d.id === props.SurveyId))+1)%props.openedSurveysArray.length] ? props.setSurveyId(props.openedSurveysArray[(props.openedSurveysArray.indexOf(props.openedSurveysArray.find(d => d.id === props.SurveyId))+1)%props.openedSurveysArray.length].id) : props.setSurveyId(props.openedSurveysArray[0].id)}} className={"next-survey-button"}>Next</button>
+                            <button onClick={SwitchResultButton} className={isActiveShowResult ?  "result-switch-button" : "results-button-active"}>{isActiveShowResult ? "See the results" : "Back to survey"}</button>
                         </span>
                 </div>
             </div>

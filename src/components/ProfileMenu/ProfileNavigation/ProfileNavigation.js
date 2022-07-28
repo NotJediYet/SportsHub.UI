@@ -1,18 +1,17 @@
 import React from "react";
 import './ProfileNavigation.scss'
 import {NavLink, Outlet} from "react-router-dom";
-import './ActiveButtons.scss'
 
 export default function ProfileNavigation() {
 
-    const personalActive = ({isActive}) => isActive ? "personalActive" : "options-personal";
-    const passwordActive = ({isActive}) => isActive ? "passwordActive"  : "options-chngpass";
-    const surveysOpenedActive = ({isActive}) => isActive ? "surveysActive" : "options-surveys";
-    const hubActive = ({isActive}) => isActive ? "hubActive" : "options-teamHub";
+    const personalActive = ({isActive}) => isActive ? "personal-active" : "options-personal";
+    const passwordActive = ({isActive}) => isActive ? "password-active"  : "options-change-password";
+    const surveysOpenedActive = ({isActive}) => isActive ? "surveys-active" : "options-surveys";
+    const hubActive = ({isActive}) => isActive ? "team-hub-active" : "options-team-hub";
 
 
     return (
-        <div className={"profilepages-container"}>
+        <div className={"profile-menu-container"}>
             <span className={"options"}>
             <NavLink to={"personal"} className={personalActive}>Personal</NavLink>
             <NavLink to={"password"} className={passwordActive} >Change password</NavLink>
