@@ -1,6 +1,6 @@
 import React from "react";
 import './PersonalInformation.scss'
-import {MdPhotoCamera} from 'react-icons/md';
+import { MdPhotoCamera } from 'react-icons/md';
 
 export default function ProfileInformation() {
     return(

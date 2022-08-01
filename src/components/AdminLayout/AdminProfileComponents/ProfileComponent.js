@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import user from '../../../../img/Ellipse.svg';
-import polygon from '../../../../img/Polygon.png';
-import { AiFillCaretDown } from 'react-icons/AiFillCaretDown';
+import { AiFillCaretDown } from 'react-icons/ai';
 
 const ProfileComponent = () => {
 	const [auth, setAuth] = useState(false);

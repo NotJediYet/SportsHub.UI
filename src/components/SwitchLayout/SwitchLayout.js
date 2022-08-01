@@ -1,23 +1,23 @@
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
-import {useNavigate} from 'react-router-dom';
-import {MdSwapHorizontalCircle} from 'react-icons/md'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
+import {useNavigate} from 'react-router-dom'
+import { MdSwapHorizontalCircle } from 'react-icons/md'
 import "./SwitchLayout.scss"
-import React from 'react';
+import React from 'react'
 
 const LayoutSwitch = () => {
     const navigate = useNavigate();
 
     let tooltipText, navigateToPage;
-    if (window.location.pathname === '/admin'){
-        tooltipText = "Switch to user view";
+    if (window.location.pathname === '/admin') {
+        tooltipText = "Switch to user view"
         navigateToPage = () => {
-            navigate('/');
+            navigate('/')
         };
     } else if (window.location.pathname === '/') {
-        tooltipText = "Switch to admin view";
+        tooltipText = "Switch to admin view"
         navigateToPage = () => {
-            navigate('/admin');
+            navigate('/admin')
         };
     }
     else {

@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
-import user from '../../../img/Ellipse.svg';
-import polygon from '../../../img/Polygon.png';
 import "./ProfileComponent.scss"
-import { AiFillCaretDown } from 'react-icons/AiFillCaretDown';
+import { AiFillCaretDown } from 'react-icons/ai';
 
 const ProfileComponent = () => {
 	const [auth, setAuth] = useState(false);
@@ -26,7 +24,6 @@ const ProfileComponent = () => {
 		<div className="navbar--profile">
 			{auth ?
 				<div className="navbar-user">
-					<img src={user} alt="user"/>
 					<div className="user-name">Ivan Baloh</div>
 					<div className="navbar-dropDown-survey">
 						<div className="navbar-btn" onClick={() => setIsUserOpen(!isUserOpen)}>
@@ -74,7 +71,6 @@ const ProfileComponent = () => {
 			<div className="navbar-dropDown">
 				<div className="navbar-btn" onClick={() => setIsLangOpen(!isLangOpen)}>
 					<div>{language}</div>
-					<img src={polygon} alt="arrow"/>
 				</div>
 				{isLangOpen && <div className="navbar-dropDown-menu">
 					<div className="navbar-dropDown-element" onClick={() => changeLng('UA')}>

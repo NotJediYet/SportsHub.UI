@@ -1,5 +1,5 @@
 import React from "react"
-import "./UserHeader.css"
+import "./UserHeader.scss"
 import ProfileComponent from '../UserProfileComponents/ProfileComponent';
 
 export default function UserHeader() {

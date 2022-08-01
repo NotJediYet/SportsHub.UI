@@ -1,6 +1,6 @@
 import React from "react";
 import './ChangePassword.scss'
-import {FaEye} from 'react-icons/fa';
+import { FaEye } from 'react-icons/fa';
 
 export default function ChangePassword(){
     const [firstPasswordIsShown, firstPasswordsetIsShown] = React.useState(false)
