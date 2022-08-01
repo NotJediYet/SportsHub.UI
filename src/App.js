@@ -1,30 +1,30 @@
-import './App.css';
+import './App.scss';
 import React from "react";
 import {Route, Routes} from "react-router-dom";
 import UserLayout from "./components/UserLayout/UserLayout";
 import AdminLayout from "./components/AdminLayout/AdminLayout";
-import {profilePagesRoutes} from "./components/ProfilePages/ProfilePages.js"
-import PrimaryContentArea from "./components/PrimaryContentArea/PrimaryContentArea";
-import SecondaryContentArea from "./components/SecondaryContentArea/SecondaryContentArea";
-import AdditionalContentArea from "./components/AdditionalContentArea/AdditionalContentArea";
-import RightSideBar from "./components/RightSideBar/RightSideBar";
-import Footer from "./components/Footer/Footer";
+import ProfileNavigation from "./components/ProfileManagement/ProfileNavigation/ProfileNavigation";
+import PersonalInformation from "./components/ProfileManagement/PersonalInformation/PersonalInformation";
+import ChangePassword from "./components/ProfileManagement/ChangePassword/ChangePassword";
+import TeamHub from "./components/ProfileManagement/TeamHub/TeamHub";
+import Surveys from "./components/ProfileManagement/Surveys/Surveys";
+import UserContentArea from "./components/UserContentArea/UserContentArea";
 
 
 export default function App(){
     return(
         <div>
             <Routes>
-                <Route path={"/"} element={<UserLayout />} >
-                    <Route index element={
-                        <div><PrimaryContentArea />
-                        <SecondaryContentArea />
-                        <AdditionalContentArea />
-                        <RightSideBar/>
-                        <Footer/></div>}/>
-                    {profilePagesRoutes}
+                <Route path={"/"} element={<UserLayout/>} >
+                    <Route index element={<UserContentArea/>}/>
+                    <Route path={"profile"} element={<ProfileNavigation/>}>
+                        <Route path={"personal-information"} element={<PersonalInformation/>}/>
+                        <Route path={"change-password"} element={<ChangePassword/>}/>
+                        <Route path={"surveys"} element={<Surveys/>}/>
+                        <Route path={"team-hub"} element={<TeamHub/>}/>
+                    </Route>
                 </Route>
-                <Route path={"/admin"} element={<AdminLayout />} ></Route>
+                <Route path={"/admin"} element={<AdminLayout />} />
             </Routes>
         </div>
     )
