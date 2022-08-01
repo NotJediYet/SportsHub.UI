@@ -6,10 +6,7 @@ import { AiFillCaretDown } from 'react-icons/AiFillCaretDown';
 const ProfileComponent = () => {
 	const [auth, setAuth] = useState(false);
 	const [isUserOpen, setIsUserOpen] = useState(false);
-	const changeAuth = () => {
-		setAuth(!auth);
-		console.log(auth);
-	};
+
 	return (
 		<div className="navbar--profile">
 			<div className="navbar-user">
@@ -29,7 +26,7 @@ const ProfileComponent = () => {
 						<div className="navbar-dropDown-survey-element navbar-email-lowercase">
 							ivanbaloh@gmail.com
 						</div>
-						<div className="navbar-dropDown-survey-element" onClick={() => changeAuth()}>
+						<div className="navbar-dropDown-survey-element">
 							<div className="navbar-logout">Log out</div>
 						</div>
 
