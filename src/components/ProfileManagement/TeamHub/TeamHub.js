@@ -2,6 +2,19 @@ import React from "react";
 import './TeamHub.scss'
 import GetFollowedTeams from "../../../services/TeamHubServices";
 
+const followedTeams = GetFollowedTeams();
+function FollowedTeamsComponent(){
+    return followedTeams.map((d) =>
+        <div>
+            <img src={d.image} alt=""/>
+            <div>
+                <span>{d.name}</span>
+                <span>{d.description}</span>
+            </div>
+        </div>
+    );
+}
+
 
 export default function TeamHub(){
     return(
@@ -10,7 +23,7 @@ export default function TeamHub(){
                 <span> YOUR FOLLOWED TEAMS</span>
             </div>
             <div>
-                <GetFollowedTeams/>
+                <FollowedTeamsComponent/>
             </div>
             <div>
                 <span>

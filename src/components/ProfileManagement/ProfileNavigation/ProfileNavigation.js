@@ -9,7 +9,6 @@ export default function ProfileNavigation() {
     const surveysOpenedActive = ({isActive}) => isActive ? "surveys-active" : "options-surveys";
     const teamHubActive = ({isActive}) => isActive ? "team-hub-active" : "options-team-hub";
 
-
     return (
         <div className={"profile-navigation-container"}>
             <span className={"options"}>

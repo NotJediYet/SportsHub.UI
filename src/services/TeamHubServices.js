@@ -26,15 +26,6 @@ const followedTeams = [
 ];
 
 
-export default function GetFollowedTeamsList(){
-
-    return followedTeams.map((d) =>
-        <div>
-            <img src={d.image} alt=""/>
-            <div>
-                <span>{d.name}</span>
-                <span>{d.description}</span>
-            </div>
-        </div>
-    );
+export default function GetFollowedTeams(){
+    return followedTeams;
 }

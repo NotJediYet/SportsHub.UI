@@ -18,8 +18,6 @@ export default function Surveys() {
     const survey = openedSurveysArray.find(element => element.id === SurveyId);
     const closedSurvey = closedSurveysArray.find(element => element.id === ClosedSurveyId);
 
-
-
     const ProgressBar = (completed) => {
         const fillerStyles = {
             height: '100%',
