@@ -18,7 +18,7 @@ export default function App(){
                 <Route path={"/"} element={<UserLayout/>} >
                     <Route index element={<UserContentArea/>}/>
                     <Route path={"profile"} element={<ProfileNavigation/>}>
-                        <Route path={"personal-information"} element={<PersonalInformation/>}/>
+                        <Route index element={<PersonalInformation/>}/>
                         <Route path={"change-password"} element={<ChangePassword/>}/>
                         <Route path={"surveys"} element={<Surveys/>}/>
                         <Route path={"team-hub"} element={<TeamHub/>}/>

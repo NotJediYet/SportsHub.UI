@@ -12,7 +12,7 @@ export default function ProfileNavigation() {
     return (
         <div className={"profile-navigation-container"}>
             <span className={"options"}>
-                <NavLink to={"personal-information"} className={personalInformationActive}>Personal</NavLink>
+                <NavLink end to={""} className={personalInformationActive}>Personal</NavLink>
                 <NavLink to={"change-password"} className={changePasswordActive} >Change password</NavLink>
                 <NavLink to={"surveys"} className={surveysOpenedActive}>My surveys</NavLink>
                 <NavLink to={"team-hub"} className={teamHubActive}>Team hub</NavLink>

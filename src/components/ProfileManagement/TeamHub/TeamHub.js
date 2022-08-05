@@ -1,6 +1,6 @@
 import React from "react";
 import './TeamHub.scss'
-import GetFollowedTeams from "../../../services/TeamHubServices";
+import GetFollowedTeams from "../../../services/TeamHubServices/TeamHubService";
 
 const followedTeams = GetFollowedTeams();
 function FollowedTeamsComponent(){

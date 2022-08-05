@@ -122,16 +122,6 @@
     color: #2B2F43;
 }
 
-.closed-surveys-container > div > p, .closed-surveys-container > div > p {
-
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    color: #2B2F43;
-}
-
 .surveys-open-quests-head > div:nth-child(2) > p > svg {
     font-size: 12px;
     position: absolute;
@@ -242,10 +232,10 @@
     color: #B2B2B2;
 }
 
-.user-quiz > div > p {
+.user-quiz > div > div > p {
     width: 246px;
     margin-left: 25px;
-    margin-top: 21px;
+    margin-top: 11px;
     margin-bottom: 0;
     font-family: 'Open Sans';
     font-style: normal;
@@ -358,7 +348,7 @@
     justify-content: center;
 }
 
-.surveys-reader-pool {
+.surveys-reader-poll-results {
     display: none;
     margin-top: 35px;
     flex-direction: column;
@@ -367,15 +357,15 @@
     margin-left: 19px;
 }
 
-.surveys-reader-pool > div {
+.surveys-reader-poll-results > div {
     margin-bottom: 22px;
 }
 
-.surveys-reader-pool > div:last-child {
+.surveys-reader-poll-results > div:last-child {
     margin-bottom: 0;
 }
 
-.surveys-reader-pool > div > span {
+.surveys-reader-poll-results > div > span {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -383,7 +373,7 @@
 
 }
 
-.surveys-reader-pool > div > span > p {
+.surveys-reader-poll-results > div > span > p {
     margin: 0;
     font-family: 'Open Sans';
     font-style: normal;
@@ -401,7 +391,7 @@
     border-radius: 50px;
 }
 
-.closed-surveys-reader-pool {
+.closed-surveys-reader-poll-results {
     display: flex;
     flex-direction: column;
     margin-top: 16px;
@@ -415,18 +405,18 @@
     background: #F8F8F8;
 }
 
-.closed-surveys-reader-pool {
+.closed-surveys-reader-poll-results {
     margin-bottom: 81px;
 }
 
-.closed-surveys-reader-pool > div > span {
+.closed-surveys-reader-poll-results > div > span {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 4px;
 }
 
-.closed-surveys-reader-pool > div > span > p {
+.closed-surveys-reader-poll-results > div > span > p {
     margin: 0;
     font-family: 'Open Sans';
     font-style: normal;
@@ -436,11 +426,11 @@
     color: #7F7B7B;
 }
 
-.closed-surveys-reader-pool > div {
+.closed-surveys-reader-poll-results > div {
     margin-bottom: 22px;
 }
 
-.closed-surveys-reader-pool > div:last-child {
+.closed-surveys-reader-poll-results > div:last-child {
     margin-bottom: 0;
 }
 

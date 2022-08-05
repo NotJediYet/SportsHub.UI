@@ -1,6 +1,22 @@
+import React from "react";
+import ReaderPollResults from "./ReaderPollResults";
+
 export default function ClosedSurveysSection(props){
+    const [ClosedSurveyId, setClosedSurveyId] = React.useState(props.closedSurveysArray[0].id);
+    const closedSurvey = props.closedSurveysArray.find(element => element.id === ClosedSurveyId);
+
+    const listOfClosedItems = props.closedSurveysArray.map((d) =>
+        <div key={d.id}
+             onClick={()=>{setClosedSurveyId(d.id)}}
+             className={(ClosedSurveyId=== d.id) ? "survey-active" : "survey-not-active"}>
+            <p className={(ClosedSurveyId=== d.id) ? "show-active-text" : "hide-not-active-text"}>{d.survey}</p>
+            <p>{`${d.date[1].slice(8)}/${d.date[1].slice(5,7)}/${new Date(d.date[1]).getFullYear().toString().slice(-2)}`}</p>
+            <div className={(ClosedSurveyId=== d.id) ? "survey-active-border" : ""}></div>
+        </div>
+    );
+
     return(
-        <div style={{display: props.isActiveOpened ? "none" : "flex"}} className={"surveys-section-container-closed"}>
+        <div className={"surveys-section-container-closed"}>
             <div className={"surveys-closed-quests"}>
                 <div className={"surveys-closed-quests-head"}>
                     <p>questions</p>
@@ -11,57 +27,25 @@ export default function ClosedSurveysSection(props){
                     </div>
                 </div>
                 <div className={"closed-surveys-container"}>
-                    {props.listOfClosedItems}
+                    {listOfClosedItems}
                 </div>
             </div>
             <div style={{display: props.ClosedSurveyId === 0 ? "none" : "flex" }} className={"user-quiz"}>
                     <span>
                         <p>
-                            READER POOL
+                            READER POLL
                         </p>
                         <p>
-                            {props.closedSurvey===undefined ? "" : `${new Date(props.closedSurvey.date[0]).toLocaleString('en-US', {month: 'short',day:"numeric"})} - ${new Date(props.closedSurvey.date[1]).toLocaleString('en-US', {month: 'short',day:"numeric"})}`}
+                            {props.surveys===undefined ? "" : `${new Date(props.surveys.date[0]).toLocaleString('en-US', {month: 'short',day:"numeric"})} - ${new Date(props.surveys.date[1]).toLocaleString('en-US', {month: 'short',day:"numeric"})}`}
                         </p>
                     </span>
-                <div   className={"closed-surveys-poll-and-pool-container"}>
-                    <p>
-                        {props.closedSurvey===undefined ? "" : props.closedSurvey.survey}
-                    </p>
-                    <div style={{display:"flex"}} className={"closed-surveys-reader-pool"}>
-                        <div>
-                                <span>
-                                    <p>
-                                        Yes
-                                    </p>
-                                    <p>
-                                        {`${props.closedSurvey.percentage[0]}%`}
-                                    </p>
-                                </span>
-                            <div className={"yes-results-progress-bar"}>{props.ProgressBar(props.closedSurvey.percentage[0])}</div>
-                        </div>
-                        <div>
-                                <span>
-                                    <p>
-                                        No
-                                    </p>
-                                    <p>
-                                        {`${props.closedSurvey.percentage[1]}%`}
-                                    </p>
-                                </span>
-                            <div className={"no-results-progress-bar"}>{props.ProgressBar(props.closedSurvey.percentage[1])}</div>
-                        </div>
-                        <div>
-                                <span>
-                                    <p>
-                                        Maybe
-                                    </p>
-                                    <p>
-                                        {`${props.closedSurvey.percentage[2]}%`}
-                                    </p>
-                                </span>
-                            <div className={"maybe-results-progress-bar"}>{props.ProgressBar(props.closedSurvey.percentage[2])}</div>
-                        </div>
-                    </div>
+                <div className={"closed-surveys-poll-and-pool-container"}>
+                    <ReaderPollResults
+                        surveys={closedSurvey}
+                        ClosedSurveyId={ClosedSurveyId}
+                        ProgressBar={props.ProgressBar}
+                        class={"closed-surveys-reader-poll-results"}
+                    />
                 </div>
             </div>
         </div>

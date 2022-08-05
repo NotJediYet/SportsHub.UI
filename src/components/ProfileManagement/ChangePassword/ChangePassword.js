@@ -1,10 +1,11 @@
 import React from "react";
 import './ChangePassword.scss'
-import {FaEye} from 'react-icons/fa';
+import {FaEye, FaEyeSlash} from 'react-icons/fa';
 
 export default function ChangePassword(){
-    const [firstPasswordIsShown, firstPasswordsetIsShown] = React.useState(false)
-    const [secondPasswordIsShown, secondPasswordsetIsShown] = React.useState(false)
+    const [firstPasswordIsShown, setFirstPasswordIsShown] = React.useState(false)
+    const [secondPasswordIsShown, setSecondPasswordIsShown] = React.useState(false)
+    const [thirdPasswordIsShown, setThirdPasswordIsShown] = React.useState(false)
 
     return(
         <div>
@@ -12,17 +13,21 @@ export default function ChangePassword(){
                 <form action="">
                     <p>
                         <label htmlFor="change-password-first-input">OLD PASSWORD</label>
-                        <input id={"change-password-first-input"} type="text"/>
+                        <input id={"change-password-first-input"} type={firstPasswordIsShown ? "text" : "password"}/>
+                        <FaEye style={{display: firstPasswordIsShown ? "none" : "flex"}} onClick={() => {setFirstPasswordIsShown(!firstPasswordIsShown)}}/>
+                        <FaEyeSlash style={{display: firstPasswordIsShown ? "flex" : "none"}} onClick={() => {setFirstPasswordIsShown(!firstPasswordIsShown)}} />
                     </p>
                     <p>
                         <label htmlFor="change-password-second-input">NEW PASSWORD</label>
-                        <input id={"change-password-second-input"} type={firstPasswordIsShown ? "text" : "password"}/>
-                        <FaEye size="300" onClick={() => {firstPasswordsetIsShown(!firstPasswordIsShown)}}/>
+                        <input id={"change-password-second-input"} type={secondPasswordIsShown ? "text" : "password"}/>
+                        <FaEye style={{display: secondPasswordIsShown ? "none" : "flex"}} onClick={() => {setSecondPasswordIsShown(!secondPasswordIsShown)}} />
+                        <FaEyeSlash style={{display: secondPasswordIsShown ? "flex" : "none"}} onClick={() => {setSecondPasswordIsShown(!secondPasswordIsShown)}} />
                     </p>
                     <p>
                         <label htmlFor="change-password-third-input">PASSWORD CONFIRMATION</label>
-                        <input id={"change-password-third-input"} type={secondPasswordIsShown ? "text" : "password"}/>
-                        <FaEye onClick={() => {secondPasswordsetIsShown(!secondPasswordIsShown)}}/>
+                        <input id={"change-password-third-input"} type={thirdPasswordIsShown ? "text" : "password"}/>
+                        <FaEye style={{display: thirdPasswordIsShown ? "none" : "flex"}} onClick={() => {setThirdPasswordIsShown(!thirdPasswordIsShown)}}/>
+                        <FaEyeSlash style={{display: thirdPasswordIsShown ? "flex" : "none"}} onClick={() => {setThirdPasswordIsShown(!thirdPasswordIsShown)}} />
                     </p>
                     <button type={"submit"}>CHANGE PASSWORD</button>
                 </form>
