@@ -15,11 +15,11 @@ const ProfileComponent = () => {
 		if (pathname !== '/') {
 			setAdmin(true);
 		}
-	}, [auth]);
+	},);
 
 	useEffect(() => {
 		console.log(isAdmin);
-	}, [isAdmin]);
+	},);
 
 	const changeAuth = () => {
 		setAuth(!auth);
