@@ -39,18 +39,6 @@ test("Switch button should be rendered", () => {
     expect(tooltips).toBeCalled;
 });
 
-test("Profile should be rendered", () => {
-    render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<AdminHeader />}/>
-            </Routes>
-        </BrowserRouter>
-    );
-    const profileElement = screen.getByText("Profile");
-    expect(profileElement).toBeInTheDocument();
-});
-
 test("Active configuration page name, CTA should be rendered", () => {
     render(
         <BrowserRouter>
