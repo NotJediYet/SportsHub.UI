@@ -59,30 +59,8 @@ test("Switch button should be rendered", () => {
         </BrowserRouter>
     );
   
+    // eslint-disable-next-line testing-library/prefer-screen-queries
     fireEvent.mouseOver(getAllByLabelText("switcher-div")[0]);
+    // eslint-disable-next-line jest/valid-expect,no-unused-expressions
     expect(tooltips).toBeCalled;
-});
-
-test("Profile should be rendered", () => {
-    render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<UserHeader />}/>
-            </Routes>
-        </BrowserRouter>
-    );
-    const profileElement = screen.getByText("Profile");
-    expect(profileElement).toBeInTheDocument();
-});
-
-test("Languages should be rendered", () => {
-    render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<UserHeader />}/>
-            </Routes>
-        </BrowserRouter>
-    );
-    const languagesElement = screen.getByText("Languages");
-    expect(languagesElement).toBeInTheDocument();
 });
