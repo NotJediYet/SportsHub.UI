@@ -18,7 +18,7 @@ const ProfileComponent = () => {
 	},[pathname]);
 
 	useEffect(() => {
-		console.log(isAdmin);
+		//console.log(isAdmin);
 	},[pathname]);
 
 	const changeAuth = () => {
