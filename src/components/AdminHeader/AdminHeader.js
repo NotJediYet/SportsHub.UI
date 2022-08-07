@@ -1,6 +1,7 @@
 import React from "react"
 import "./AdminHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
+import ProfileComponent from '../ProfileComponents/ProfileComponent';
 
 export default function AdminHeader() {
 
@@ -15,7 +16,9 @@ export default function AdminHeader() {
                 <div className="navbar-switch">
                     <LayoutSwitch />
                 </div>
-                <div className="navbar-profile">Profile</div>
+                <div className="navbar-profile">
+                    <ProfileComponent />
+                </div>
             </nav>
             <div className="header-page-name">
                Active configuration page name, CTA
