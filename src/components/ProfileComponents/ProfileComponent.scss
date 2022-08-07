@@ -105,7 +105,7 @@
   flex-direction: column;
   background: #FFFFFF;
   box-shadow: 0px 0px 17px #00000017;
-  width: 150px;
+  width: 170px;
 
 }
 
@@ -124,11 +124,6 @@
   color: #C63638;
 }
 
-.navbar-logout {
-  border-top: 1px solid #EDEDED;
-
-}
-
 .navbar-email-lowercase {
   font-style: normal;
   font-weight: 400;
@@ -141,10 +136,12 @@
 
 .navbar-email-lowercase:hover {
   background: none;
+  color: #7F7B7B;
 }
 
 .navbar-dropDown-survey-element:first-child:hover {
   background: none;
+  color: black;
 }
 
 .navbar-dropDown-survey-element:last-child {
