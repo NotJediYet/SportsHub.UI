@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserHeader from "./UserHeader";
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 import Profile from '../Profile/Profile';
+import {AiFillCaretDown} from 'react-icons/ai';
+import AdminHeader from '../AdminHeader/AdminHeader';
 
 test("logo or identity item should be rendered", () => {
     render(
@@ -87,17 +89,5 @@ test("Sign up and should be rendered", () => {
     );
     const ProfileElement = screen.getByText("Sign up");
     expect(ProfileElement).toBeInTheDocument();
-
-});
-test("Language should be rendered", () => {
-    render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<Profile />}/>
-            </Routes>
-        </BrowserRouter>
-    );
-    const LanguageElement = screen.getByText("EN");
-    expect(LanguageElement).toBeInTheDocument();
 
 });

@@ -12,7 +12,7 @@ const Profile = () => {
 
 	const {pathname} = useLocation();
 	useEffect(() => {
-		if (pathname !== '/') {
+		if (pathname.startsWith('/admin')) {
 			setIsAdmin(true);
 		}
 	},[pathname]);
