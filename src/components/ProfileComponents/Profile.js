@@ -30,7 +30,7 @@ const Profile = () => {
 			{auth && !isAdmin ?
 				<div className="navbar-user">
 					<div className="navbar-profile-user-photo">
-						<img className="navbar-profile-user-photo" src=""/>
+						<img className="navbar-profile-user-photo" src="" alt=""/>
 						<BiUserCircle/>
 					</div>
 					<div className="user-name">Ivan Baloh</div>
