@@ -9,6 +9,7 @@ const Language = () => {
 		setLanguage(lng)
 		setIsLangOpen(false)
 	}
+
 	return (
 		<div className="navbar-dropDown">
 			<div className="navbar-btn" onClick={() => setIsLangOpen(!isLangOpen)}>
