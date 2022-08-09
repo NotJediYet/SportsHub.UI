@@ -3,7 +3,7 @@ import "./Profile.scss";
 import {AiFillCaretDown} from 'react-icons/ai';
 import {BiUserCircle} from 'react-icons/bi';
 import {useLocation} from 'react-router-dom';
-import Language from '../LanguageSwitch/Language';
+import Language from '../Language/Language';
 
 const Profile = () => {
 	const [auth, setAuth] = useState(false);
@@ -18,12 +18,10 @@ const Profile = () => {
 	},[pathname]);
 
 	useEffect(() => {
-
 	},[pathname]);
 
 	const changeAuth = () => {
 		setAuth(!auth);
-		console.log(auth);
 	};
 	return (
 		<div className="navbar-profile">

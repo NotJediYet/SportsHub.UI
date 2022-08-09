@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import "../ProfileComponents/Profile.scss"
+import "../Profile/Profile.scss"
 import {AiFillCaretDown} from 'react-icons/ai';
 
 const Language = () => {

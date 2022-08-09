@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import UserHeader from "./UserHeader";
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
-import Profile from '../ProfileComponents/Profile';
+import Profile from '../Profile/Profile';
 
 test("logo or identity item should be rendered", () => {
     render(
@@ -73,8 +73,8 @@ test("Login and should be rendered", () => {
             </Routes>
         </BrowserRouter>
     );
-    const socialMediaElement = screen.getByText("Login");
-    expect(socialMediaElement).toBeInTheDocument();
+    const ProfileElement = screen.getByText("Login");
+    expect(ProfileElement).toBeInTheDocument();
 
 });
 test("Sign up and should be rendered", () => {
@@ -85,8 +85,19 @@ test("Sign up and should be rendered", () => {
             </Routes>
         </BrowserRouter>
     );
-    const socialMediaElement = screen.getByText("Sign up");
-    expect(socialMediaElement).toBeInTheDocument();
+    const ProfileElement = screen.getByText("Sign up");
+    expect(ProfileElement).toBeInTheDocument();
 
 });
+test("Language should be rendered", () => {
+    render(
+        <BrowserRouter>
+            <Routes>
+                <Route path="*" element= {<Profile />}/>
+            </Routes>
+        </BrowserRouter>
+    );
+    const LanguageElement = screen.getByText("EN");
+    expect(LanguageElement).toBeInTheDocument();
 
+});

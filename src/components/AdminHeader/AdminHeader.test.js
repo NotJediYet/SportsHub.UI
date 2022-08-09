@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import AdminHeader from "./AdminHeader";
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
+import Profile from '../Profile/Profile';
 
 test("Sports Hub item should be rendered", () => {
     render(

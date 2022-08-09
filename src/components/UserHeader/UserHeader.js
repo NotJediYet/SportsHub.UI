@@ -1,7 +1,7 @@
 import React from "react"
 import "./UserHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
-import Profile from '../ProfileComponents/Profile';
+import Profile from '../Profile/Profile';
 
 export default function UserHeader() {
     let isAdminLoggedIn = true;

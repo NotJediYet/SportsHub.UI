@@ -106,6 +106,7 @@
   background: #FFFFFF;
   box-shadow: 0px 0px 17px #00000017;
   width: fit-content;
+  min-width: 150px;
 
 }
 
@@ -113,6 +114,7 @@
   display: flex;
   align-items: center;
   padding-left: 10px;
+  padding-right: 10px;
   box-sizing: border-box;
   height: 40px;
   width: 100%;
@@ -154,4 +156,5 @@
 }
 .navbar-profile-user-photo{
   border-radius: 50%;
+  size: 33px;
 }

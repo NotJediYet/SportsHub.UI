@@ -1,7 +1,7 @@
 import React from "react"
 import "./AdminHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
-import Profile from '../ProfileComponents/Profile';
+import Profile from '../Profile/Profile';
 
 export default function AdminHeader() {
 
