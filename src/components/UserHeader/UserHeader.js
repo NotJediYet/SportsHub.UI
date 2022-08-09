@@ -1,7 +1,7 @@
 import React from "react"
 import "./UserHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
-import ProfileComponent from '../ProfileComponents/ProfileComponent';
+import Profile from '../ProfileComponents/Profile';
 
 export default function UserHeader() {
     let isAdminLoggedIn = true;
@@ -19,7 +19,7 @@ export default function UserHeader() {
                 ): (
                     <div></div>
                 )}
-                <ProfileComponent/>
+                <Profile/>
             </nav>
         </header>
     );

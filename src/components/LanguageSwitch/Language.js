@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
-import "../ProfileComponent.scss"
+import "../ProfileComponents/Profile.scss"
 import {AiFillCaretDown} from 'react-icons/ai';
 
-const ProfileComponent = () => {
-
-
+const Language = () => {
 	const [language, setLanguage] = useState('EN');
-
 	const [isLangOpen, setIsLangOpen] = useState(false);
-
 	const changeLng = (lng) => {
 		setLanguage(lng)
 		setIsLangOpen(false)
@@ -36,4 +32,4 @@ const ProfileComponent = () => {
 		</div>
 	);
 }
-export default ProfileComponent;
+export default Language;

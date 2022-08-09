@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import "./ProfileComponent.scss";
+import "./Profile.scss";
 import {AiFillCaretDown} from 'react-icons/ai';
 import {BiUserCircle} from 'react-icons/bi';
-import LanguageSwitch from './LanguageSwitch/LanguageSwitch';
 import {useLocation} from 'react-router-dom';
+import Language from '../LanguageSwitch/Language';
 
-const ProfileComponent = () => {
+const Profile = () => {
 	const [auth, setAuth] = useState(false);
 	const [isUserOpen, setIsUserOpen] = useState(false);
-	const [isAdmin, setAdmin] = useState(false);
+	const [isAdmin, setIsAdmin] = useState(false);
 
 	const {pathname} = useLocation();
 	useEffect(() => {
 		if (pathname !== '/') {
-			setAdmin(true);
+			setIsAdmin(true);
 		}
 	},[pathname]);
 
@@ -30,6 +30,7 @@ const ProfileComponent = () => {
 			{auth && !isAdmin ?
 				<div className="navbar-user">
 					<div className="navbar-profile-user-photo">
+						<img className="navbar-profile-user-photo" src="" alt="user photo"/>
 						<BiUserCircle/>
 					</div>
 					<div className="user-name">Ivan Baloh</div>
@@ -79,7 +80,7 @@ const ProfileComponent = () => {
 				</>
 			}
 			{!isAdmin &&<>
-				<LanguageSwitch/>
+				<Language/>
 			</>}
 
 			{isAdmin &&
@@ -122,4 +123,4 @@ const ProfileComponent = () => {
 	);
 };
 
-export default ProfileComponent;
+export default Profile;
