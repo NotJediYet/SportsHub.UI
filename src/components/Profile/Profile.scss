@@ -1,0 +1,161 @@
+.navbar-profile {
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  background-color: #FFF;
+}
+
+.navbar-sing_in {
+  color: #D72130;
+  cursor: pointer;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+
+}
+
+.navbar-login {
+  color: #D72130;
+  font-size: 12px;
+  padding: 8px 36px;
+  border: 1px solid #C63638;
+  cursor: pointer;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  cursor: pointer;
+
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.navbar-btn {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.navbar-dropDown {
+  position: relative;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+
+}
+
+.navbar-dropDown-menu {
+  position: absolute;
+  top: 14px;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+
+.navbar-dropDown-element {
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 3px 7px 3px 3px;
+  height: 30px;
+  width: 56px;
+  left: 37px;
+  top: 67px;
+  border-radius: 0px;
+  text-align: center;
+
+}
+
+.navbar-dropDown-element:hover {
+  background-color: #d721301c;
+  color: #C63638;
+}
+
+.navbar-dropDown-survey {
+  position: relative;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+
+
+}
+
+.navbar-dropDown-list {
+  position: absolute;
+  right: 0;
+  top: 25px;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 17px #00000017;
+  width: fit-content;
+  min-width: 150px;
+
+}
+
+.navbar-dropDown-survey-element {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  height: 40px;
+  width: 100%;
+  text-align: left;
+}
+
+.navbar-dropDown-survey-element:hover {
+  background-color: #d721301c;
+  color: #C63638;
+}
+
+.navbar-email-lowercase {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19px;
+  color: #7F7B7B;
+  height: fit-content;
+  border-top: none;
+}
+
+.navbar-email-lowercase:hover {
+  background: none;
+  color: #7F7B7B;
+}
+
+.navbar-dropDown-survey-element:first-child:hover {
+  background: none;
+  color: black;
+}
+
+.navbar-dropDown-survey-element:last-child {
+  border-top: 1px solid #EDEDED;
+}
+
+.navbar-dropDown-survey-element:first-child{
+  padding-top: 10px;
+  height: fit-content;
+}
+.navbar-profile-user-photo{
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+}

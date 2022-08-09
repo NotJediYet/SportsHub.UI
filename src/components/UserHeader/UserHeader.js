@@ -1,6 +1,7 @@
 import React from "react"
 import "./UserHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
+import Profile from '../Profile/Profile';
 
 export default function UserHeader() {
     let isAdminLoggedIn = true;
@@ -18,8 +19,7 @@ export default function UserHeader() {
                 ): (
                     <div></div>
                 )}
-                <div className="navbar-profile-user">Profile</div>
-                <div className="navbar-languages-user">Languages</div>
+                <Profile/>
             </nav>
         </header>
     );
