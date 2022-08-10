@@ -34,7 +34,7 @@ export default function ClosedSurveysSection(props){
                 ClosedSurveyId={ClosedSurveyId}
                 ProgressBar={props.ProgressBar}
                 class={"closed-surveys-reader-pool-results"}
-                isActiveOpened={props.isActiveOpened}
+                isOpenSurveys={props.isOpenSurveys}
             />
         </div>
     )

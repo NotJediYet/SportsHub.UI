@@ -6,8 +6,8 @@ import {GetSurveys} from "../../../services/SurveysServices/SurveysService";
 
 export default function Surveys() {
 
-    const [isActiveOpened, setIsActiveOpened] = React.useState(true);
-    const [surveys, setSurveys] = React.useState(GetSurveys(isActiveOpened));
+    const [isOpenSurveys, setIsOpenSurveys] = React.useState(true);
+    const [surveys, setSurveys] = React.useState(GetSurveys(isOpenSurveys));
 
     if (surveys.length === 0){
         setSurveys([{
@@ -20,7 +20,7 @@ export default function Surveys() {
     }
 
     function Surveys(surveysFilterModel){
-        setIsActiveOpened(surveysFilterModel);
+        setIsOpenSurveys(surveysFilterModel);
         setSurveys(GetSurveys(surveysFilterModel));
     }
     const ProgressBar = (completed) => {
@@ -41,17 +41,17 @@ export default function Surveys() {
     return(
         <div className={"surveys-container"}>
             <div className={"surveys-open-close-text"}>
-                <p onClick={() => {if(isActiveOpened===false)Surveys(true)}} className={isActiveOpened ? "surveys-open-close-button-active" : "surveys-open-close-button"}>
+                <p onClick={() => {if(isOpenSurveys===false)Surveys(true)}} className={isOpenSurveys ? "surveys-open-close-button-active" : "surveys-open-close-button"}>
                     OPENED
                 </p>
-                <p onClick={() => {if (isActiveOpened===true)Surveys(false)}} className={isActiveOpened ? "surveys-open-close-button" : "surveys-open-close-button-active"}>
+                <p onClick={() => {if (isOpenSurveys===true)Surveys(false)}} className={isOpenSurveys ? "surveys-open-close-button" : "surveys-open-close-button-active"}>
                     CLOSED
                 </p>
             </div>
             <div className={"surveys-section-container-opened"}>
-                {isActiveOpened
-                    ? <OpenedSurveysSection isActiveOpened={isActiveOpened} ProgressBar={ProgressBar} openedSurveysArray={surveys}/>
-                    : <ClosedSurveysSection isActiveOpened={isActiveOpened} ProgressBar={ProgressBar} closedSurveysArray={surveys}/>
+                {isOpenSurveys
+                    ? <OpenedSurveysSection isOpenSurveys={isOpenSurveys} ProgressBar={ProgressBar} openedSurveysArray={surveys}/>
+                    : <ClosedSurveysSection isOpenSurveys={isOpenSurveys} ProgressBar={ProgressBar} closedSurveysArray={surveys}/>
                 }
             </div>
         </div>

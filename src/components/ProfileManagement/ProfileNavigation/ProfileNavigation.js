@@ -3,7 +3,6 @@ import './ProfileNavigation.scss'
 import {NavLink, Outlet} from "react-router-dom";
 
 export default function ProfileNavigation() {
-
     const personalInformationActive = ({isActive}) => isActive ? "personal-active" : "options-personal";
     const changePasswordActive = ({isActive}) => isActive ? "password-active"  : "options-change-password";
     const surveysOpenedActive = ({isActive}) => isActive ? "surveys-active" : "options-surveys";
@@ -19,6 +18,5 @@ export default function ProfileNavigation() {
             </span>
             <Outlet/>
         </div>
-
     );
 }

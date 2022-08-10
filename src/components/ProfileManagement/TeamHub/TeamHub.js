@@ -15,20 +15,17 @@ function FollowedTeamsComponent(){
     );
 }
 
-
 export default function TeamHub(){
     return(
         <div className={"team-hub-container"}>
             <div>
-                <span> YOUR FOLLOWED TEAMS</span>
+                <span>YOUR FOLLOWED TEAMS</span>
             </div>
             <div>
                 <FollowedTeamsComponent/>
             </div>
             <div>
-                <span>
-                    Manage teams list
-                </span>
+                <span>Manage teams list</span>
             </div>
         </div>
     )

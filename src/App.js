@@ -10,7 +10,6 @@ import TeamHub from "./components/ProfileManagement/TeamHub/TeamHub";
 import Surveys from "./components/ProfileManagement/Surveys/Surveys";
 import UserContentArea from "./components/UserContentArea/UserContentArea";
 
-
 export default function App(){
     return(
         <div>

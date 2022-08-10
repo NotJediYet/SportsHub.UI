@@ -38,7 +38,7 @@ export default function OpenedSurveysSection (props){
                 SurveyId={SurveyId}
                 ProgressBar={props.ProgressBar}
                 class={"surveys-reader-pool-results"}
-                isActiveOpened={props.isActiveOpened}
+                isOpenSurveys={props.isOpenSurveys}
                 isActiveShowResult={isActiveShowResult}
                 setSurveyId={setSurveyId}
                 SwitchButtonResult={SwitchResultButton}

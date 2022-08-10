@@ -22,7 +22,7 @@ export default function ReaderPool(props){
                 <p>
                     {props.surveys===undefined ? "" : props.surveys.survey}
                 </p>
-                    <div style={{display: (isActiveShowResult && props.isActiveOpened) ? "flex" : "none"}} className={"surveys-reader-pool"}>
+                    <div style={{display: (isActiveShowResult && props.isOpenSurveys) ? "flex" : "none"}} className={"surveys-reader-pool"}>
                 <span>
                     <input id={"PoolCoice1"} name={"UserPool"} value={"Yes"} type="radio"/>
                     <label htmlFor="PoolCoice1">Yes</label>
@@ -36,7 +36,7 @@ export default function ReaderPool(props){
                     <label htmlFor="PoolCoice3">Maybe</label>
                 </span>
                     </div>
-                <div style={{display: (isActiveShowResult===false || props.isActiveOpened === false)? "flex" : "none"}}>
+                <div style={{display: (isActiveShowResult===false || props.isOpenSurveys === false)? "flex" : "none"}}>
                     <div style={{display:"flex"}} className={props.class}>
                         <div>
                     <span>
@@ -73,7 +73,7 @@ export default function ReaderPool(props){
                         </div>
                     </div>
                 </div>
-                <span style={{display: props.isActiveOpened ? "flex" : "none"}} className={"surveys-pool-navigation-buttons"}>
+                <span style={{display: props.isOpenSurveys ? "flex" : "none"}} className={"surveys-pool-navigation-buttons"}>
                     <button style={{display: isActiveShowResult ? "flex" : "none" }} onClick={() => { props.openedSurveysArray[(props.openedSurveysArray.indexOf(props.openedSurveysArray.find(d => d.id === props.SurveyId))+1)%props.openedSurveysArray.length] ? props.setSurveyId(props.openedSurveysArray[(props.openedSurveysArray.indexOf(props.openedSurveysArray.find(d => d.id === props.SurveyId))+1)%props.openedSurveysArray.length].id) : props.setSurveyId(props.openedSurveysArray[0].id)}} className={"next-survey-button"}>Next</button>
                     <button onClick={SwitchResultButton} className={isActiveShowResult ?  "result-switch-button" : "results-button-active"}>{isActiveShowResult ? "See the results" : "Back to survey"}</button>
                 </span>
