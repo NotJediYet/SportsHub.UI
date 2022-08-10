@@ -1,0 +1,99 @@
+.team-hub-container {
+    margin-top: 75px;
+    height: 375px;
+    width: 284px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.team-hub-container > div:nth-child(1) {
+    width: 100%;
+    background: #F2F2F2;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.team-hub-container > div:nth-child(1) > span {
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: #434C5D;
+}
+
+.team-hub-container > div:nth-child(2) {
+    height: 289px;
+    width: 100%;
+    background: #F8F8F8;
+    overflow-y: auto;
+}
+
+.team-hub-container > div:nth-child(2) > div > img {
+    border-radius: 50%;
+}
+
+.team-hub-container > div:nth-child(2)::-webkit-scrollbar {
+    width: 0;
+}
+
+.team-hub-container > div:nth-child(2) > div {
+    border-bottom: 1px solid #F2F2F2;
+    height: 89px;
+    display: flex;
+    align-items: center;
+}
+
+.team-hub-container > div:nth-child(2) > div > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 17px;
+}
+
+.team-hub-container > div:nth-child(2) > div > div > span:nth-child(1) {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: #2B2F43;
+    margin-bottom: 4px;
+}
+
+.team-hub-container > div:nth-child(2) > div > div > span:nth-child(2) {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #7F7B7B;
+}
+
+.team-hub-container > div:nth-child(2) > div > img {
+    margin-left: 19px;
+    height: 60px;
+    width: 60px;
+}
+
+.team-hub-container > div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    width: 100%;
+    background: #F8F8F8;
+}
+
+.team-hub-container > div:nth-child(3) > span {
+    margin-left: 20px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    color: #D72130;
+    cursor: pointer;
+}
