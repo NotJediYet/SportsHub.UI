@@ -9,11 +9,20 @@ export default function Surveys() {
     const [isActiveOpened, setIsActiveOpened] = React.useState(true);
     const [surveys, setSurveys] = React.useState(GetSurveys(isActiveOpened));
 
+    if (surveys.length === 0){
+        setSurveys([{
+            id: 0,
+            survey: "No surveys left",
+            date:["", ""],
+            percentage: [],
+            isOpen: true
+        }]);
+    }
+
     function Surveys(surveysFilterModel){
         setIsActiveOpened(surveysFilterModel);
         setSurveys(GetSurveys(surveysFilterModel));
     }
-
     const ProgressBar = (completed) => {
         const fillerStyles = {
             height: '100%',
@@ -39,10 +48,12 @@ export default function Surveys() {
                     CLOSED
                 </p>
             </div>
-            {isActiveOpened
-                ? <OpenedSurveysSection isActiveOpened={isActiveOpened} ProgressBar={ProgressBar} openedSurveysArray={surveys}/>
-                : <ClosedSurveysSection isActiveOpened={isActiveOpened} ProgressBar={ProgressBar} closedSurveysArray={surveys}/>
-            }
+            <div className={"surveys-section-container-opened"}>
+                {isActiveOpened
+                    ? <OpenedSurveysSection isActiveOpened={isActiveOpened} ProgressBar={ProgressBar} openedSurveysArray={surveys}/>
+                    : <ClosedSurveysSection isActiveOpened={isActiveOpened} ProgressBar={ProgressBar} closedSurveysArray={surveys}/>
+                }
+            </div>
         </div>
     )
 }

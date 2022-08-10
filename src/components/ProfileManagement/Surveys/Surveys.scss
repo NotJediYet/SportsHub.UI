@@ -53,19 +53,30 @@
 
 .surveys-open-quests-head, .surveys-closed-quests-head{
     display: flex;
-    width: 708px;
+    width: 710px;
     height: 48px;
     background: #F2F2F2;
     align-items: center;
     justify-content: space-between;
 }
 
-.surveys-open-quests-head > p:nth-child(1), .surveys-closed-quests-head > p:nth-child(1) {
-    margin-left: 16px;
+.surveys-open-quests-head > th:nth-child(1), .surveys-closed-quests-head > th:nth-child(1){
+    margin-left: 20px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
     text-transform: uppercase;
+    color: #434C5D;
 }
 
-.surveys-open-quests-head > div:nth-child(2) > p{
+table {
+    border: none;
+    border-spacing: 0;
+}
+
+.surveys-open-quests-head > th:last-child{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,40 +91,39 @@
     color: #D72130;
 }
 
-.closed-surveys-container > div {
+.closed-surveys-container > tr, .surveys-container-opened > tr {
     display: flex;
     justify-content: space-between;
 }
 
-.surveys-closed-quests-head > div:nth-child(2) > p {
+.surveys-closed-quests-head > th:nth-child(2) {
     margin: 0;
-    ont-family: 'Open Sans';
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 11px;
     text-transform: uppercase;
     color: #434C5D;
-    margin-right: 64px;
+    margin-right: 59px;
 }
 
-.surveys-open-quests-head > div:nth-child(2){
+.surveys-open-quests-head > th:nth-child(2){
     cursor: pointer;
-    width: 150px;
+    width: 140px;
     height: 17px;
     margin-right: 20px;
 }
 
-.survey-not-active > p:nth-child(2) {
+.survey-not-active > td:nth-child(2) {
     margin-left: 210px;
 }
 
-.survey-active > p:nth-child(2) {
+.survey-active > td:nth-child(2) {
     margin-right: 35px;
 }
 
-.surveys-container-opened > div > p, .closed-surveys-container > div > p {
-
+.surveys-container-opened > tr > td, .closed-surveys-container > tr > td {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -122,23 +132,9 @@
     color: #2B2F43;
 }
 
-.surveys-open-quests-head > div:nth-child(2) > p > svg {
-    font-size: 12px;
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    margin-left: 135px;
-}
-
-
-.surveys-open-quests > div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-}
-
 .survey-not-active {
     cursor: pointer;
-    width: 706px;
+    width: 708px;
     height: 55px;
     display: flex;
     align-items: center;
@@ -172,16 +168,17 @@
 
 .survey-active-border {
     position: absolute;
-    height: 59px;
+    height: 57px;
     width: 4px;
     background: #C4C4C4;
-    border-radius: 2px;
-    margin-left: 702px;
+    border-radius: 7px;
+    margin-left: 703px;
+    margin-top: 4px;
 }
 
 .survey-active {
     cursor: pointer;
-    width: 706px;
+    width: 709px;
     height: 55px;
     display: flex;
     align-items: center;
@@ -232,7 +229,7 @@
     color: #B2B2B2;
 }
 
-.user-quiz > div > div > p {
+.user-quiz > div > p {
     width: 246px;
     margin-left: 25px;
     margin-top: 11px;
@@ -245,14 +242,14 @@
     color: #2B2F43;
 }
 
-.closed-surveys-poll-and-pool-container {
+.surveys-pool-container {
     min-height: 330px;
     background: #F8F8F8;
     display: flex;
     flex-direction: column;
 }
 
-.surveys-reader-poll {
+.surveys-reader-pool {
     display: flex;
     flex-direction: column;
     width: 234px;
@@ -269,21 +266,21 @@
 
 }
 
-.surveys-reader-poll > span  {
+.surveys-reader-pool > span  {
     height: 17px;
     display: flex;
     align-items: center;
 }
 
-.surveys-reader-poll > span > label  {
+.surveys-reader-pool > span > label  {
     margin-left: 24px;
 }
 
-.surveys-reader-poll > span  {
+.surveys-reader-pool > span  {
     margin-bottom: 18px;
 }
 
-.surveys-reader-poll > span:last-child  {
+.surveys-reader-pool > span:last-child  {
     margin-bottom: 0;
 }
 
@@ -317,7 +314,7 @@
     cursor: pointer;
 }
 
-.surveys-poll-navigation-buttons {
+.surveys-pool-navigation-buttons {
     margin-top: 15px;
     margin-bottom: 22px;
     display: flex;
@@ -343,12 +340,12 @@
     cursor: pointer;
 }
 
-.surveys-poll-navigation-buttons > button:nth-child(1) {
+.surveys-pool-navigation-buttons > button:nth-child(1) {
     align-items: center;
     justify-content: center;
 }
 
-.surveys-reader-poll-results {
+.surveys-reader-pool-results {
     display: none;
     margin-top: 35px;
     flex-direction: column;
@@ -357,15 +354,15 @@
     margin-left: 19px;
 }
 
-.surveys-reader-poll-results > div {
+.surveys-reader-pool-results > div {
     margin-bottom: 22px;
 }
 
-.surveys-reader-poll-results > div:last-child {
+.surveys-reader-pool-results > div:last-child {
     margin-bottom: 0;
 }
 
-.surveys-reader-poll-results > div > span {
+.surveys-reader-pool-results > div > span {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -373,7 +370,7 @@
 
 }
 
-.surveys-reader-poll-results > div > span > p {
+.surveys-reader-pool-results > div > span > p {
     margin: 0;
     font-family: 'Open Sans';
     font-style: normal;
@@ -391,7 +388,7 @@
     border-radius: 50px;
 }
 
-.closed-surveys-reader-poll-results {
+.closed-surveys-reader-pool-results {
     display: flex;
     flex-direction: column;
     margin-top: 16px;
@@ -401,22 +398,22 @@
     margin-top: 16px;
 }
 
-.closed-surveys-poll-and-pool-container {
+.surveys-pool-container {
     background: #F8F8F8;
 }
 
-.closed-surveys-reader-poll-results {
+.closed-surveys-reader-pool-results {
     margin-bottom: 81px;
 }
 
-.closed-surveys-reader-poll-results > div > span {
+.closed-surveys-reader-pool-results > div > span {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 4px;
 }
 
-.closed-surveys-reader-poll-results > div > span > p {
+.closed-surveys-reader-pool-results > div > span > p {
     margin: 0;
     font-family: 'Open Sans';
     font-style: normal;
@@ -426,11 +423,11 @@
     color: #7F7B7B;
 }
 
-.closed-surveys-reader-poll-results > div {
+.closed-surveys-reader-pool-results > div {
     margin-bottom: 22px;
 }
 
-.closed-surveys-reader-poll-results > div:last-child {
+.closed-surveys-reader-pool-results > div:last-child {
     margin-bottom: 0;
 }
 
