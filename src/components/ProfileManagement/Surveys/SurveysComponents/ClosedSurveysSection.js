@@ -11,7 +11,7 @@ export default function ClosedSurveysSection(props){
             <table className={"surveys-closed-quests"}>
                 <thead>
                 <tr className={"surveys-closed-quests-head"}>
-                    <th>questions</th>
+                    <th>QUESTIONS</th>
                     <th>DATE</th>
                 </tr>
                 </thead>
