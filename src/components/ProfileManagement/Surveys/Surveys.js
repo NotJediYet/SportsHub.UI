@@ -1,8 +1,8 @@
 import './Surveys.scss'
 import React from "react";
-import ClosedSurveysSection from "./SurveysComponents/ClosedSurveysSection";
-import OpenedSurveysSection from "./SurveysComponents/OpenedSurveysSection";
-import {GetSurveys} from "../../../services/SurveysServices/SurveysService";
+import ClosedSurveysSection from "./SurveyTables/ClosedSurveysTable";
+import OpenedSurveysSection from "./SurveyTables/OpenedSurveysTable";
+import {GetSurveys} from "../../../services/Surveys/SurveysService";
 
 export default function Surveys() {
 
