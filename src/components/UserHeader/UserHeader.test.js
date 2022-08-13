@@ -5,8 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserHeader from "./UserHeader";
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 import Profile from '../Profile/Profile';
-import {AiFillCaretDown} from 'react-icons/ai';
-import AdminHeader from '../AdminHeader/AdminHeader';
+
 
 test("logo or identity item should be rendered", () => {
     render(
@@ -66,28 +65,4 @@ test("Switch button should be rendered", () => {
     fireEvent.mouseOver(getAllByLabelText("switcher-div")[0]);
     // eslint-disable-next-line jest/valid-expect,no-unused-expressions
     expect(tooltips).toBeCalled;
-});
-test("Login and should be rendered", () => {
-    render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<Profile />}/>
-            </Routes>
-        </BrowserRouter>
-    );
-    const ProfileElement = screen.getByText("Login");
-    expect(ProfileElement).toBeInTheDocument();
-
-});
-test("Sign up and should be rendered", () => {
-    render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<Profile />}/>
-            </Routes>
-        </BrowserRouter>
-    );
-    const ProfileElement = screen.getByText("Sign up");
-    expect(ProfileElement).toBeInTheDocument();
-
 });

@@ -1,5 +1,5 @@
 .navbar-profile {
-  padding: 0 50px;
+  padding: 0 30px 0 10px;
   display: flex;
   align-items: center;
   column-gap: 30px;
@@ -34,7 +34,6 @@
   align-items: center;
   column-gap: 10px;
   cursor: pointer;
-
 }
 
 .user-name {
@@ -158,4 +157,10 @@
   border-radius: 50%;
   width: 33px;
   height: 33px;
+}
+.admin-language-switch{
+  padding: 0 10px 0 20px;
+}
+a{
+  text-decoration: none;
 }
