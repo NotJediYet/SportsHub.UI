@@ -1,10 +1,8 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import UserHeader from "./UserHeader";
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
-import Profile from '../Profile/Profile';
 
 
 test("logo or identity item should be rendered", () => {
