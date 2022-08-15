@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./Profile.scss";
 import {AiFillCaretDown} from 'react-icons/ai';
-import {BiUserCircle} from 'react-icons/bi';
-import {useLocation} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import Language from '../Language/Language';
 
 const Profile = () => {
@@ -28,8 +27,7 @@ const Profile = () => {
 			{auth && !isAdmin ?
 				<div className="navbar-user">
 					<div className="navbar-profile-user-photo">
-						<img className="navbar-profile-user-photo" src="" alt=""/>
-						<BiUserCircle/>
+						<img className="navbar-profile-user-photo" src="https://i1.wp.com/cdn.auth0.com/avatars/jd.png?ssl=1" alt=""/>
 					</div>
 					<div className="user-name">Ivan Baloh</div>
 					<div className="navbar-dropDown-survey">
@@ -45,16 +43,16 @@ const Profile = () => {
 								ivanbaloh@gmail.com
 							</div>
 							<div className="navbar-dropDown-survey-element">
-								View profile
+								<Link to="/profile">View profile</Link>
 							</div>
 							<div className="navbar-dropDown-survey-element">
-								Change password
+								<Link to="/profile/change-password">Change password</Link>
 							</div>
 							<div className="navbar-dropDown-survey-element">
-								My surveys
+								<Link to="/profile/surveys">My surveys</Link>
 							</div>
 							<div className="navbar-dropDown-survey-element">
-								Team Hub
+								<Link to="/profile/team-hub">Team hub</Link>
 							</div>
 							<div className="navbar-dropDown-survey-element" onClick={() => changeAuth()}>
 								Log out
@@ -72,7 +70,7 @@ const Profile = () => {
 							Sign up
 						</div>
 						<div className="navbar-login" onClick={() => changeAuth()}>
-							Login
+							Log in
 						</div>
 					</>}
 				</>
@@ -86,7 +84,7 @@ const Profile = () => {
 				<div className="navbar--profile">
 					<div className="navbar-user">
 						<div className="navbar-user-photo">
-							<BiUserCircle/>
+							<img className="navbar-profile-user-photo" src="https://i1.wp.com/cdn.auth0.com/avatars/jd.png?ssl=1" alt=""/>
 						</div>
 						<div className="user-name">Brandon Miles
 							<div className="navbar-email-lowercase">
@@ -111,6 +109,9 @@ const Profile = () => {
 
 							</div>}
 						</div>
+							<div className="admin-language-switch">
+								<Language/>
+							</div>
 
 					</div>
 				</div>
