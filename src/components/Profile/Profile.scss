@@ -1,5 +1,4 @@
 .navbar-profile {
-  padding: 0 30px 0 10px;
   display: flex;
   align-items: center;
   column-gap: 30px;
@@ -14,7 +13,6 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
-
 }
 
 .navbar-login {
@@ -56,7 +54,6 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 17px;
-
 }
 
 .navbar-dropDown-menu {
@@ -77,7 +74,6 @@
   top: 67px;
   border-radius: 0px;
   text-align: center;
-
 }
 
 .navbar-dropDown-element:hover {
@@ -92,8 +88,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-
-
 }
 
 .navbar-dropDown-list {
@@ -106,7 +100,6 @@
   box-shadow: 0px 0px 17px #00000017;
   width: fit-content;
   min-width: 150px;
-
 }
 
 .navbar-dropDown-survey-element {
@@ -149,18 +142,21 @@
   border-top: 1px solid #EDEDED;
 }
 
-.navbar-dropDown-survey-element:first-child{
+.navbar-dropDown-survey-element:first-child {
   padding-top: 10px;
   height: fit-content;
 }
-.navbar-profile-user-photo{
+
+.navbar-profile-user-photo {
   border-radius: 50%;
   width: 33px;
   height: 33px;
 }
-.admin-language-switch{
+
+.admin-language-switch {
   padding: 0 10px 0 20px;
 }
-a{
+
+a {
   text-decoration: none;
 }

@@ -78,37 +78,33 @@ const Profile = () => {
 			</>}
 			{isAdmin &&
 			<div>
-				<div className="navbar--profile">
-					<div className="navbar-user">
-						<div className="navbar-user-photo">
-							<img className="navbar-profile-user-photo" src={user?.picture} alt=""/>
+				<div className="navbar-user">
+					<div className="navbar-user-photo">
+						<img className="navbar-profile-user-photo" src={user?.picture} alt=""/>
+					</div>
+					<div className="user-name">{user?.name}
+						<div className="navbar-email-lowercase">
+							Administrator
 						</div>
-						<div className="user-name">{user?.name}
-							<div className="navbar-email-lowercase">
-								Administrator
+					</div>
+					<div className="navbar-dropDown-survey">
+						<div className="navbar-btn" onClick={() => setIsUserOpen(!isUserOpen)}>
+							<AiFillCaretDown/>
+						</div>
+						{isUserOpen && <div className="navbar-dropDown-list">
+							<div className="navbar-dropDown-survey-element">
+								{user?.name}
 							</div>
-						</div>
-						<div className="navbar-dropDown-survey">
-							<div className="navbar-btn" onClick={() => setIsUserOpen(!isUserOpen)}>
-								<AiFillCaretDown/>
+							<div className="navbar-dropDown-survey-element navbar-email-lowercase">
+								{user?.email}
 							</div>
-							{isUserOpen && <div className="navbar-dropDown-list">
-
-								<div className="navbar-dropDown-survey-element">
-									{user?.name}
-								</div>
-								<div className="navbar-dropDown-survey-element navbar-email-lowercase">
-									{user?.email}
-								</div>
-								<div className="navbar-dropDown-survey-element">
-									<div className="navbar-logout" onClick={() => logout()}>Log out</div>
-								</div>
-
-							</div>}
-						</div>
-						<div className="admin-language-switch">
-							<Language/>
-						</div>
+							<div className="navbar-dropDown-survey-element">
+								<div className="navbar-logout" onClick={() => logout()}>Log out</div>
+							</div>
+						</div>}
+					</div>
+					<div className="admin-language-switch">
+						<Language/>
 					</div>
 				</div>
 			</div>
