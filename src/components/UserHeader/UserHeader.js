@@ -2,9 +2,16 @@ import React from "react"
 import "./UserHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 import Profile from '../Profile/Profile';
+import {useAuth0} from "@auth0/auth0-react";
 
 export default function UserHeader() {
-    let isAdminLoggedIn = true;
+    let isAdminLoggedIn = false;
+    const { user } = useAuth0();
+
+    if (user) {
+        const role = user['https://sportshub.com/roles'];
+        role == 'User' ? isAdminLoggedIn = false : isAdminLoggedIn = true;
+    }
 
     return (
         <header className="header-user">
