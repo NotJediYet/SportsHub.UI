@@ -6,7 +6,7 @@ import Language from '../Language/Language';
 import {useAuth0} from "@auth0/auth0-react";
 
 const Profile = () => {
-	const {isLoading, isAuthenticated, user, loginWithRedirect, logout} = useAuth0();
+	const {isAuthenticated, user, loginWithRedirect, logout} = useAuth0();
 	const [isUserOpen, setIsUserOpen] = useState(false);
 	const [isAdmin, setIsAdmin] = useState(false);
 
@@ -16,10 +16,6 @@ const Profile = () => {
 			setIsAdmin(true);
 		}
 	},[pathname]);
-
-	useEffect(() => {
-		if(!isLoading && !isAuthenticated) loginWithRedirect()
-	}, [isAuthenticated]);
 
 	useEffect(() => {
 	},[pathname]);

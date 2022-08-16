@@ -10,7 +10,7 @@ export default function UserHeader() {
 
     if (user) {
         const role = user['https://sportshub.com/roles'];
-        role == 'User' ? isAdminLoggedIn = false : isAdminLoggedIn = true;
+        role === 'User' ? isAdminLoggedIn = false : isAdminLoggedIn = true;
     }
 
     return (
