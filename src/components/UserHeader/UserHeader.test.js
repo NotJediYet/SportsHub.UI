@@ -4,8 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserHeader from "./UserHeader";
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 
-
-test("logo or identity item should be rendered", () => {
+test("logo item should be rendered", () => {
     render(
         <BrowserRouter>
             <Routes>
@@ -13,7 +12,7 @@ test("logo or identity item should be rendered", () => {
             </Routes>
         </BrowserRouter>
     );
-    const logoElement = screen.getByText("Logo or identity");
+    const logoElement = screen.getByText("Sports Hub");
     expect(logoElement).toBeInTheDocument();
 });
 
@@ -59,8 +58,6 @@ test("Switch button should be rendered", () => {
         </BrowserRouter>
     );
   
-    // eslint-disable-next-line testing-library/prefer-screen-queries
     fireEvent.mouseOver(getAllByLabelText("switcher-div")[0]);
-    // eslint-disable-next-line jest/valid-expect,no-unused-expressions
     expect(tooltips).toBeCalled;
 });

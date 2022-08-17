@@ -9,6 +9,7 @@ import ChangePassword from "./components/ProfileManagement/ChangePassword/Change
 import TeamHub from "./components/ProfileManagement/TeamHub/TeamHub";
 import Surveys from "./components/ProfileManagement/Surveys/Surveys";
 import UserContentArea from "./components/UserContentArea/UserContentArea";
+import RequireAuth from "./components/RequireAuth/RequireAuth"
 
 export default function App(){
     return(
@@ -16,14 +17,18 @@ export default function App(){
             <Routes>
                 <Route path={"/"} element={<UserLayout/>} >
                     <Route index element={<UserContentArea/>}/>
-                    <Route path={"profile"} element={<ProfileNavigation/>}>
-                        <Route index element={<PersonalInformation/>}/>
-                        <Route path={"change-password"} element={<ChangePassword/>}/>
-                        <Route path={"surveys"} element={<Surveys/>}/>
-                        <Route path={"team-hub"} element={<TeamHub/>}/>
+                    <Route element={<RequireAuth allowedRoles={["User", "Admin"]}/> }>
+                        <Route path={"profile"} element={<ProfileNavigation/>}>
+                            <Route index element={<PersonalInformation/>}/>
+                            <Route path={"change-password"} element={<ChangePassword/>}/>
+                            <Route path={"surveys"} element={<Surveys/>}/>
+                            <Route path={"team-hub"} element={<TeamHub/>}/>
+                        </Route>
                     </Route>
                 </Route>
-                <Route path={"/admin"} element={<AdminLayout />} />
+                <Route element={<RequireAuth allowedRoles={["Admin"]} /> }>
+                    <Route path={"/admin"} element={<AdminLayout />} />
+                </Route>
             </Routes>
         </div>
     )

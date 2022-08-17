@@ -10,15 +10,12 @@ li{
     justify-content: center;
     width:253px;
     overflow: hidden;
-    background-color: white;
-
 }
 
 .left-sidebar-list-style{
     margin-top: auto;
     list-style: none;
     display: inline-block;
-    background-color: #ecd3e5;
     width: 100%;
     height: var(--menu--size);
     align-items: stretch;
@@ -30,7 +27,6 @@ li{
     position: absolute;
     display: flex;
     align-items: center;
-    background-color: #d7e4f1;
     justify-content: center;
     width:253px;
     min-height:var(--icon--size);

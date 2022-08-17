@@ -10,13 +10,16 @@ export default function AdminHeader() {
             <nav className="header-navbar">
                 <div className="navbar-logo">
                     <button className="button-sport-hub">
-                        Sports Hub
+                        <a href="/admin">
+                            Sports Hub
+                        </a>
                     </button>
                 </div>
-                <div className="navbar-switch">
-                    <LayoutSwitch />
-                </div>
-                <div className="navbar-profile">
+                <div className="navbar-divider"/>
+                <div className="navbar-user-menu">
+                    <div className="navbar-switch">
+                        <LayoutSwitch />
+                    </div>
                     <Profile />
                 </div>
             </nav>
