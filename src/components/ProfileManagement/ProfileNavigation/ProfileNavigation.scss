@@ -6,17 +6,21 @@
     margin-top: 79px;
     flex-direction: row;
     z-index: 4;
-
 }
 
 .profile-navigation-container {
     margin-top: 83px;
     margin-left: 253px;
-    width: 1027px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media screen and (max-width: 1280px) {
+    .profile-navigation-container {
+        width: 1030px;
+    }
 }
 
 .options-personal{
