@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import "./Profile.scss";
+import './Profile.scss';
 import {AiFillCaretDown} from 'react-icons/ai';
 import {Link, useLocation} from 'react-router-dom';
 import Language from '../Language/Language';
-import {useAuth0} from "@auth0/auth0-react";
+import {useAuth0} from '@auth0/auth0-react';
 
 const Profile = () => {
 	const {isAuthenticated, user, loginWithRedirect, logout} = useAuth0();
@@ -11,14 +11,16 @@ const Profile = () => {
 	const [isAdmin, setIsAdmin] = useState(false);
 
 	const {pathname} = useLocation();
+
+	useEffect(() => {
+		setIsUserOpen(false);
+	}, [pathname]);
+
 	useEffect(() => {
 		if (pathname.startsWith('/admin')) {
 			setIsAdmin(true);
 		}
-	},[pathname]);
-
-	useEffect(() => {
-	},[pathname]);
+	}, [pathname]);
 
 	return (
 		<div className="navbar-profile">
@@ -39,18 +41,18 @@ const Profile = () => {
 							<div className="navbar-dropDown-survey-element navbar-email-lowercase">
 								{user?.email}
 							</div>
-							<div className="navbar-dropDown-survey-element">
-								<Link to="/profile">View profile</Link>
-							</div>
-							<div className="navbar-dropDown-survey-element">
-								<Link to="/profile/change-password">Change password</Link>
-							</div>
-							<div className="navbar-dropDown-survey-element">
-								<Link to="/profile/surveys">My surveys</Link>
-							</div>
-							<div className="navbar-dropDown-survey-element">
-								<Link to="/profile/team-hub">Team hub</Link>
-							</div>
+							<Link to="/profile" className="navbar-dropDown-survey-element">
+								View profile
+							</Link>
+							<Link to="/profile/change-password" className="navbar-dropDown-survey-element">
+								Change password
+							</Link>
+							<Link to="/profile/surveys" className="navbar-dropDown-survey-element">
+								My surveys
+							</Link>
+							<Link to="/profile/team-hub" className="navbar-dropDown-survey-element">
+								Team hub
+							</Link>
 							<div className="navbar-dropDown-survey-element" onClick={() => logout()}>
 								Log out
 							</div>
@@ -59,7 +61,7 @@ const Profile = () => {
 				</div>
 				:
 				<>
-					{!isAdmin &&<>
+					{!isAdmin && <>
 						<div className="navbar-sing_in" onClick={() => loginWithRedirect({initialScreen: 'signup'})}>
 							Sign up
 						</div>
@@ -69,7 +71,7 @@ const Profile = () => {
 					</>}
 				</>
 			}
-			{!isAdmin &&<>
+			{!isAdmin && <>
 				<Language/>
 			</>}
 			{isAdmin &&
@@ -94,8 +96,8 @@ const Profile = () => {
 							<div className="navbar-dropDown-survey-element navbar-email-lowercase">
 								{user?.email}
 							</div>
-							<div className="navbar-dropDown-survey-element">
-								<div className="navbar-logout" onClick={() => logout()}>Log out</div>
+							<div className="navbar-dropDown-survey-element" onClick={() => logout()}>
+								 Log out
 							</div>
 						</div>}
 					</div>

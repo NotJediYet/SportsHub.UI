@@ -42,9 +42,11 @@
 .navbar-btn {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 5px;
   font-weight: 600;
   font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .navbar-dropDown {
@@ -58,9 +60,10 @@
 
 .navbar-dropDown-menu {
   position: absolute;
-  top: 14px;
+  top: 25px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 17px #00000017;
   background: #FFFFFF;
 }
 
@@ -159,4 +162,5 @@
 
 a {
   text-decoration: none;
+  color: #000000;
 }
