@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"
 import { IconContext } from "react-icons";
-import { FaTrash } from "react-icons/fa";
 import Backdrop from "../Backdrop/Backdrop"
 import "./Modal.scss"
 
@@ -19,7 +18,7 @@ const dropIn = {
     }
 };
 
-export default function Modal({ handleAction, handleClose, message, details }) {
+export default function Modal({ handleAction, handleClose, icon, message, details, actionButtonText }) {
     return (
         <Backdrop onClick={handleClose}>
             <motion.div
@@ -32,20 +31,16 @@ export default function Modal({ handleAction, handleClose, message, details }) {
             >
                 <div className="modal-action-sign">
                     <IconContext.Provider value={{ size: 28 }}>
-                        <FaTrash />
+                        {icon}
                     </IconContext.Provider>
                 </div>
                 <div className="modal-message">
-                    <h4>You are about to delete an article</h4>
-                    <p>
-                        This article will be deleted from Sports Hub!
-                        <br/>
-                        Are you sure?
-                    </p>
+                    <h4>{message}</h4>
+                    <p>{details}</p>
                 </div>
                 <div className="modal-action-menu">
                     <button className="btn-cancel" onClick={handleClose}>Cancel</button>
-                    <button className="btn-action" onClick={handleAction}>Delete</button>
+                    <button className="btn-action" onClick={handleAction}>{actionButtonText}</button>
                 </div>
             </motion.div>
         </Backdrop>
