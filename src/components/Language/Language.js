@@ -6,8 +6,6 @@ import {useLocation} from 'react-router-dom';
 const Language = () => {
 	const [language, setLanguage] = useState('EN');
 	const [isLangOpen, setIsLangOpen] = useState(false);
-
-
 	const {pathname} = useLocation();
 
 	useEffect(() => {
