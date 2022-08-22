@@ -57,6 +57,15 @@
     line-height: 17px;
     background-color: transparent;
     border: 0;
+
+    &:hover {
+        color: #E02232;
+        transition: background-color 300ms linear;
+    }
+    
+    &:active, &:focus {
+        color: #C80515;
+    }
 }
 
 .btn-action {
@@ -71,14 +80,14 @@
     width: min(60%, 107px);
     height: 32px;
     
-    :hover {
+    &:hover {
         color: #FFFFFF;
         background: #E02232;
         border: 1px solid #E02232;
         transition: background-color 300ms linear;
     }
     
-    :active, :focus {
+    &:active, &:focus {
         color: #FFFFFF;
         background: #C80515;
         border: 1px solid #C80515;
