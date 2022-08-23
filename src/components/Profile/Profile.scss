@@ -42,9 +42,11 @@
 .navbar-btn {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 5px;
   font-weight: 600;
   font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .navbar-dropDown {
@@ -58,9 +60,10 @@
 
 .navbar-dropDown-menu {
   position: absolute;
-  top: 14px;
+  top: 25px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 17px #00000017;
   background: #FFFFFF;
 }
 
@@ -149,8 +152,8 @@
 
 .navbar-profile-user-photo {
   border-radius: 50%;
-  width: 33px;
-  height: 33px;
+  width: 34px;
+  height: 34px;
 }
 
 .admin-language-switch {
@@ -159,4 +162,13 @@
 
 a {
   text-decoration: none;
+  color: #000000;
+}
+.navbar-login:hover{
+  background-color: #D72130;
+  color: white;
+}
+.navbar-user-photo {
+  display: flex;
+  align-items: center;
 }
