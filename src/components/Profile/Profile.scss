@@ -152,8 +152,8 @@
 
 .navbar-profile-user-photo {
   border-radius: 50%;
-  width: 33px;
-  height: 33px;
+  width: 34px;
+  height: 34px;
 }
 
 .admin-language-switch {
@@ -163,4 +163,8 @@
 a {
   text-decoration: none;
   color: #000000;
+}
+.navbar-login:hover{
+  background-color: #D72130;
+  color: white;
 }
