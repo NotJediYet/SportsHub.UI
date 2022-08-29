@@ -36,7 +36,7 @@ export default function AdminContentArea() {
 
     return (
         <div className="content-area">
-            <AdminSearchContentArea articles={articles} />
+            <AdminSearchContentArea />
             <AdminFiltersContentArea />
             <AdminArticlesContentArea articles={articles} />
         </div>
