@@ -1,8 +1,8 @@
 import React from "react"
 import "./AdminContentArea.scss"
-import AdminFiltersContentArea from "./AdminFiltersContentArea/AdminFiltersContentArea";
-import AdminArticlesContentArea from "./AdminArticlesContentArea/AdminArticlesContentArea";
-import AdminSearchContentArea from "./AdminSearchContentArea/AdminSearchContentArea";
+import AdminFiltersContentArea from "../AdminFiltersContentArea/AdminFiltersContentArea";
+import AdminArticlesContentArea from "../AdminArticlesContentArea/AdminArticlesContentArea";
+import AdminSearchContentArea from "../AdminSearchContentArea/AdminSearchContentArea";
 
 const articles = [
     {
