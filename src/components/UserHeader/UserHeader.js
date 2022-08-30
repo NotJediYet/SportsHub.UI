@@ -8,13 +8,7 @@ import {Link} from "react-router-dom";
 export default function UserHeader() {
     let isAdminLoggedIn = false;
     const {user} = useAuth0();
-    const [modalOpen, setModalOpen] = useState(false);
-
-    const closeModal = () => setModalOpen(false);
-    const openModal = () => setModalOpen(true);
-
-    const notify = () => toast.custom((t) => <SuccessToast t={t}/>)
-
+    
     if (user) {
         const role = user['https://sportshub.com/roles'];
         role === 'User' ? isAdminLoggedIn = false : isAdminLoggedIn = true;
