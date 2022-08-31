@@ -31,7 +31,6 @@ export default function ArticleActionMenu() {
             );
         })();
     }, []);
-
     
     return (
         <>
@@ -47,7 +46,7 @@ export default function ArticleActionMenu() {
                     details={["This article will be deleted from Sports Hub!", <br/>, "Are you sure?"]}
                     actionButtonText={"Delete"}
                     handleAction={() => {
-                            articleService.delete("Articles", "d1d85437-d47d-466d-1bb8-08da8b56af83")
+                            articleService.delete("4007add2-a36d-49e7-1bba-08da8b56af83")
                             .then(
                                 () => {succeededDeletionToast()}
                             )
