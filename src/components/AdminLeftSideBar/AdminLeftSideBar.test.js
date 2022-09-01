@@ -1,50 +1,33 @@
 import React from "react";
-import { render, screen, fireEvent, getAllByLabelText } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import LeftVerticalMenu from "./AdminLeftSideBar.js";
 import SideBarIcon from "./AdminLeftSideBar.js";
+import {Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 
 test("all icons should be rendered", () => {
-    render(<LeftVerticalMenu />);
+    render(
+        <Router>
+            <Routes>
+                <Route path="admin/*" element={<LeftVerticalMenu />} />
+            </Routes>
+        </Router>
+    );
 
     const icons = jest.fn();
     const tooltips = jest.fn();
-  
-    const { getAllByLabelText } = render(<SideBarIcon icon={icons} tooltip={tooltips} />);
-  
-    fireEvent.mouseOver(getAllByLabelText("icons-div")[0]);
-    expect(icons).toBeCalled;
-    expect(tooltips).toBeCalled;
+    const links = jest.fn();
 
-    fireEvent.mouseOver(getAllByLabelText("icons-div")[1]);
-    expect(icons).toBeCalled;
-    expect(tooltips).toBeCalled;
+    const { getAllByLabelText } = render(
+        <Router>
+            <Routes>
+                <Route path="admin/*" element={<SideBarIcon icon={icons} tooltip={tooltips} link={links}/>} />
+            </Routes>
+        </Router>
+    );
 
-    fireEvent.mouseOver(getAllByLabelText("icons-div")[2]);
     expect(icons).toBeCalled;
     expect(tooltips).toBeCalled;
-
-    fireEvent.mouseOver(getAllByLabelText("icons-div")[3]);
-    expect(icons).toBeCalled;
-    expect(tooltips).toBeCalled;
-
-    fireEvent.mouseOver(getAllByLabelText("icons-div")[4]);
-    expect(icons).toBeCalled;
-    expect(tooltips).toBeCalled;
-
-    fireEvent.mouseOver(getAllByLabelText("icons-div")[5]);
-    expect(icons).toBeCalled;
-    expect(tooltips).toBeCalled;
-
-    fireEvent.mouseOver(getAllByLabelText("icons-div")[6]);
-    expect(icons).toBeCalled;
-    expect(tooltips).toBeCalled;
-    
-    fireEvent.mouseOver(getAllByLabelText("icons-div")[7]);
-    expect(icons).toBeCalled;
-    expect(tooltips).toBeCalled;
-
-    fireEvent.mouseOver(getAllByLabelText("icons-div")[8]);
-    expect(icons).toBeCalled;
-    expect(tooltips).toBeCalled;
+    expect(links).toBeCalled;
 });

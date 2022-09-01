@@ -5,39 +5,48 @@ import { MdOutlinePeopleAlt } from 'react-icons/md';
 export const VerticalMenuElements = [
     {
         title: "Surveys",
-        icon: <BiMessageCheck/>
+        icon: <BiMessageCheck/>,
+        link: ""
     },
     {
         title: "Banners",
-        icon: <RiFileList2Line/>
+        icon: <RiFileList2Line/>,
+        link: ""
     },
     {
         title: "Languages",
-        icon: <BiGlobe/>
+        icon: <BiGlobe/>,
+        link: ""
     },
     {
         title: "Footer",
-        icon: <RiLayoutBottomLine/>
+        icon: <RiLayoutBottomLine/>,
+        link: ""
     },
     {
         title: "Social Networks",
-        icon: <BiShareAlt/>
+        icon: <BiShareAlt/>,
+        link: ""
     },
     {
         title: "Users",
-        icon: <MdOutlinePeopleAlt/>
+        icon: <MdOutlinePeopleAlt/>,
+        link: ""
     },
     {
         title: "IA",
-        icon: <RiOrganizationChart/>
+        icon: <RiOrganizationChart/>,
+        link: "information-architecture"
     },
     {
         title: "Teams",
-        icon: <BiCollection style = {{transform: 'rotate(180deg)' }}/>
+        icon: <BiCollection style = {{transform: 'rotate(180deg)' }}/>,
+        link: ""
     },
     {
         title: "News Partners",
-        icon: <BiBriefcase/>
+        icon: <BiBriefcase/>,
+        link: ""
     },
 ]
 

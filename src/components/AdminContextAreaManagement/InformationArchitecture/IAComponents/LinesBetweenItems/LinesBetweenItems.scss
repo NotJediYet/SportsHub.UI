@@ -1,0 +1,40 @@
+:root {
+  --subcategory-amount: null;
+  --teams-amount: null;
+}
+
+.lines {
+  display: flex;
+  flex-direction: row;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.vertical-line {
+  margin-top: 18px;
+  border-left: 2px dashed #D4D9E2;
+}
+
+.left-vertical-line {
+  @extend .vertical-line;
+  height: calc(61.8px  * (var(--subcategory-amount) - 1));
+}
+
+.right-vertical-line {
+  @extend .vertical-line;
+  height: calc(61.8px * (var(--teams-amount) - 1));
+}
+
+.horizontal-lines {
+  display: flex;
+  flex-direction: column;
+  width: 22px;
+}
+
+.horizontal-line {
+  margin-top: 16.8px;
+  margin-bottom: 42px;
+  width: 100%;
+  height: 1px;
+  border-top: 2px dashed #D4D9E2;
+}
