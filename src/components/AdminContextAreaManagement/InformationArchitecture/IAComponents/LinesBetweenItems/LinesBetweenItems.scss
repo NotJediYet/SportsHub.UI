@@ -1,6 +1,6 @@
 :root {
-  --subcategory-amount: null;
-  --teams-amount: null;
+  --subcategory-amount: 1;
+  --teams-amount: 1;
 }
 
 .lines {
@@ -17,7 +17,7 @@
 
 .left-vertical-line {
   @extend .vertical-line;
-  height: calc(61.8px  * (var(--subcategory-amount) - 1));
+  height: calc(61.8px * (var(--subcategory-amount) - 1));
 }
 
 .right-vertical-line {
