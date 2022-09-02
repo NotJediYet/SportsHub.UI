@@ -8,6 +8,7 @@ import "./ArticleActionMenu.scss";
 import { useAuth0 } from "@auth0/auth0-react";
 import ArticleService from "../../services/Articles/ArticleService";
 import SuccessToast from "../Toasts/SuccessToast/SuccessToast";
+import FailureToast from "../Toasts/FailureToast/FailureToast";
 import { toast } from "react-hot-toast";
 
 export default function ArticleActionMenu() {
@@ -16,13 +17,26 @@ export default function ArticleActionMenu() {
     const { getAccessTokenSilently } = useAuth0();
     const closeModal = () => setModalOpen(false);
     const openModal = () => setModalOpen(true);
-    const succeededDeletionToast = () => toast.custom(
-        (t) => <SuccessToast
-            t={t}
-            message="Deleted!"
-            details={"The article is successfully deleted."}
-        />
-    );
+    const deleteArticle = () => {
+        articleService.delete("0e745e78-22d0-4eb0-e034-08da8cbda82b")
+        .then(
+            (res) => toast.custom(
+                (t) => <SuccessToast
+                    t={t}
+                    message="Deleted!"
+                    details={"The article is successfully deleted."}
+                />
+            )
+        )
+        .catch(
+            toast.custom(
+                (t) => <FailureToast
+                    t={t}
+                    handleRetry={deleteArticle}
+                />
+            )
+        );
+    }
     
     React.useEffect(() => {
         (async () => {
@@ -30,7 +44,7 @@ export default function ArticleActionMenu() {
                 setArticleService(new ArticleService(token))
             );
         })();
-    }, []);
+    }, [getAccessTokenSilently]);
     
     return (
         <>
@@ -45,13 +59,7 @@ export default function ArticleActionMenu() {
                     message={"You are about to delete an article"}
                     details={["This article will be deleted from Sports Hub!", <br/>, "Are you sure?"]}
                     actionButtonText={"Delete"}
-                    handleAction={() => {
-                            articleService.delete("4007add2-a36d-49e7-1bba-08da8b56af83")
-                            .then(
-                                () => {succeededDeletionToast()}
-                            )
-                            .catch(error => console.log(error));
-                        }}
+                    handleAction={deleteArticle}
                     />
                 }
             </AnimatePresence>

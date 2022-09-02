@@ -1,33 +1,33 @@
 .failure-toast-sign {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 3rem;
-  min-height: 3rem;
-  border-radius: 1.5rem;
-  color: #FFFFFF;
-  background-color: #D72130;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3rem;
+    min-height: 3rem;
+    border-radius: 1.5rem;
+    color: #FFFFFF;
+    background-color: #D72130;
 }
 
 .failure-toast-retry {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 1rem;
-  right: 2rem;
-  padding: 0;
-  border: 0;
-  color: #D72130;
-  background: transparent;
-  cursor: pointer;
-  gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    padding: 0;
+    border: 0;
+    color: #D72130;
+    background: transparent;
+    cursor: pointer;
+    gap: 0.5rem;
 
-  p {
-    font-family: 'Open Sans', serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    text-align: center;
-    margin: 0;
-  }
+    p {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        text-align: center;
+        margin: 0;
+    }
 }
