@@ -35,11 +35,3 @@ export default class TeamService {
             .catch(error => console.log(error));
     }
 }
-
-
-
-
-
-
-
-

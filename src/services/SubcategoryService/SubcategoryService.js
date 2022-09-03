@@ -35,11 +35,3 @@ export default class SubcategoryService {
             .catch(error => console.log(error));
     }
 }
-
-
-
-
-
-
-
-

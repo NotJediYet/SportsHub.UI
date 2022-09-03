@@ -34,11 +34,3 @@ export default class CategoryService {
             .catch(error => console.log(error));
     }
 }
-
-
-
-
-
-
-
-
