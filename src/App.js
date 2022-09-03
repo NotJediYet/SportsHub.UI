@@ -27,7 +27,7 @@ export default function App(){
                     </Route>
                 </Route>
                 <Route element={<RequireAuth allowedRoles={["Admin"]} /> }>
-                    <Route path={"/admin"} element={<AdminLayout />} />
+                    <Route path={"admin/*"} element={<AdminLayout />} />
                 </Route>
             </Routes>
         </div>
