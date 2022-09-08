@@ -23,7 +23,7 @@ export default class ArticleService {
 
     get(id) {
         const method = 'GET';
-        let url = urls.ArticlesEndpoint;
+        let url = urls.articlesEndpoint;
         if (id) {
             url = `${url}/${id}`;
         }
@@ -32,7 +32,7 @@ export default class ArticleService {
 
     delete(id) {
         const method = 'DELETE';
-        let url = urls.ArticlesEndpoint;
+        let url = urls.articlesEndpoint;
         if (id) {
             url = `${url}/${id}`;
         }
