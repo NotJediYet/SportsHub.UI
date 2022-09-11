@@ -48,5 +48,5 @@ jobs:
         with:
           app-name: 'sports-hub-ui'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9338EFF3D0814CE983DBB3C521080761 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6C2F33D7D5DF473BB8B4441C02425CC2 }}
           package: .
