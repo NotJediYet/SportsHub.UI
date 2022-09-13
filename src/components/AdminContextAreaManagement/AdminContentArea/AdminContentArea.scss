@@ -1,13 +1,9 @@
 :root {
-    --margin-value: 300px;
+    --margin-value: 315px;
 }
 
-.content-area {
-    display: flex;
-    position: absolute;
+.content-filter-area {
     margin: var(--margin-value);
     height: calc(100% - var(--margin-value));
     width: calc(100% - 2 * var(--margin-value));
-    justify-content: center;
-    align-items: center;
 }
