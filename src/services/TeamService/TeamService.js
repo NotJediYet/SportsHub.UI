@@ -28,6 +28,12 @@ export default class TeamService {
         );
     }
 
+
+    getTeams() {
+        const method = 'GET';
+        return this.request(urls.teamsEndpoint, method).then(res => res.json());
+    }
+
     createTeam(data) {
         const method = 'POST';
         return this.request(urls.teamsEndpoint, method, data)
