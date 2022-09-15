@@ -24,7 +24,7 @@ const Language = () => {
 			setIsLangOpen(false);
 			setIsComponentVisible(true);
 		}
-	}, [isComponentVisible]);
+	}, [isComponentVisible,setIsComponentVisible]);
 
 	const hideButton = (lng) => lng !== language;
 
