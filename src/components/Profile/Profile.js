@@ -4,11 +4,13 @@ import {AiFillCaretDown} from 'react-icons/ai';
 import {Link, useLocation} from 'react-router-dom';
 import Language from '../Language/Language';
 import {useAuth0} from '@auth0/auth0-react';
+import useComponentVisible from '../../rootFunctions/useComponentVisible';
 
 const Profile = () => {
 	const {isAuthenticated, user, loginWithRedirect, logout} = useAuth0();
 	const [isUserOpen, setIsUserOpen] = useState(false);
 	const [isAdmin, setIsAdmin] = useState(false);
+	const {ref, isComponentVisible, setIsComponentVisible} = useComponentVisible(true);
 
 	const {pathname} = useLocation();
 
@@ -22,6 +24,14 @@ const Profile = () => {
 		}
 	}, [pathname]);
 
+	useEffect(() => {
+		if (!isComponentVisible) {
+			setIsUserOpen(false);
+			setIsComponentVisible(true);
+		}
+	}, [isComponentVisible,setIsComponentVisible]);
+
+
 	return (
 		<div className="navbar-profile">
 			{isAuthenticated && !isAdmin ?
@@ -34,7 +44,7 @@ const Profile = () => {
 						<div className="navbar-btn" onClick={() => setIsUserOpen(!isUserOpen)}>
 							<AiFillCaretDown/>
 						</div>
-						{isUserOpen && <div className="navbar-dropDown-list">
+						{isUserOpen && <div className="navbar-dropDown-list" ref={ref}>
 							<div className="navbar-dropDown-survey-element">
 								{user?.name}
 							</div>
@@ -89,7 +99,7 @@ const Profile = () => {
 						<div className="navbar-btn" onClick={() => setIsUserOpen(!isUserOpen)}>
 							<AiFillCaretDown/>
 						</div>
-						{isUserOpen && <div className="navbar-dropDown-list">
+						{isUserOpen && <div className="navbar-dropDown-list" ref={ref}>
 							<div className="navbar-dropDown-survey-element">
 								{user?.name}
 							</div>
