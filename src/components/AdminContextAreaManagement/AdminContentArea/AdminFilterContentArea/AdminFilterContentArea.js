@@ -41,6 +41,7 @@ export default function AdminFilterContentArea({defValue,components,handleChange
                         <div className="filter-dropdown-list-element"
                              data-user={component.name}
                              onClick={onClick}
+                             key={Math.random().toString(3)}
                         >{component.name}</div>
                     ))}
                 </div>}

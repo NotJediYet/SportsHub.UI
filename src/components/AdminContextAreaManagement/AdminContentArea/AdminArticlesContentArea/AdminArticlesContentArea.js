@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from "react"
+import React from "react"
 import "./AdminArticlesContentArea.scss"
 import {FaCircle} from "react-icons/fa";
 
@@ -6,7 +6,7 @@ export default function AdminArticlesContentArea(props) {
 
         return (
         <div>
-            {  props.articles.map((article) => (
+            { props.articles.map((article) => (
                 <div key={article.id} className="article" >
                     <img  className="article-image " src={article.image} alt="" width="285" height="160" />
                     <div className="article-body ">
@@ -24,7 +24,8 @@ export default function AdminArticlesContentArea(props) {
                         </div>
                     </div>
                 </div>
-            ))}
+            ))
+            }
         </div>
         )
 }

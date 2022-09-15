@@ -14,14 +14,14 @@ function AdminSearchContentArea({articles,handleChangeArticles}){
         let updatedArticles = [];
 
         if(value) {
-            articles.map((article) => {
-                let tempArticle = article.content.toLowerCase().indexOf(value.toLowerCase()) !== -1;
-                if (tempArticle) {
+            articles.forEach((article) => {
+                let tempArticle = article.headline.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+                if(tempArticle) {
                     updatedArticles.push(article);
                 }
             });
-            handleChangeArticles(updatedArticles);
-        } else { handleChangeArticles(articles);}
+            handleChangeArticles(updatedArticles, true);
+        } else { handleChangeArticles(articles, false);}
     },[value])
 
     return (
