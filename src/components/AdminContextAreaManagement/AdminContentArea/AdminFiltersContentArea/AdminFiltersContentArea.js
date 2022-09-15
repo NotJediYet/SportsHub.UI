@@ -14,51 +14,41 @@ function AdminFiltersContentArea()  {
     const categoryId = "c4ac0c1d-26fe-4877-b81d-08da90d6d7d1";
 
     const objArticlesStatus = [
-        { name: 'Published' },
-        { name: 'Unpublished' },
+        { name: 'Published', id: '1' },
+        { name: 'Unpublished', id: '2' },
     ];
 
     const [subcategories, setSubcategories] = useState([]);
     const [teams,setTeams] = useState(Array.from([]));
+    const [filteredArticles, setFilteredArticles] = useState([]);
     const [articles, setArticles] = useState([]);
 
-    const [articlesStatus, setArticlesStatus] = useState(Array.from(objArticlesStatus));
-    const [searchArticles, setSearchArticles] = useState(articles);
-    const [isSearchActive, setIsSearchActive] = useState("false");
+    const articlesStatus = Array.from(objArticlesStatus);
 
     const [filterSubcategoriesValue, setFilterSubcategoriesValue] = useState("All Subcategories");
     const [filterTeamsValue, setFilterTeamsValue] = useState("All Teams");
     const [filterStatusValue, setFilterStatusValue] = useState("All");
 
-    const [filterArticlesService, setFilterArticlesService] = useState(null);
-    const [subcategoryService, setSubcategoryService] = useState({});
-    const [teamService, setTeamService] = useState({});
-
     const {getAccessTokenSilently} = useAuth0();
-    const [times, setTimes] = useState(0);
 
     const handleSubcategoryFilterChange = value =>{
         setFilterSubcategoriesValue(value);
-        setIsSearchActive("false");
     };
 
     const handleTeamFilterChange = value =>{
         setFilterTeamsValue(value);
-        setIsSearchActive("false");
     };
 
     const handleStatusFilterChange = value =>{
         setFilterStatusValue(value);
-        setIsSearchActive("false");
     };
 
-    const handleChangeArticles = (value) =>{
-       setTimes(times+1);
-       if (times > 0) {
-           setIsSearchActive("true");
-           setSearchArticles(value);
-
-       } else {setSearchArticles(articles);}
+    const handleChangeArticles = (value,isActive) =>{
+       if(isActive) {
+               setArticles(value);
+       } else {
+           setArticles(filteredArticles);
+       }
     };
 
    useEffect(() => {
@@ -74,38 +64,75 @@ function AdminFiltersContentArea()  {
                     if (filterSubcategoriesValue === "All Subcategories") {
                         teamService.getTeams().then(teams => {setTeams(filterTeams(teams, subcategories));
                             filterArticlesService.getFilterArticles(filterSubcategoriesValue, filterTeamsValue, filterStatusValue)
-                                .then(articlesOld => {setArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue))})
+                                .then(articlesOld => {setFilteredArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue));
+                                setArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue))})
                         });
                     } else {
                         let subcategory = subcategories.filter(item => item.name === filterSubcategoriesValue);
                         let subcategoryId = Array.from(subcategory)[0]["id"];
                         teamService.getTeamsBySubcategoryId(subcategoryId).then(teams => {setTeams(sortedByName(teams));
                             filterArticlesService.getFilterArticles(filterSubcategoriesValue, filterTeamsValue, filterStatusValue)
-                                .then(articlesOld => {setArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue))})
+                                .then(articlesOld => {setFilteredArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue));
+                                setArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue))})
                         })
                     }
                 });
-
-                setSubcategoryService(subcategoryService);
-                setFilterArticlesService(filterArticlesService);
-                setTeamService(teamService);
             });
         })();
-    }, [getAccessTokenSilently,filterSubcategoriesValue, filterTeamsValue, filterStatusValue]);
 
-   function filterTeams(teams,subcategories) {
-       const filterTeams = [];
+       function getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue){
+           let articlesNew = [];
 
-       subcategories.forEach(subcategory => {
-           teams.forEach(team => {
-               if (Object.keys(team).find(key => team[key] === subcategory["id"])) {
-                   filterTeams.push(team);
+           if(filterSubcategoriesValue === "All Subcategories" && filterTeamsValue === "All Teams"){
+               articlesOld.forEach((articleOld) =>{
+                   let team = teams.find(({ id }) => id === articleOld.teamId);
+                   if(team){
+                       let subcategory = subcategories.find(({ id }) => id=== team.subcategoryId);
+                       if(subcategory){
+                           let articleNew = new createArticle(articleOld,subcategory.name , team.name);
+                           articlesNew.push(articleNew);
+                       }
+                   }
+               } )
+           } else
+           if(filterTeamsValue !== "All Teams") {
+               let team = teams.find(({name}) => name === filterTeamsValue);
+               if (team) {
+                   articlesOld.forEach((articleOld) => {
+                       let subcategory = subcategories.find(({id}) => id === team.subcategoryId);
+                       if (subcategory) {
+                           let articleNew = new createArticle(articleOld, subcategory.name, filterTeamsValue);
+                           articlesNew.push(articleNew);
+                       }
+                   })
                }
-           });
-       })
+           } else {
+               articlesOld.forEach((articleOld) =>{
+                   let team = teams.find(({ id }) => id=== articleOld.teamId);
+                   if(team){
+                       let articleNew = new createArticle(articleOld, filterSubcategoriesValue, team.name);
+                       articlesNew.push(articleNew);
+                   }
+               })
+           }
 
-       return sortedByName(filterTeams);
-   }
+           return articlesNew;
+       }
+
+       function filterTeams(teams,subcategories) {
+           const filterTeams = [];
+
+           subcategories.forEach(subcategory => {
+               teams.forEach(team => {
+                   if (Object.keys(team).find(key => team[key] === subcategory["id"])) {
+                       filterTeams.push(team);
+                   }
+               });
+           })
+
+           return sortedByName(filterTeams);
+       }
+    }, [getAccessTokenSilently,filterSubcategoriesValue, filterTeamsValue, filterStatusValue]);
 
    function sortedByName(array){
        let byName = array.slice(0);
@@ -133,59 +160,18 @@ function AdminFiltersContentArea()  {
         this.teamName = teamName;
     }
 
-    function getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue){
-        let articlesNew = [];
-
-        if(filterSubcategoriesValue === "All Subcategories" && filterTeamsValue === "All Teams"){
-            articlesOld.map((articleOld) =>{
-                let team = teams.find(({ id }) => id === articleOld.teamId);
-                if(team){
-                    let subcategory = subcategories.find(({ id }) => id=== team.subcategoryId);
-                    if(subcategory){
-                        let articleNew = new createArticle(articleOld,subcategory.name , team.name);
-                        articlesNew.push(articleNew);
-                    }
-                }
-            } )
-        } else
-            if(filterTeamsValue !== "All Teams") {
-                let team = teams.find(({name}) => name === filterTeamsValue);
-                if (team) {
-                    articlesOld.map((articleOld) => {
-                    let subcategory = subcategories.find(({id}) => id === team.subcategoryId);
-                    if (subcategory) {
-                        let articleNew = new createArticle(articleOld, subcategory.name, filterTeamsValue);
-                        articlesNew.push(articleNew);
-                    }
-                })
-            }
-            } else {
-                articlesOld.map((articleOld) =>{
-                    let team = teams.find(({ id }) => id=== articleOld.teamId);
-                    if(team){
-                        let articleNew = new createArticle(articleOld, filterSubcategoriesValue, team.name);
-                        articlesNew.push(articleNew);
-                }
-            })
-        }
-
-        return articlesNew;
-    }
-
     return (
         <div>
-            <AdminSearchContentArea articles = {articles} handleChangeArticles={handleChangeArticles}/>
+            <AdminSearchContentArea articles = {filteredArticles} handleChangeArticles={handleChangeArticles}/>
      <div className="filters">
             <AdminFilterContentArea  defValue="All Subcategories" components ={subcategories} handleChange={handleSubcategoryFilterChange}/>
             <AdminFilterContentArea  defValue="All Teams" components ={teams} handleChange={handleTeamFilterChange}/>
             <AdminFilterContentArea  defValue="All" components ={articlesStatus} handleChange={handleStatusFilterChange}/>
      </div>
-            {(isSearchActive && times > 1) ? <AdminArticlesContentArea articles={searchArticles}/>
-                                           : <AdminArticlesContentArea articles={articles}/>
-            }
+             <AdminArticlesContentArea articles = {articles} />
         </div>
     );
-};
+}
 
 export default AdminFiltersContentArea;
 
