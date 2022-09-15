@@ -29,7 +29,7 @@ const Profile = () => {
 			setIsUserOpen(false);
 			setIsComponentVisible(true);
 		}
-	}, [isComponentVisible]);
+	}, [isComponentVisible,setIsComponentVisible]);
 
 
 	return (
