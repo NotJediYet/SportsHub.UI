@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useState} from "react"
 import "./AdminSearchContentArea.scss"
 import {BiSearch} from "react-icons/bi";
 
@@ -7,22 +7,21 @@ function AdminSearchContentArea({articles,handleChangeArticles}){
     const [value, setValue] = useState('');
 
     const handleChange = (event) => {
-        setValue(event.target.value);
-    }
-
-    useEffect(() => {
         let updatedArticles = [];
 
-        if(value) {
+        setValue(event.target.value);
+
+        if(event.target.value) {
             articles.forEach((article) => {
-                let tempArticle = article.headline.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+                let tempArticle = article.headline.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1;
                 if(tempArticle) {
                     updatedArticles.push(article);
                 }
             });
             handleChangeArticles(updatedArticles, true);
         } else { handleChangeArticles(articles, false);}
-    },[value])
+    }
+
 
     return (
             <div className="search">
@@ -34,7 +33,6 @@ function AdminSearchContentArea({articles,handleChangeArticles}){
                 </div>
             </div>
     );
-};
+}
 
 export default AdminSearchContentArea;
-
