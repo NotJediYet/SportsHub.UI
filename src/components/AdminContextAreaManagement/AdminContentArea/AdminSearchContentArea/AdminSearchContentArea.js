@@ -8,7 +8,6 @@ function AdminSearchContentArea({articles,handleChangeArticles}){
 
     const handleChange = (event) => {
         let updatedArticles = [];
-
         setValue(event.target.value);
 
         if(event.target.value) {
@@ -21,7 +20,6 @@ function AdminSearchContentArea({articles,handleChangeArticles}){
             handleChangeArticles(updatedArticles, true);
         } else { handleChangeArticles(articles, false);}
     }
-
 
     return (
             <div className="search">

@@ -10,39 +10,31 @@ import TeamService from "../../../../services/TeamService/TeamService";
 
 
 function AdminFiltersContentArea()  {
-
-    const categoryId = "c4ac0c1d-26fe-4877-b81d-08da90d6d7d1";
-
+    const categoryId = "7550c17f-69c4-4e69-e5ce-08da98a86b2f";
+    const categoryName = "Category1";
     const objArticlesStatus = [
         { name: 'Published', id: '1' },
         { name: 'Unpublished', id: '2' },
     ];
-
     const [subcategories, setSubcategories] = useState([]);
     const [teams,setTeams] = useState(Array.from([]));
     const [filteredArticles, setFilteredArticles] = useState([]);
     const [articles, setArticles] = useState([]);
-
     const articlesStatus = Array.from(objArticlesStatus);
-
     const [filterSubcategoriesValue, setFilterSubcategoriesValue] = useState("All Subcategories");
     const [filterTeamsValue, setFilterTeamsValue] = useState("All Teams");
     const [filterStatusValue, setFilterStatusValue] = useState("All");
-
     const {getAccessTokenSilently} = useAuth0();
 
     const handleSubcategoryFilterChange = value =>{
         setFilterSubcategoriesValue(value);
     };
-
     const handleTeamFilterChange = value =>{
         setFilterTeamsValue(value);
     };
-
     const handleStatusFilterChange = value =>{
         setFilterStatusValue(value);
     };
-
     const handleChangeArticles = (value,isActive) =>{
        if(isActive) {
                setArticles(value);
@@ -63,7 +55,7 @@ function AdminFiltersContentArea()  {
 
                     if (filterSubcategoriesValue === "All Subcategories") {
                         teamService.getTeams().then(teams => {setTeams(filterTeams(teams, subcategories));
-                            filterArticlesService.getFilterArticles(filterSubcategoriesValue, filterTeamsValue, filterStatusValue)
+                            filterArticlesService.getFilterArticles(categoryName,filterSubcategoriesValue, filterTeamsValue, filterStatusValue)
                                 .then(articlesOld => {setFilteredArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue));
                                 setArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue))})
                         });
@@ -71,7 +63,7 @@ function AdminFiltersContentArea()  {
                         let subcategory = subcategories.filter(item => item.name === filterSubcategoriesValue);
                         let subcategoryId = Array.from(subcategory)[0]["id"];
                         teamService.getTeamsBySubcategoryId(subcategoryId).then(teams => {setTeams(sortedByName(teams));
-                            filterArticlesService.getFilterArticles(filterSubcategoriesValue, filterTeamsValue, filterStatusValue)
+                            filterArticlesService.getFilterArticles(categoryName,filterSubcategoriesValue, filterTeamsValue, filterStatusValue)
                                 .then(articlesOld => {setFilteredArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue));
                                 setArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue))})
                         })
@@ -89,7 +81,7 @@ function AdminFiltersContentArea()  {
                    if(team){
                        let subcategory = subcategories.find(({ id }) => id=== team.subcategoryId);
                        if(subcategory){
-                           let articleNew = new createArticle(articleOld,subcategory.name , team.name);
+                           let articleNew = new CreateArticle(articleOld,subcategory.name , team.name);
                            articlesNew.push(articleNew);
                        }
                    }
@@ -101,7 +93,7 @@ function AdminFiltersContentArea()  {
                    articlesOld.forEach((articleOld) => {
                        let subcategory = subcategories.find(({id}) => id === team.subcategoryId);
                        if (subcategory) {
-                           let articleNew = new createArticle(articleOld, subcategory.name, filterTeamsValue);
+                           let articleNew = new CreateArticle(articleOld, subcategory.name, filterTeamsValue);
                            articlesNew.push(articleNew);
                        }
                    })
@@ -110,7 +102,7 @@ function AdminFiltersContentArea()  {
                articlesOld.forEach((articleOld) =>{
                    let team = teams.find(({ id }) => id=== articleOld.teamId);
                    if(team){
-                       let articleNew = new createArticle(articleOld, filterSubcategoriesValue, team.name);
+                       let articleNew = new CreateArticle(articleOld, filterSubcategoriesValue, team.name);
                        articlesNew.push(articleNew);
                    }
                })
@@ -145,7 +137,7 @@ function AdminFiltersContentArea()  {
        return byName;
    }
 
-    function createArticle(articlesOld, subcategoryName, teamName){
+    function CreateArticle(articlesOld, subcategoryName, teamName){
         this.id = articlesOld.id;
         this.teamId = articlesOld.teamId;
         this.location = articlesOld.location;
@@ -174,8 +166,3 @@ function AdminFiltersContentArea()  {
 }
 
 export default AdminFiltersContentArea;
-
-
-
-
-

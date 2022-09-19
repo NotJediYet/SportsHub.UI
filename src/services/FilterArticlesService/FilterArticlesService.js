@@ -20,13 +20,12 @@ export default class FilterArticlesService {
         return fetch(url, options);
     }
 
-    getFilterArticles(subcategoryName,teamName,status) {
+    getFilterArticles(categoryName,subcategoryName,teamName,status) {
         const method = 'GET';
         let url = urls.getFilterArticles;
-        if (subcategoryName || teamName ||status) {
-            url = `${url}/${subcategoryName}/${teamName}/${status}`;
+        if (categoryName || subcategoryName || teamName ||status) {
+            url = `${url}/${categoryName}/${subcategoryName}/${teamName}/${status}`;
         }
         return this.request(url, method).then(res => res.json());
     }
 }
-
