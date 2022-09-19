@@ -2,6 +2,7 @@ import React from "react"
 import "./AdminArticlesContentArea.scss"
 import {FaCircle} from "react-icons/fa";
 
+
 export default function AdminArticlesContentArea(props) {
 
         return (
@@ -29,4 +30,3 @@ export default function AdminArticlesContentArea(props) {
         </div>
         )
 }
-

@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react"
 import "./AdminFilterContentArea.scss"
 import {AiFillCaretDown} from "react-icons/ai";
 
+
 export default function AdminFilterContentArea({defValue,components,handleChange}) {
     const [isFilterListOpen, setIsFilterListOpen] = useState(false);
     const [value, setValue] = useState(defValue);
@@ -48,4 +49,3 @@ export default function AdminFilterContentArea({defValue,components,handleChange
             </div>
     );
 };
-
