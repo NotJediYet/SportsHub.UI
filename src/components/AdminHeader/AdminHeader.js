@@ -3,6 +3,7 @@ import "./AdminHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 import Profile from '../Profile/Profile';
 import IAHeader from "../AdminContextAreaManagement/InformationArchitecture/IAComponents/IAHeader/IAHeader";
+import LCHeader from "../AdminContextAreaManagement/LanguagesConfiguration/LCComponents/LCHeader/LCHeader";
 import {Link, Route, Routes} from "react-router-dom";
 import HeaderTeams from "../AdminTeams/AdminTeamsComponents/HeaderTeams/HeaderTeams";
 
@@ -30,6 +31,7 @@ export default function AdminHeader() {
                 <Routes>
                     <Route path={"information-architecture"} element={<IAHeader/>}/>
                     <Route path={"teams"} element={<HeaderTeams/>}/>
+                    <Route path={"languages"} element={<LCHeader/>}/>
                 </Routes>
             </div>
             <div className="header-horisontal-menu">

@@ -1,11 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import '../Profile/Profile.scss';
 import {AiFillCaretDown} from 'react-icons/ai';
 import {useLocation} from 'react-router-dom';
 import useComponentVisible from '../../rootFunctions/useComponentVisible';
+import { Context } from '../ContextProvider/ContextProvider';
 
 const Language = () => {
-	const [language, setLanguage] = useState('EN');
+	const {languages} = useContext(Context);
+	const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 	const [isLangOpen, setIsLangOpen] = useState(false);
 	const {pathname} = useLocation();
 	const {ref, isComponentVisible, setIsComponentVisible} = useComponentVisible(true);
@@ -14,11 +16,11 @@ const Language = () => {
 		setIsLangOpen(false);
 	}, [pathname]);
 
-
 	const changeLng = (lng) => {
-		setLanguage(lng);
+		setSelectedLanguage(lng);
 		setIsLangOpen(false);
 	};
+
 	useEffect(() => {
 		if (!isComponentVisible) {
 			setIsLangOpen(false);
@@ -26,35 +28,19 @@ const Language = () => {
 		}
 	}, [isComponentVisible,setIsComponentVisible]);
 
-	const hideButton = (lng) => lng !== language;
-
 	return (
 		<div className="navbar-dropDown">
 			<div className="navbar-btn" onClick={() => setIsLangOpen(!isLangOpen)}>
-				<div>{language}</div>
+				<div>{selectedLanguage.code}</div>
 				<AiFillCaretDown/>
 			</div>
 			{isLangOpen && <div className="navbar-dropDown-menu" ref={ref}>
-				{hideButton('UA') &&
-				<div className="navbar-dropDown-element" onClick={() => changeLng('UA')}>
-					UA
-				</div>
-				}
-				{hideButton('DE') &&
-				<div className="navbar-dropDown-element" onClick={() => changeLng('DE')}>
-					DE
-				</div>
-				}
-				{hideButton('FR') &&
-				<div className="navbar-dropDown-element" onClick={() => changeLng('FR')}>
-					FR
-				</div>
-				}
-				{hideButton('EN') &&
-				<div className="navbar-dropDown-element" onClick={() => changeLng('EN')}>
-					EN
-				</div>
-				}
+				{languages.map((language) => 
+					!language.isHidden && language.code !== selectedLanguage.code &&
+					<div className="navbar-dropDown-element" onClick={() => changeLng(language)}>
+						{language.code}
+					</div>
+				)}
 			</div>}
 		</div>
 	);
