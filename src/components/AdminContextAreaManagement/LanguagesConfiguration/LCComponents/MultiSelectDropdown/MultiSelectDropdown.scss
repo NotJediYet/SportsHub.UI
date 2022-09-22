@@ -88,9 +88,13 @@
                     transition: background-color 200ms linear;
                 }
 
-                input {
+                input[type="checkbox"] {
                     cursor: pointer;
-                    accent-color: #D72130;;
+                    accent-color: #D72130;
+
+                    &:disabled {
+                        cursor: default;
+                    }
                 }
             }
 

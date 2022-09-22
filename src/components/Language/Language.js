@@ -36,7 +36,7 @@ const Language = () => {
 			</div>
 			{isLangOpen && <div className="navbar-dropDown-menu" ref={ref}>
 				{languages.map((language) => 
-					!language.isHidden && language.code !== selectedLanguage.code &&
+					language.isShown && language.code !== selectedLanguage.code &&
 					<div className="navbar-dropDown-element" onClick={() => changeLng(language)}>
 						{language.code}
 					</div>

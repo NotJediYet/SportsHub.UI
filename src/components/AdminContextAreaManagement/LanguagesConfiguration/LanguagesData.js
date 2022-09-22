@@ -2,25 +2,29 @@ export const LanguagesData = [
     {
         name: "English",
         code: "en",
-        isHidden: false,
+        isDefault: true,
+        isShown: true,
         isAdded: true,
     },
     {
         name: "Ukrainian",
         code: "uk",
-        isHidden: false,
+        isDefault: false,
+        isShown: false,
         isAdded: false,
     },
     {
         name: "French",
         code: "fr",
-        isHidden: false,
+        isDefault: false,
+        isShown: true,
         isAdded: false,
     },
     {
         name: "Spanish",
         code: "es",
-        isHidden: true,
-        isAdded: false,
+        isDefault: false,
+        isShown: true,
+        isAdded: true,
     }
 ]

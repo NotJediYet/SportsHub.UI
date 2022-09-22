@@ -43,6 +43,7 @@ export default function AddLanguageModal({ handleClose }) {
                             optionName="language"
                             optionKeyToShow="name"
                             optionKeyToSelect="isAdded"
+                            optionKeyToDisable="isDefault"
                             setOptionsToUpdate={updatedLanguages => {setUpdatedLanguages(updatedLanguages)}}
                         />
                     </div>

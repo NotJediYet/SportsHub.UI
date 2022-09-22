@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Switch.scss";
 
-export default function Switch({ checked, handleChange }) {
+export default function Switch({ checked, disabled, handleChange }) {
   const [isToggled, setIsToggled] = useState(checked);
 
   const onToggle = () => {
@@ -11,7 +11,7 @@ export default function Switch({ checked, handleChange }) {
 
   return (
     <label className="toggle-switch">
-      <input type="checkbox" checked={isToggled} onChange={onToggle} />
+      <input type="checkbox" checked={isToggled} onChange={onToggle} disabled={disabled}/>
       <span className="switch" />
     </label>
   );

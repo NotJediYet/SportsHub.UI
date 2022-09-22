@@ -38,4 +38,8 @@
         transform: translateX(11px);
         background-color: #C80515;
     }
+
+    input[type="checkbox"]:disabled + .switch::before {
+        background-color: #D7213011;
+    }
 }

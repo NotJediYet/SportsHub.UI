@@ -1,6 +1,5 @@
 import "./TableOfLanguages.scss"
 import { MdDelete } from "react-icons/md"
-import { LanguagesData } from "../../LanguagesData"
 import Modal from "../../../../Modal/Modal"
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useContext } from "react";
@@ -49,23 +48,26 @@ export default function TableOfLanguages() {
                             <td>
                                 <div className="switch-container">
                                     <Switch
-                                        checked={!language.isHidden}
+                                        checked={language.isShown}
+                                        disabled={language.isDefault}
                                         handleChange={(e) => {
                                             setLanguages(
                                                 languages.map(languageToUpdate =>
                                                     JSON.stringify(languageToUpdate) === JSON.stringify(language)
-                                                    ? {...languageToUpdate, isHidden: !languageToUpdate.isHidden}
+                                                    ? {...languageToUpdate, isShown: !languageToUpdate.isShown}
                                                     : languageToUpdate
                                                 )
                                             );
                                         }}/>
-                                    {language.isHidden ? <text>Hide</text> : <text>Show</text>}
+                                    {language.isShown ? <text>Show</text> : <text>Hide</text>}
                                 </div>
                             </td>
                             <td>
-                                <button className="btn-delete" onClick={() => (modalOpen ? closeModal() : openModal())}>
-                                    <MdDelete/>
-                                </button>
+                                {!language.isDefault && 
+                                    <button className="btn-delete" onClick={() => (modalOpen ? closeModal() : openModal())}>
+                                        <MdDelete/>
+                                    </button>
+                                }
                             </td>
                         </tr>
                     )}

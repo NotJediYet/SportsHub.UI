@@ -5,7 +5,7 @@ import { IconContext } from "react-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import "./MultiSelectDropdown.scss";
 
-export default function MultiSelectDropdown({optionName, options, optionKeyToShow, optionKeyToSelect, setOptionsToUpdate}) {
+export default function MultiSelectDropdown({optionName, options, optionKeyToShow, optionKeyToSelect, optionKeyToDisable, setOptionsToUpdate}) {
     const [isExpanded, setIsExpanded] = useState(true);
     const [optionsToShow, setOptionsToShow] = useState(options);
     const [selectedOptions, setSelectedOptions] = useState(optionsToShow.filter(option => { return option[optionKeyToSelect] }));
@@ -26,6 +26,7 @@ export default function MultiSelectDropdown({optionName, options, optionKeyToSho
                             {selectedOptions.map((selectedOption) =>
                                 <motion.label
                                     key={`${selectedOption[optionKeyToShow]}`}
+                                    disabled={selectedOption[optionKeyToDisable]}
                                     className="label-selected-option"
                                     initial={{opacity: 0, scale: 0 }}
                                     animate={{opacity: 1, scale: 1}}
@@ -36,23 +37,26 @@ export default function MultiSelectDropdown({optionName, options, optionKeyToSho
                                     }}
                                 >
                                     {selectedOption[optionKeyToShow]}
-                                    <button
-                                        className="btn-deselect-option"
-                                        onClick={() => {
-                                            setSelectedOptions(selectedOptions => selectedOptions.filter(option => option !== selectedOption));
-                                            setTmpOptions(
-                                                tmpOptions.map(optionToUpdate =>
-                                                    JSON.stringify(optionToUpdate) === JSON.stringify(selectedOption)
-                                                    ? {...optionToUpdate, [optionKeyToSelect]: false}
-                                                    : optionToUpdate
-                                                )
-                                            );
-                                        }}
-                                    >
-                                        <IconContext.Provider value={{ size: 16 }}>
-                                            <IoClose />
-                                        </IconContext.Provider>
-                                    </button>
+                                    {!selectedOption[optionKeyToDisable] &&
+                                        <button
+                                            disabled={selectedOption[optionKeyToDisable]}
+                                            className="btn-deselect-option"
+                                            onClick={() => {
+                                                setSelectedOptions(selectedOptions => selectedOptions.filter(option => option !== selectedOption));
+                                                setTmpOptions(
+                                                    tmpOptions.map(optionToUpdate =>
+                                                        JSON.stringify(optionToUpdate) === JSON.stringify(selectedOption)
+                                                        ? {...optionToUpdate, [optionKeyToSelect]: false}
+                                                        : optionToUpdate
+                                                    )
+                                                );
+                                            }}
+                                        >
+                                            <IconContext.Provider value={{ size: 16 }}>
+                                                <IoClose />
+                                            </IconContext.Provider>
+                                        </button>
+                                    }
                                 </motion.label>
                             )}
                         </AnimatePresence>
@@ -88,6 +92,7 @@ export default function MultiSelectDropdown({optionName, options, optionKeyToSho
                                 {optionToShow[optionKeyToShow]}
                                 <input
                                     type="checkbox"
+                                    disabled={optionToShow[optionKeyToDisable]}
                                     checked={selectedOptions.includes(optionToShow)}
                                     onChange={(e) => {
                                         if (e.target.checked) 
