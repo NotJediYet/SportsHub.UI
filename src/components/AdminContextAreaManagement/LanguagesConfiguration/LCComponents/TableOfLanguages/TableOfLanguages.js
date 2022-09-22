@@ -34,36 +34,36 @@ export default function TableOfLanguages() {
                 <thead>
                     <tr>
                         <td>Language</td>
-                        <td colspan="2">Status</td>
+                        <td colSpan="2">Status</td>
                     </tr>
                 </thead>
                 <tbody>
-                    {languages.map((language, index) =>
+                    {languages.filter(language => language.isAdded).map((addedLanguage) =>
                         <tr>
                             <td>
                                 <div className="language-cell">
-                                    {language.name}
+                                    {addedLanguage.name}
                                 </div>
                             </td>
                             <td>
                                 <div className="switch-container">
                                     <Switch
-                                        checked={language.isShown}
-                                        disabled={language.isDefault}
+                                        checked={addedLanguage.isShown}
+                                        disabled={addedLanguage.isDefault}
                                         handleChange={(e) => {
                                             setLanguages(
                                                 languages.map(languageToUpdate =>
-                                                    JSON.stringify(languageToUpdate) === JSON.stringify(language)
+                                                    JSON.stringify(languageToUpdate) === JSON.stringify(addedLanguage)
                                                     ? {...languageToUpdate, isShown: !languageToUpdate.isShown}
                                                     : languageToUpdate
                                                 )
                                             );
                                         }}/>
-                                    {language.isShown ? <text>Show</text> : <text>Hide</text>}
+                                    {addedLanguage.isShown ? <text>Show</text> : <text>Hide</text>}
                                 </div>
                             </td>
                             <td>
-                                {!language.isDefault && 
+                                {!addedLanguage.isDefault && 
                                     <button className="btn-delete" onClick={() => (modalOpen ? closeModal() : openModal())}>
                                         <MdDelete/>
                                     </button>
