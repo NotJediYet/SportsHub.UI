@@ -30,14 +30,10 @@ export default class TeamService {
         );
     }
 
-    createTeam(name, subcategoryId) {
+    createTeam(data) {
         const method = 'POST';
 
-        let formData = new FormData();
-        formData.append('name', name);
-        formData.append('subcategoryId', subcategoryId);
-
-        return this.request(urls.teamsEndpoint, method, formData)
+        return this.request(urls.teamsEndpoint, method, data)
             .then(res => {if (!res.ok) return Promise.reject(res.status)})
             .catch(error => console.log(error));
     }
@@ -45,14 +41,7 @@ export default class TeamService {
     editTeam(data) {
         const method = 'PUT';
 
-        let formData = new FormData();
-        formData.append('id', data.id);
-        formData.append('name', data.name);
-        formData.append('subcategoryId', data.subcategoryId);
-        formData.append('isHidden', data.isHidden);
-        formData.append('OrderIndex', data.orderIndex);
-
-        return this.request(urls.teamsEndpoint, method, formData)
+        return this.request(urls.teamsEndpoint, method, data)
             .then(res => {if (!res.ok) return Promise.reject(res.status)})
             .catch(error => console.log(error));
     }

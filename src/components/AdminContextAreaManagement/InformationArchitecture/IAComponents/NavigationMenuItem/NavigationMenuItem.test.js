@@ -26,8 +26,8 @@ test("Dropdown menu should be rendered", () => {
     let item = {name: "name", isHidden: false}
 
     render(
-        <NavigationMenuItem name="testName" item={item} isActive={false}
-                            changeDraggable = {() => void(0)} itemType="subcategory" onPress={() => void(0)}/>
+        <NavigationMenuItem name="testName" item={item} isActive={false} changeDraggable = {() => void(0)}
+                            itemType="subcategory" onPress={() => void(0)}/>
     );
 
     fireEvent.mouseOver(screen.getByTestId("item"));

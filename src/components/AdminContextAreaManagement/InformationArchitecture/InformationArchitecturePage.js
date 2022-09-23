@@ -30,7 +30,6 @@ export default function InformationArchitecturePage() {
     const [dragOverItemId, setDragOverItemId] = useState("");
     const [isDragAvailable, setIsDragAvailable] = useState(true);
 
-
     const itemsStates = {
         category: {items: categories, setItems: setCategories},
         subcategory: {items: subcategories, setItems: setSubcategories},
@@ -73,13 +72,10 @@ export default function InformationArchitecturePage() {
                     setActiveCategory({id: activeCategory.id, index: activeCategory.index + 1})
                     setCategories(updatesLoadedItems("category", data));
                     toast.custom((t) =>
-                        <SuccessToast t={t} message="Saved!"
-                                      details={"The information architecture is successfully saved!"}/>
+                        <SuccessToast t={t} message="Saved!" details={"The information architecture is successfully saved!"}/>
                     );
                 }));
-        } else {
-            toast.custom((t) => <FailureToast t={t}/>);
-        }
+        } else toast.custom((t) => <FailureToast t={t}/>);
     }
 
     const uploadSubcategory = (subcategoryName) => {
@@ -92,19 +88,19 @@ export default function InformationArchitecturePage() {
                         setActiveSubcategory({id: activeSubcategory.id, index: activeSubcategory.index + 1});
                         setSubcategories(updatesLoadedItems("subcategory", data));
                         toast.custom((t) =>
-                            <SuccessToast t={t} message="Saved!"
-                                          details={"The information architecture is successfully saved!"}/>
+                            <SuccessToast t={t} message="Saved!" details={"The information architecture is successfully saved!"}/>
                         );
                     }));
-        } else {
-            toast.custom((t) => <FailureToast t={t}/>);
-        }
+        } else toast.custom((t) => <FailureToast t={t}/>);
     }
 
     const uploadTeam = (teamName) => {
         if (!teams.find(element => element.name === teamName)
             && teamName.length > 0 && activeSubcategory.index >= 0) {
-            teamService.createTeam(teamName, activeSubcategory.id).then(() => teamService.getTeams()
+            let formData = new FormData();
+            formData.append('name', teamName);
+            formData.append('subcategoryId', activeSubcategory.id);
+            teamService.createTeam(formData).then(() => teamService.getTeams()
                 .then(data => {
                     setTeams(updatesLoadedItems("team", data));
                     toast.custom((t) =>
@@ -112,9 +108,7 @@ export default function InformationArchitecturePage() {
                                       details={"The information architecture is successfully saved!"}/>
                     );
                 }));
-        } else {
-            toast.custom((t) => <FailureToast t={t}/>);
-        }
+        } else toast.custom((t) => <FailureToast t={t}/>);
     }
 
     const addItemsToUpdates = (item, itemType, method) => {
@@ -148,16 +142,18 @@ export default function InformationArchitecturePage() {
         } else if (itemType === "team") {
             item.subcategoryId = newId;
         }
+
         itemsStates[itemType].setItems(items => {
             items[items.findIndex(element => element.id === item.id)] = item;
             return [...items]
         });
+
         addItemsToUpdates(item, itemType, "edit");
     }
 
     const moveItemToAnotherParent = (item, itemType) => {
-        let newOrderIndex = Math.max(...itemsStates[itemType].items.map(item => item.orderIndex)) + 1;
         let movedItem;
+        let newOrderIndex = Math.max(...itemsStates[itemType].items.map(item => item.orderIndex)) + 1;
 
         if (itemType === "subcategory") {
             movedItem = {...currentItem.item, subcategoryId: item.id, orderIndex: newOrderIndex};
@@ -165,8 +161,8 @@ export default function InformationArchitecturePage() {
             movedItem = {...currentItem.item, categoryId: item.id, orderIndex: newOrderIndex};
         }
 
-        console.log(movedItem)
-        itemsStates[currentItem.type].setItems(itemsStates[currentItem.type].items.filter(element => element.id !== currentItem.item.id));
+        itemsStates[currentItem.type].setItems(itemsStates[currentItem.type].items
+            .filter(element => element.id !== currentItem.item.id));
         addItemsToUpdates(movedItem, currentItem.type, "edit");
     }
 
@@ -204,7 +200,6 @@ export default function InformationArchitecturePage() {
                         secondElement = {...element, orderIndex: item.orderIndex};
                         return secondElement;
                     }
-
                     return element
                 }));
                 if (currentItem.type === "category") {
@@ -254,7 +249,14 @@ export default function InformationArchitecturePage() {
         }
 
         const editTeam = (team) => {
-            teamService.editTeam(team);
+            let formData = new FormData();
+            formData.append('id', team.id);
+            formData.append('name', team.name);
+            formData.append('subcategoryId', team.subcategoryId);
+            formData.append('isHidden', team.isHidden);
+            formData.append('OrderIndex', team.orderIndex);
+
+            teamService.editTeam(formData);
         }
 
        if (AISaveButtonClicked) {
@@ -273,8 +275,7 @@ export default function InformationArchitecturePage() {
                setActiveCategory({id: -1, index: -1});
                setActiveSubcategory({id: -1, index: -1});
                toast.custom((t) =>
-                       <SuccessToast t={t} message="Saved!"
-                       details={"The information architecture is successfully saved!"}/>
+                       <SuccessToast t={t} message="Saved!" details={"The information architecture is successfully saved!"}/>
                )
            }
            setAISaveButtonClicked(!AISaveButtonClicked)
@@ -300,9 +301,8 @@ export default function InformationArchitecturePage() {
                             <NavigationMenuItem key={index} itemType="category" isActive={(index === activeCategory.index)}
                                                 onPressChangeVisibility={() => changeItemVisibility("category", x)}
                                                 item = {x} onPressLoadItems={() => loadSubcategories(x.id, index)}
-                                                isOverDrag = {dragOverItemId === x.id}
+                                                isOverDrag = {dragOverItemId === x.id} changeDraggable = {setIsDragAvailable}
                                                 isStartDrag = {currentItem !== {} ? currentItem.item.id === x.id : false}
-                                                changeDraggable = {setIsDragAvailable}
                             />
                         </div>
                     )}
@@ -325,8 +325,7 @@ export default function InformationArchitecturePage() {
                                                         itemType="subcategory" onPressLoadItems={() => loadTeams(x.id, index)}
                                                         isOverDrag = {dragOverItemId === x.id } categories={categories}
                                                         isStartDrag = {currentItem.item.id === x.id}
-                                                        moveItem = {moveItem}
-                                                        changeDraggable = {setIsDragAvailable}/>
+                                                        moveItem = {moveItem} changeDraggable = {setIsDragAvailable}/>
                                 </div>
                             )}
                         </div>
@@ -349,9 +348,8 @@ export default function InformationArchitecturePage() {
                                                         onPressChangeVisibility={() => changeItemVisibility("team", x)}
                                                         isStartDrag={currentItem !== {} ? currentItem.item.id === x.id : false}
                                                         categories={categories} subcategories = {subcategories}
-                                                        moveItem = {moveItem}
-                                                        changeDraggable = {setIsDragAvailable}/>
-                                    </div>
+                                                        moveItem = {moveItem} changeDraggable = {setIsDragAvailable}/>
+                                </div>
                             )}
                         </div>
                     </>
