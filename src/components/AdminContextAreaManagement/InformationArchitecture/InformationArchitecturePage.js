@@ -155,18 +155,6 @@ export default function InformationArchitecturePage() {
         addItemsToUpdates(item, itemType, "edit");
     }
 
-    const editCategory = (category) => {
-        categoryService.editCategory(category);
-    }
-
-    const editSubcategory = (subcategory) => {
-        subcategoryService.editSubcategory(subcategory);
-    }
-
-    const editTeam = (team) => {
-        teamService.editTeam(team);
-    }
-
     const moveItemToAnotherParent = (item, itemType) => {
         let newOrderIndex = Math.max(...itemsStates[itemType].items.map(item => item.orderIndex)) + 1;
         let movedItem;
@@ -257,6 +245,18 @@ export default function InformationArchitecturePage() {
     }, [getAccessTokenSilently]);
 
     useEffect(() => {
+        const editCategory = (category) => {
+            categoryService.editCategory(category);
+        }
+
+        const editSubcategory = (subcategory) => {
+            subcategoryService.editSubcategory(subcategory);
+        }
+
+        const editTeam = (team) => {
+            teamService.editTeam(team);
+        }
+
        if (AISaveButtonClicked) {
            if (updates.length > 0) {
                const updateMethods = {
@@ -279,7 +279,7 @@ export default function InformationArchitecturePage() {
            }
            setAISaveButtonClicked(!AISaveButtonClicked)
        }
-    }, [AISaveButtonClicked, updates, setAISaveButtonClicked]);
+    }, [AISaveButtonClicked, updates, setAISaveButtonClicked, categoryService, subcategoryService, teamService]);
 
     return (
         <div className="content-area">
