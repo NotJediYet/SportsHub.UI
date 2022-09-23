@@ -12,7 +12,7 @@ export default function AdminHeader() {
             <nav className="header-navbar">
                 <div className="navbar-logo">
                     <button className="button-sport-hub">
-                        <a href="">
+                        <a href="/admin">
                             Sports Hub
                         </a>
                     </button>
