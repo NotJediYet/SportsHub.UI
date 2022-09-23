@@ -279,7 +279,7 @@ export default function InformationArchitecturePage() {
            }
            setAISaveButtonClicked(!AISaveButtonClicked)
        }
-    }, [AISaveButtonClicked]);
+    }, [AISaveButtonClicked, updates, setAISaveButtonClicked]);
 
     return (
         <div className="content-area">

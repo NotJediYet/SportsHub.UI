@@ -20,8 +20,7 @@ export default function NavigationMenuItem(
     const menuRef = useRef(null);
 
     const showMenuItem = () => {
-        if (
-            itemType !== "category") return true
+        if (itemType !== "category") return true
         return itemType === "category" && !item.isStatic;
     }
 
@@ -43,7 +42,7 @@ export default function NavigationMenuItem(
 
     useEffect(() => {
         changeDraggable(!isMenuOpen);
-    }, [isMenuOpen]);
+    }, [isMenuOpen, changeDraggable]);
 
     const handleMouseOverItem = () => {
         if (!isMenuOpen)
@@ -69,11 +68,8 @@ export default function NavigationMenuItem(
         e.preventDefault();
         if (
             itemType === "subcategory") {
-
-            moveItem(
-                itemType,
-                item, id);
-            setIsMenuOpen(false)
+            moveItem(itemType, item, id);
+            setIsMenuOpen(false);
             setIsItemHovering(false);
             setIsCategoriesOpen(false);
             setActiveClickCategory("");
@@ -104,7 +100,6 @@ export default function NavigationMenuItem(
 
     const changeVisibility = (e) => {
         e.preventDefault();
-
         onPressChangeVisibility();
         setIsItemHovering(false);
     }
