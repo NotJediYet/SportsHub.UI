@@ -326,7 +326,7 @@ export default function InformationArchitecturePage() {
                                                         isOverDrag = {dragOverItemId === x.id } categories={categories}
                                                         isStartDrag = {currentItem.item.id === x.id}
                                                         moveItem = {moveItem}
-                                                        changeDraggable = {(value) => setIsDragAvailable(value)}/>
+                                                        changeDraggable = {setIsDragAvailable}/>
                                 </div>
                             )}
                         </div>
@@ -350,7 +350,7 @@ export default function InformationArchitecturePage() {
                                                         isStartDrag={currentItem !== {} ? currentItem.item.id === x.id : false}
                                                         categories={categories} subcategories = {subcategories}
                                                         moveItem = {moveItem}
-                                                        changeDraggable = {(value) => setIsDragAvailable(value)}/>
+                                                        changeDraggable = {setIsDragAvailable}/>
                                     </div>
                             )}
                         </div>
