@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import AdminHeader from "./AdminHeader";
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
-import Profile from '../Profile/Profile';
 
 test("Sports Hub item should be rendered", () => {
     render(
@@ -38,18 +37,6 @@ test("Switch button should be rendered", () => {
   
     fireEvent.mouseOver(getAllByLabelText("switcher-div")[0]);
     expect(tooltips).toBeCalled;
-});
-
-test("Active configuration page name, CTA should be rendered", () => {
-    render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<AdminHeader />}/>
-            </Routes>
-        </BrowserRouter>
-    );
-    const pageNameElement = screen.getByText("Active configuration page name, CTA");
-    expect(pageNameElement).toBeInTheDocument();
 });
 
 test("Horisontal menu with static item should be rendered", () => {

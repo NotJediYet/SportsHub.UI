@@ -18,19 +18,41 @@ export default class TeamService {
         if (data) {
             options.body = data;
         }
+
         return fetch(url, options);
     }
 
-    getTeamsBySubcategoryId(subcategoryId) {
+    getTeams() {
         const method = 'GET';
+
         return this.request(urls.teamsEndpoint, method).then(res => res.json()
-            .then(data => data.filter(item => item.subcategoryId === subcategoryId).reverse())
+            .then(data => data)
         );
     }
 
-    createTeam(data) {
+    createTeam(name, subcategoryId) {
         const method = 'POST';
-        return this.request(urls.teamsEndpoint, method, data)
+
+        let formData = new FormData();
+        formData.append('name', name);
+        formData.append('subcategoryId', subcategoryId);
+
+        return this.request(urls.teamsEndpoint, method, formData)
+            .then(res => {if (!res.ok) return Promise.reject(res.status)})
+            .catch(error => console.log(error));
+    }
+
+    editTeam(data) {
+        const method = 'PUT';
+
+        let formData = new FormData();
+        formData.append('id', data.id);
+        formData.append('name', data.name);
+        formData.append('subcategoryId', data.subcategoryId);
+        formData.append('isHidden', data.isHidden);
+        formData.append('OrderIndex', data.orderIndex);
+
+        return this.request(urls.teamsEndpoint, method, formData)
             .then(res => {if (!res.ok) return Promise.reject(res.status)})
             .catch(error => console.log(error));
     }
