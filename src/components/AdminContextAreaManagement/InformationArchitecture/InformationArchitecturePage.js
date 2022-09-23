@@ -302,7 +302,7 @@ export default function InformationArchitecturePage() {
                                                 item = {x} onPressLoadItems={() => loadSubcategories(x.id, index)}
                                                 isOverDrag = {dragOverItemId === x.id}
                                                 isStartDrag = {currentItem !== {} ? currentItem.item.id === x.id : false}
-                                                changeDraggable = {(value) => setIsDragAvailable(value)}
+                                                changeDraggable = {setIsDragAvailable}
                             />
                         </div>
                     )}

@@ -5,7 +5,9 @@ import {BsThreeDots} from "react-icons/bs";
 import "./NavigationMenuItem.scss"
 import {GoTriangleRight} from "react-icons/go";
 
-export default function NavigationMenuItem(props) {
+export default function NavigationMenuItem(
+    {itemType, isActive, onPressChangeVisibility,
+        item, onPressLoadItems, isOverDrag, isStartDrag, changeDraggable, categories, moveItem}) {
     const [isItemHovering, setIsItemHovering] = useState(false);
     const [isMoveToHovering, setMoveToHovering] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,8 +20,9 @@ export default function NavigationMenuItem(props) {
     const menuRef = useRef(null);
 
     const showMenuItem = () => {
-        if (props.itemType !== "category") return true
-        return props.itemType === "category" && !props.item.isStatic;
+        if (
+            itemType !== "category") return true
+        return itemType === "category" && !item.isStatic;
     }
 
     useEffect(() => {
@@ -39,7 +42,7 @@ export default function NavigationMenuItem(props) {
     }, [menuRef]);
 
     useEffect(() => {
-        props.changeDraggable(!isMenuOpen);
+        changeDraggable(!isMenuOpen);
     }, [isMenuOpen]);
 
     const handleMouseOverItem = () => {
@@ -64,27 +67,33 @@ export default function NavigationMenuItem(props) {
 
     const handleCategoryClick = (e, id) => {
         e.preventDefault();
-        if (props.itemType === "subcategory") {
-            props.moveItem(props.itemType, props.item, id);
+        if (
+            itemType === "subcategory") {
+
+            moveItem(
+                itemType,
+                item, id);
             setIsMenuOpen(false)
             setIsItemHovering(false);
             setIsCategoriesOpen(false);
             setActiveClickCategory("");
-        } else if (props.itemType === "team") {
+        } else if (
+            itemType === "team") {
             if (activeClickCategory === id) {
                 setActiveClickCategory("");
                 setSubcategories([]);
             } else {
                 setActiveClickCategory(id);
-                setSubcategories(props.subcategories.filter(item => item.categoryId === id));
+                setSubcategories(
+                    subcategories.filter(item => item.categoryId === id));
             }
         }
     }
 
     const handleSubcategoryClick = (e, id) => {
         e.preventDefault();
-        if (props.itemType === "team") {
-            props.moveItem(props.itemType, props.item, id);
+        if (itemType === "team") {
+            moveItem(itemType, item, id);
             setIsMenuOpen(false)
             setIsItemHovering(false);
             setIsCategoriesOpen(false);
@@ -95,7 +104,8 @@ export default function NavigationMenuItem(props) {
 
     const changeVisibility = (e) => {
         e.preventDefault();
-        props.onPressChangeVisibility();
+
+        onPressChangeVisibility();
         setIsItemHovering(false);
     }
 
@@ -115,11 +125,15 @@ export default function NavigationMenuItem(props) {
 
     return (
         <div className="item" data-testid = "item" onMouseOver={handleMouseOverItem} onMouseOut={handleMouseOutItem}
-             style={{borderColor: props.isOverDrag ? "#D72130" : "#D4D9E2",
-                 background: props.isStartDrag ? "#FDF5F5" : "#FFFEFE",
-                 color: props.isStartDrag ? "#F4C7CA" : "#B2B2B2"}}>
+             style={{borderColor:
+                     isOverDrag ? "#D72130" : "#D4D9E2",
+                 background:
+                     isStartDrag ? "#FDF5F5" : "#FFFEFE",
+                 color:
+                     isStartDrag ? "#F4C7CA" : "#B2B2B2"}}>
             <div>
-                {isItemHovering && ! props.isStartDrag &&  (
+                {isItemHovering && !
+                    isStartDrag &&  (
                     <span className="item-button" data-testid = "move-button">
                     <IconContext.Provider value={{size: "22", className: "item-icon"}}>
                         <BiDotsVertical className="item-icon-left-part"/>
@@ -127,20 +141,28 @@ export default function NavigationMenuItem(props) {
                     </IconContext.Provider>
                 </span>
                 )}
-                {!isItemHovering && props.item.isHidden && (
+                {!isItemHovering &&
+                    item.isHidden && (
                     <span className="hiddenLabel">
                         <h3> hidden </h3>
                     </span>
                 )}
-                <span style={{color: props.isStartDrag ? "#F4C7CA" : props.isActive ? "#D72130" : "#B2B2B2" }}
-                      className={styleClasses[props.itemType]} onClick={props.onPressLoadItems}>
-                {props.item.name}
+                <span style={{color:
+                        isStartDrag ? "#F4C7CA" :
+                            isActive ? "#D72130" : "#B2B2B2" }}
+                      className={styleClasses[
+                          itemType]} onClick={
+                    onPressLoadItems}>
+                {
+                    item.name}
             </span>
                 <div className="dropDown-wrapper" ref={menuRef}>
-                    {isItemHovering && ! props.isStartDrag && (
+                    {isItemHovering && !
+                        isStartDrag && (
                         <button className="item-menu-button" data-testid = "menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                             <IconContext.Provider value={{size: "20", className: "menu-icon"}}>
-                                <BsThreeDots style={{color: props.isStartDrag ? "#F4C7CA": isMenuOpen ? "#D72130" : "#B2B2B2"}}/>
+                                <BsThreeDots style={{color:
+                                        isStartDrag ? "#F4C7CA": isMenuOpen ? "#D72130" : "#B2B2B2"}}/>
                             </IconContext.Provider>
                         </button>
                     )}
@@ -151,7 +173,8 @@ export default function NavigationMenuItem(props) {
                                     <BsThreeDots style={{color: isMenuOpen ? "#D72130" : "#B2B2B2"}}/>
                                 </IconContext.Provider>
                             </button>
-                            { props.itemType !== "category" && (
+                            {
+                                itemType !== "category" && (
                                 <div className="dropDown-menu-element" onMouseOver={handleMouseOverMoveTo}
                                      onMouseOut={handleMouseOutMoveTo} onClick={openCategoriesMenu}>
                                     <h2 className="move-to-text">Move to</h2>
@@ -163,23 +186,28 @@ export default function NavigationMenuItem(props) {
                             )}
                             {isCategoriesOpen && (
                                 <div className="dropDown-categories">
-                                    {props.categories.filter(item => filterCategories(item, props.item.categoryId))
+                                    {
+                                        categories.filter(item => filterCategories(item,
+                                            item.categoryId))
                                         .map((c, index) =>
                                         <div className="dropDown-menu-element" key={index}
                                              onMouseOver={() => setActiveHoverCategory(index)}
                                              onMouseOut={() => setActiveHoverCategory(-1)}
                                              onClick={(e) => handleCategoryClick(e, c.id)}>
                                             <h2 className="items-name">{c.name}</h2>
-                                            { props.itemType === "team" && (
+                                            {
+                                                itemType === "team" && (
                                                 <IconContext.Provider value={{size: "14", className: "move-to-icon"}}>
                                                     <GoTriangleRight
                                                         style={{color: (activeHoverCategory === index ||
                                                                 activeClickCategory === c.id) ? "#D72130" : "#B2B2B2"}}/>
                                                 </IconContext.Provider>
                                             )}
-                                            {(activeClickCategory === c.id && props.itemType === "team") && (
+                                            {(activeClickCategory === c.id &&
+                                                itemType === "team") && (
                                                 <div className="dropDown-subcategories">
-                                                    {subcategories.filter(item => item.id !== props.item.subcategoryId)
+                                                    {subcategories.filter(item => item.id !==
+                                                        item.subcategoryId)
                                                         .map((s, index) =>
                                                             <div className="dropDown-menu-element" key={index}
                                                                  onClick={(e) => handleSubcategoryClick(e, s.id)}>
@@ -194,7 +222,8 @@ export default function NavigationMenuItem(props) {
                                 </div>
                             )}
                             <div className="dropDown-menu-element" onClick={changeVisibility}>
-                                <h2>{props.item.isHidden ? "Show" : "Hide"}</h2>
+                                <h2>{
+                                    item.isHidden ? "Show" : "Hide"}</h2>
                             </div>
                             { showMenuItem() && (
                                 <div className="dropDown-menu-element">
