@@ -10,18 +10,19 @@ export default function CreateItemWindow(props) {
     const handleSubmit = event => {
         event.preventDefault();
         setIsPending(true);
-        if (itemName.length !== 0) props.onPress(itemName);
+        props.onPress(itemName);
         setIsPending(false)
         props.setTrigger(false);
+        setItemName("");
     }
 
     return (props.trigger) ? (
         <div className="popup-window">
             <div className="popup-inner-window">
                 <h2>{titles[props.itemType]}</h2>
-                <form onSubmit={handleSubmit} data-testid = "form">
+                <form onSubmit={handleSubmit} data-testid = "form" id="item-name-input">
                     <label htmlFor="category-name">NAME</label>
-                    <input type="text" placeholder="Name your menu item" value={itemName}
+                    <input type="text" className="item-name-input" placeholder="Name your menu item" value={itemName}
                     onChange={e => setItemName(e.target.value)}/>
                     <button className="add-button" type="submit" disabled={isPending}>
                         Add

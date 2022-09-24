@@ -2,6 +2,8 @@ import React from "react"
 import "./AdminHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 import Profile from '../Profile/Profile';
+import IAHeader from "../AdminContextAreaManagement/InformationArchitecture/IAComponents/IAHeader/IAHeader";
+import {Route, Routes} from "react-router-dom";
 
 export default function AdminHeader() {
 
@@ -24,7 +26,9 @@ export default function AdminHeader() {
                 </div>
             </nav>
             <div className="header-page-name">
-               Active configuration page name, CTA
+                <Routes>
+                    <Route path={"information-architecture"} element={<IAHeader/>}/>
+                </Routes>
             </div>
             <div className="header-horisontal-menu">
                 Horisontal menu with static items

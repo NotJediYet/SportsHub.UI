@@ -10,6 +10,7 @@ import TeamHub from "./components/ProfileManagement/TeamHub/TeamHub";
 import Surveys from "./components/ProfileManagement/Surveys/Surveys";
 import UserContentArea from "./components/UserContentArea/UserContentArea";
 import RequireAuth from "./components/RequireAuth/RequireAuth"
+import {Toaster} from 'react-hot-toast';
 
 export default function App(){
     return(
@@ -30,6 +31,7 @@ export default function App(){
                     <Route path={"admin/*"} element={<AdminLayout />} />
                 </Route>
             </Routes>
+            <Toaster position="top-right"  gutter={25}/>
         </div>
     )
 }
