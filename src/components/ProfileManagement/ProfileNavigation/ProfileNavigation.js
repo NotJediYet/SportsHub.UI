@@ -1,6 +1,10 @@
 import React from "react";
 import './ProfileNavigation.scss'
-import {NavLink, Outlet} from "react-router-dom";
+import {NavLink, Route, Routes} from "react-router-dom";
+import PersonalInformation from "../PersonalInformation/PersonalInformation";
+import ChangePassword from "../ChangePassword/ChangePassword";
+import Surveys from "../Surveys/Surveys";
+import TeamHub from "../TeamHub/TeamHub";
 
 export default function ProfileNavigation() {
     const personalInformationActive = ({isActive}) => isActive ? "personal-active" : "options-personal";
@@ -16,7 +20,13 @@ export default function ProfileNavigation() {
                 <NavLink to={"surveys"} className={surveysOpenedActive}>My surveys</NavLink>
                 <NavLink to={"team-hub"} className={teamHubActive}>Team hub</NavLink>
             </span>
-            <Outlet/>
+            <Routes>
+                <Route index element={<PersonalInformation/>}/>
+                <Route path={"change-password"} element={<ChangePassword/>}/>
+                <Route path={"surveys"} element={<Surveys/>}/>
+                <Route path={"team-hub"} element={<TeamHub/>}/>
+            </Routes>
+
         </div>
     );
 }

@@ -1,0 +1,250 @@
+.admin-teams-table{
+  width: 1166px;
+  min-height: 649px;
+  padding-bottom: 226px;
+}
+
+.admin-teams-table .table-head{
+  background: #F2F2F2;
+  display: flex;
+  width: 100%;
+  height: 40px;
+}
+
+.admin-teams-table tr{
+  display: flex;
+  align-items: center;
+
+}
+
+.admin-teams-table table{
+  width: 100%;
+}
+
+.admin-teams-table .table-head td{
+  user-select: none;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-teams-table .table-head td p{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #434C5D;
+}
+
+.admin-teams-table .table-head td svg{
+  color: #B2B2B2;
+  width: 12px;
+  height: 10px;
+  margin-left: 10px;
+}
+
+.admin-teams-table .table-head td:nth-child(1){
+  margin-left: 35px;
+  cursor: pointer;
+}
+
+.admin-teams-table .table-head td:nth-child(2){
+  margin-left: 170px;
+  cursor: pointer;
+}
+
+.admin-teams-table .table-head td:nth-child(3){
+  margin-left: 160px;
+}
+
+.admin-teams-table .table-head td:nth-child(4){
+  margin-left: 108px;
+}
+
+.admin-teams-table .table-head td:nth-child(5){
+  margin-left: 108px;
+}
+
+.admin-teams-table .table-item{
+  height: 56px;
+  width: 100%;
+  border-bottom: 1px solid #D4D9E2;
+  border-left: 1px solid #D4D9E2;
+  border-right: 1px solid #D4D9E2;
+}
+
+.admin-teams-table .table-item:hover{
+  filter: drop-shadow(3px 2px 14px rgba(0, 0, 0, 0.09));
+  border: 0;
+  background: #FFFFFF;
+}
+
+.admin-teams-table .navigation{
+  height: 56px;
+  width: 100%;
+  border-bottom: 1px solid #D4D9E2;
+  border-left: 1px solid #D4D9E2;
+  border-right: 1px solid #D4D9E2;
+}
+
+.admin-teams-table .table-item td{
+  user-select: none;
+  height: 17px;
+  align-items: center;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2B2F43;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.admin-teams-table .table-item td:nth-child(1){
+  width: 217px;
+  margin-left: 35px;
+}
+
+.admin-teams-table .table-item td:nth-child(2){
+  margin-left: 13px;
+  width: 231px;
+}
+
+.admin-teams-table .table-item td:nth-child(3){
+  margin-left: 9px;
+  width: 169px;
+}
+
+.admin-teams-table .table-item td:nth-child(4){
+  margin-left: 14px;
+  width: 157px;
+}
+
+.admin-teams-table .table-item td:nth-child(5){
+  margin-left: 14px;
+  width: 169px;
+}
+
+.admin-teams-table .table-item td:nth-child(6){
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #D72130;
+  cursor: pointer;
+  user-select: none;
+}
+
+.admin-teams-table .table-item td:nth-child(7){
+  margin-left: 35px;
+}
+
+.admin-teams-table .navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-teams-table .teams-drop-down{
+  height: 24px;
+  width: 43px;
+}
+
+.admin-teams-table .teams-drop-down .teams-drop-down-button{
+  width: 43px;
+  height: 24px;
+}
+
+.admin-teams-table .teams-drop-down .teams-drop-down-button svg{
+  padding-right: 4px;
+  width: 12px;
+  height: 9px;
+  color: #8C9FB4;
+}
+
+.admin-teams-table .teams-drop-down .teams-drop-down-button p{
+  width: 45px;
+  padding-left: 7px;
+  font-family: 'Ek Mukta';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  color: #6F7983;
+  height: 24px;
+}
+
+.admin-teams-table .teams-drop-down .teams-drop-down-content{
+  width: 45px;
+  height: 24px;
+}
+
+.admin-teams-table .teams-drop-down .teams-drop-down-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-teams-table .results-per-page{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 22px;
+  width: 180px;
+}
+
+.admin-teams-table .results-per-page p{
+  user-select: none;
+  display: flex;
+  padding-left: 8px;
+  margin: 0;
+  height: 24px;
+  font-family: 'Ek Mukta';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  color: #B2BBC5;
+}
+
+.admin-teams-table .page-switch{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 29px;
+}
+
+.admin-teams-table .page-switch svg{
+  cursor: pointer;
+  width: 16px;
+  height: 22px;
+  color: #B2BBC5;
+}
+
+.admin-teams-table .page-switch div{
+  user-select: none;
+  width: 16px;
+  height: 22px;
+}
+
+.admin-teams-table .page-switch p:nth-child(2){
+  margin-left: 10px;
+}
+
+.admin-teams-table .page-switch p{
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Ek Mukta';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  color: #5C7694;
+  margin-right: 10px;
+}

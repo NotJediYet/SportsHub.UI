@@ -6,6 +6,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
 import { IconContext } from "react-icons";
+import {Link} from "react-router-dom";
 
 export default function AdminLeftSideBar() {
     return (
@@ -13,8 +14,8 @@ export default function AdminLeftSideBar() {
             <div className="content-vertical-menu">
                 <>
                     {
-                        VerticalMenuElements.map((arr) => 
-                            <SideBarIcon tooltip={arr.title} icon={arr.icon} />
+                        VerticalMenuElements.map((arr,index) =>
+                            <SideBarIcon key={index} tooltip={arr.title} icon={arr.icon} link={arr.link} />
                         )
                     }
                 </>
@@ -23,18 +24,21 @@ export default function AdminLeftSideBar() {
     );
 };
 
-export const SideBarIcon = ({ icon, tooltip }) => {
+export const SideBarIcon = ({ icon, tooltip, link}) => {
     return (
         <OverlayTrigger offset={[0,20]} placement={"right"} overlay={
-                <Tooltip>
-                    <span className="sidebar-tooltip">{tooltip}</span>
-                </Tooltip>
-            }>
-            <div aria-label="icons-div" className="sidebar-icon" >
-                <IconContext.Provider value={{ color: "#B2B2B2", size: "2em"}}>
-                    {icon}
-                </IconContext.Provider>
-            </div>
+            <Tooltip>
+                <span className="sidebar-tooltip">{tooltip}</span>
+            </Tooltip>
+        }>
+
+            <Link to={link} className="sidebar-icon" >
+                <div aria-label="icons-div">
+                    <IconContext.Provider value={{ color: "#B2B2B2", size: "2em"}}>
+                        {icon}
+                    </IconContext.Provider>
+                </div>
+            </Link>
         </OverlayTrigger>
     );
 };

@@ -2,6 +2,9 @@ import React from "react"
 import "./AdminHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 import Profile from '../Profile/Profile';
+import {Link} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
+import HeaderTeams from "../AdminTeams/AdminTeamsComponents/HeaderTeams/HeaderTeams";
 
 export default function AdminHeader() {
 
@@ -10,9 +13,9 @@ export default function AdminHeader() {
             <nav className="header-navbar">
                 <div className="navbar-logo">
                     <button className="button-sport-hub">
-                        <a href="/admin">
+                        <Link to="/admin">
                             Sports Hub
-                        </a>
+                        </Link>
                     </button>
                 </div>
                 <div className="navbar-divider"/>
@@ -24,7 +27,9 @@ export default function AdminHeader() {
                 </div>
             </nav>
             <div className="header-page-name">
-               Active configuration page name, CTA
+               <Routes>
+                   <Route path={"teams"} element={<HeaderTeams/>}/>
+               </Routes>
             </div>
             <div className="header-horisontal-menu">
                 Horisontal menu with static items

@@ -1,0 +1,89 @@
+.teams-drop-down{
+  user-select: none;
+  padding: 0;
+  width: 246px;
+  height: 36px;
+  margin: 0 auto;
+  border: 1px solid #D4D9E2;
+  position: relative;
+  box-shadow: 0 0 37px rgba(0, 0, 0, 0.09);
+}
+
+.teams-drop-down .teams-drop-down-button{
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  width: 246px;
+  margin-left: -1px;
+  height: 36px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.teams-drop-down .teams-drop-down-button svg{
+  width: 9px;
+  height: 9px;
+  padding-right: 15px;
+}
+
+.teams-drop-down .teams-drop-down-button p{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2B2F43;
+  padding-left: 13px;
+  z-index: 6;
+}
+
+.teams-drop-down .teams-drop-down-content{
+  z-index: 7;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2B2F43;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 248px;
+  margin-left: -1px;
+  margin-top: 1px;
+}
+
+.teams-drop-down .teams-drop-down-item{
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  margin: 0;
+  width: 100%;
+  height: 41px;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.teams-drop-down .teams-drop-down-item p{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  padding-left: 18px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #7F7B7B;
+  width: 248px;
+  height: 41px;
+}
+
+.teams-drop-down .teams-drop-down-item p:hover{
+  color: #D72130;
+  background: rgba(215, 33, 48, 0.11);
+}

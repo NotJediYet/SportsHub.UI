@@ -3,6 +3,7 @@ import "./UserHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 import Profile from '../Profile/Profile';
 import {useAuth0} from "@auth0/auth0-react";
+import {Link} from "react-router-dom";
 
 export default function UserHeader() {
     let isAdminLoggedIn = false;
@@ -18,9 +19,9 @@ export default function UserHeader() {
             <nav className="header-navbar">
                 <div className="navbar-logo">
                     <button className="button-sport-hub">
-                        <a href="/">
+                        <Link to="/">
                             Sports Hub
-                        </a>
+                        </Link>
                     </button>
                 </div>
                 <div className="navbar-search">Search</div>

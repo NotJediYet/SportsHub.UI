@@ -40,18 +40,6 @@ test("Switch button should be rendered", () => {
     expect(tooltips).toBeCalled;
 });
 
-test("Active configuration page name, CTA should be rendered", () => {
-    render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<AdminHeader />}/>
-            </Routes>
-        </BrowserRouter>
-    );
-    const pageNameElement = screen.getByText("Active configuration page name, CTA");
-    expect(pageNameElement).toBeInTheDocument();
-});
-
 test("Horisontal menu with static item should be rendered", () => {
     render(
         <BrowserRouter>
