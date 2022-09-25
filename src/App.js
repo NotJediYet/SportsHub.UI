@@ -5,9 +5,7 @@ import UserLayout from "./components/UserLayout/UserLayout";
 import AdminLayout from "./components/AdminLayout/AdminLayout";
 import ProfileNavigation from "./components/ProfileManagement/ProfileNavigation/ProfileNavigation";
 import UserContentArea from "./components/UserContentArea/UserContentArea";
-import RequireAuth from "./components/RequireAuth/RequireAuth";
-import AdminContentArea from "./components/AdminContentArea/AdminContentArea";
-import AdminTeamsLayout from "./components/AdminTeams/AdminTeamsLayout";
+import RequireAuth from "./components/RequireAuth/RequireAuth"
 import {Toaster} from 'react-hot-toast';
 
 export default function App(){

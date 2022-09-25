@@ -1,0 +1,233 @@
+.item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 36px;
+  border: 0.5px solid #D4D9E2;
+  color: #B2B2B2;
+  user-select: none;
+}
+
+.item-left-part {
+  width: 16%;
+  min-width: 20px;
+  height: 100%;
+}
+
+.item-button {
+  position: absolute;
+  left: 1px;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 26px;
+  height: 100%;
+  border: none;
+}
+
+.item-menu-button {
+  position: absolute;
+  left: 133px;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 26px;
+  height: 100%;
+  background: #FFFEFE;
+  border: none;
+}
+
+.item-icon {
+  margin-bottom: 7px;
+  margin-top: 7px;
+  background-color: transparent;
+}
+
+.item-icon-left-part {
+  position: absolute;
+  color: #B2B2B2;
+  left: 1px;
+  top: 0;
+}
+
+.item-icon-right-part {
+  position: absolute;
+  color: #B2B2B2;
+  left: 9px;
+  top: 0;
+}
+
+.menu-icon {
+  z-index: 1;
+  cursor: pointer;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-right: 5px;
+}
+.menu-navbar-icon {
+  left: 130px;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-right: 5px;
+}
+
+.item-name {
+  position: absolute;
+  left: 25px;
+  margin: 0;
+  width: 68%;
+  height: 36px;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-size: 14px;
+  text-align: center;
+  line-height: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-name {
+  @extend .item-name;
+  font-weight: 700;
+}
+
+.subcategory-team-name {
+  @extend .item-name;
+  font-weight: 400;
+}
+
+.dropDown-wrapper {
+  position: relative;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  box-shadow: rgba(0, 0, 0, 0.0949246);
+}
+
+.subcategories-wrapper {
+  position: relative;
+}
+
+.dropDown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 168px;
+  box-shadow: 0 0 17px #00000017;
+  background: #FFFFFF;
+}
+
+.dropDown-menu {
+  @extend .dropDown;
+  z-index: 2;
+  left: 123px;
+}
+
+.dropDown-categories {
+  @extend .dropDown;
+  z-index: 3;
+  top: 37px;
+  left: 168px;
+}
+
+.dropDown-subcategories {
+  @extend .dropDown;
+  z-index: 4;
+  top: -1px;
+  left: 168px;
+}
+
+.dropDown-menu-element {
+  position: relative;
+  color: #B2B2B2;
+  border: 1px solid white;
+  padding: 0;
+  width: 168px;
+  height: 39px;
+  border-radius: 0;
+  text-align: center;
+}
+
+.dropDown-menu-element:hover {
+  color: #D72130;
+  background: rgba(215, 33, 48, 0.11);
+}
+
+.dropDown-menu-element > h2 {
+  margin-left: 25px;
+  text-align: left;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.dropDown-menu-button {
+  z-index: 1;
+  margin-left: 10px;
+  padding: 0;
+  height: 36px;
+  width: 16%;
+  min-width: 20px;
+  background: #FFFEFE;
+  border: none;
+}
+
+.hiddenLabel {
+  position: absolute;
+  top: 11px;
+  left: 4px;
+  width: 34px;
+  height: 14px;
+  background: rgba(196, 196, 196, 0.3);
+  border-radius: 50px;
+  margin: 0;
+}
+
+.hiddenLabel > h3 {
+  text-align: center;
+  margin: 0;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.move-to-text {
+  width: 80%;
+}
+
+.move-to-icon {
+  position: absolute;
+  top: 13px;
+  left: 140px;
+  width: 20%;
+}
+
+.items-name {
+  width: 75%;
+  text-align: center;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.items-name:hover {
+  color: #D72130;
+}

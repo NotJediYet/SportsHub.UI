@@ -2,8 +2,8 @@ import React from "react"
 import "./AdminHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 import Profile from '../Profile/Profile';
-import {Link} from "react-router-dom";
-import {Route, Routes} from "react-router-dom";
+import IAHeader from "../AdminContextAreaManagement/InformationArchitecture/IAComponents/IAHeader/IAHeader";
+import {Link, Route, Routes} from "react-router-dom";
 import HeaderTeams from "../AdminTeams/AdminTeamsComponents/HeaderTeams/HeaderTeams";
 
 export default function AdminHeader() {
@@ -27,9 +27,10 @@ export default function AdminHeader() {
                 </div>
             </nav>
             <div className="header-page-name">
-               <Routes>
-                   <Route path={"teams"} element={<HeaderTeams/>}/>
-               </Routes>
+                <Routes>
+                    <Route path={"information-architecture"} element={<IAHeader/>}/>
+                    <Route path={"teams"} element={<HeaderTeams/>}/>
+                </Routes>
             </div>
             <div className="header-horisontal-menu">
                 Horisontal menu with static items
