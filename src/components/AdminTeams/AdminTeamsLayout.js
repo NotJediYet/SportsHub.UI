@@ -84,6 +84,10 @@ export default function AdminTeamsLayout(){
         }
     }, [teams]);
 
+    useEffect(() => {
+        setSelectedSubCategory({name:"All"})
+    }, [selectedCategory]);
+
     function SetDefaultFields() {
         setSelectedCategory({name: "All"});
         setSelectedSubCategory({name: "All"});

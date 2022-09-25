@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export const Context = React.createContext();
 export const ContextProvider = ({ children }) => {
-    const [applyTeamButtonText, setApplyTeamButtonText] = useState("Apply");
+    const [teamsButtonText, setTeamsButtonText] = useState("Apply");
     const [AISaveButtonClicked, setAISaveButtonClicked] = useState(false);
 
     return (
