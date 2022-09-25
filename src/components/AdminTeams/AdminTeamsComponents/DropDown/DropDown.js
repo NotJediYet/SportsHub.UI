@@ -5,7 +5,6 @@ import "./DropDown.scss";
 export default function DropDown(props){
     const[isActive, setIsActive] = useState(false);
 
-
     function useOutsideAlerter(ref) {
         useEffect(() => {
             function handleClickOutside(event) {

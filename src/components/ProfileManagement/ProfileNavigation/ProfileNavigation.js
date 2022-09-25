@@ -26,7 +26,6 @@ export default function ProfileNavigation() {
                 <Route path={"surveys"} element={<Surveys/>}/>
                 <Route path={"team-hub"} element={<TeamHub/>}/>
             </Routes>
-
         </div>
     );
 }
