@@ -27,18 +27,18 @@ export default function AdminLeftSideBar() {
 export const SideBarIcon = ({ icon, tooltip, link}) => {
     return (
         <OverlayTrigger offset={[0,20]} placement={"right"} overlay={
-                <Tooltip>
-                    <span className="sidebar-tooltip">{tooltip}</span>
-                </Tooltip>
-            }>
+            <Tooltip>
+                <span className="sidebar-tooltip">{tooltip}</span>
+            </Tooltip>
+        }>
 
-            <div className="sidebar-icon" >
-                <Link to={link} aria-label="icons-div">
+            <Link to={link} className="sidebar-icon" >
+                <div aria-label="icons-div">
                     <IconContext.Provider value={{ color: "#B2B2B2", size: "2em"}}>
                         {icon}
                     </IconContext.Provider>
-                </Link>
-            </div>
+                </div>
+            </Link>
         </OverlayTrigger>
     );
 };

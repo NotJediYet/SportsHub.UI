@@ -41,7 +41,7 @@ export const VerticalMenuElements = [
     {
         title: "Teams",
         icon: <BiCollection style = {{transform: 'rotate(180deg)' }}/>,
-        link: ""
+        link: "teams"
     },
     {
         title: "News Partners",

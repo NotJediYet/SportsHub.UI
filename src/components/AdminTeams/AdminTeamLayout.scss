@@ -1,0 +1,255 @@
+.admin-team-layout-container{
+  margin-left: 100px;
+  margin-top: 300px;
+}
+
+.changable-params{
+  display: flex;
+  flex-direction: row;
+}
+
+.changable-params > div {
+  width: 246px;
+  height: 36px;
+  background: #FFFFFF;
+  border: 1px solid #D4D9E2;
+}
+
+.teams-container{
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.teams-container > div > p{
+  width: 250px;
+}
+
+.teams-container > div{
+  align-items: center;
+  display: flex;
+}
+
+.teams-container > div > p:last-child{
+  margin-left: 20px;
+  height: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #D72130;
+}
+
+.changable-params > div:nth-child(5){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: red;
+  cursor: pointer;
+}
+
+.admin-teams-layout-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1165px;
+  margin-top: 262px;
+}
+
+@media screen and (max-width: 1360px) {
+  .admin-teams-layout-container {
+    min-width: 1020px;
+  margin-left: 173px;
+  }
+}
+
+.teams-location-map{
+  min-width: 861px;
+  height: 578px;
+  display: flex;
+  background: lightgray;
+}
+
+.create-team-container{
+  padding-bottom: 80px;
+  display: flex;
+}
+
+.create-team-inputs{
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  filter: drop-shadow(-1px 3px 14px rgba(0, 0, 0, 0.07));
+  width: 304px;
+  height: 578px;
+  align-items: center;
+}
+
+.create-team-inputs > label{
+  align-self: normal;
+  margin-left: 29px;
+  margin-bottom: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: #7F8899;
+  margin-top: 18px;
+}
+
+#select-location-for-team{
+  display: flex;
+  align-items: center;
+  height: 36px;
+  width: 246px;
+  background: white;
+  border: 1px solid #D4D9E2;
+  box-shadow: 0 0 37px rgba(0, 0, 0, 0.09);
+}
+
+#select-location-for-team p{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2B2F43;
+  user-select: none;
+  padding-left: 13px;
+}
+
+.upload-team-logo-container{
+  margin-top: 25px;
+}
+
+#select-team-name{
+  padding-left: 13px;
+  height: 36px;
+  width: 246px;
+  background: #FFFFFF;
+  box-shadow: 0 0 37px rgba(0, 0, 0, 0.09);
+  display: flex;
+  align-items: center;
+  outline: none !important;
+  border: 1px solid #D4D9E2;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  color: #000000;
+}
+
+#select-team-name::placeholder{
+  line-height: 16px;
+  color: #C6CCD7;
+}
+
+.create-team-logo-image{
+  border: 1px dashed #D1D1D1;
+  width: 244px;
+  height: 155px;
+}
+
+.create-team-logo-input-button{
+  border: 1px dashed #D1D1D1;
+  width: 246px;
+  height: 155px;
+  background: #EFEFEF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.create-team-logo-input-button > div{
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+}
+
+.create-team-logo-input-button > div > p:nth-child(1){
+  color: #D72130;
+}
+
+.create-team-logo-input-button > div > p:nth-child(2){
+  margin-left: 4px;
+}
+
+.create-team-logo-input-button > div > p{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+}
+
+.upload-team-logo-container{
+  width: 246px;
+  height: 155px;
+}
+
+.create-team-logo-input-svg {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #D72130;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-team-logo-input-svg > svg {
+  height: 23px;
+  width: 28px;
+  z-index: 3;
+  color: white;
+}
+
+.create-team-apply-button{
+  background: #D72130;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 246px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+.create-team-cancel-button{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #D72130;
+  margin-top: 9px;
+  cursor: pointer;
+  margin-bottom: 27px;
+  user-select: none;
+}

@@ -3,7 +3,8 @@ import "./AdminHeader.scss"
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
 import Profile from '../Profile/Profile';
 import IAHeader from "../AdminContextAreaManagement/InformationArchitecture/IAComponents/IAHeader/IAHeader";
-import {Route, Routes} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
+import HeaderTeams from "../AdminTeams/AdminTeamsComponents/HeaderTeams/HeaderTeams";
 
 export default function AdminHeader() {
 
@@ -12,9 +13,9 @@ export default function AdminHeader() {
             <nav className="header-navbar">
                 <div className="navbar-logo">
                     <button className="button-sport-hub">
-                        <a href="/admin">
+                        <Link to="/admin">
                             Sports Hub
-                        </a>
+                        </Link>
                     </button>
                 </div>
                 <div className="navbar-divider"/>
@@ -28,6 +29,7 @@ export default function AdminHeader() {
             <div className="header-page-name">
                 <Routes>
                     <Route path={"information-architecture"} element={<IAHeader/>}/>
+                    <Route path={"teams"} element={<HeaderTeams/>}/>
                 </Routes>
             </div>
             <div className="header-horisontal-menu">
