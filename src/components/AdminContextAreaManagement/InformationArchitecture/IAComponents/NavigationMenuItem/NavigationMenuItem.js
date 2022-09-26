@@ -7,7 +7,7 @@ import {GoTriangleRight} from "react-icons/go";
 
 export default function NavigationMenuItem(
     {itemType, isActive, onPressChangeVisibility, item, onPressLoadItems,
-        isOverDrag, isStartDrag, changeDraggable, categories, moveItem}) {
+        isOverDrag, isStartDrag, changeDraggable, categories, AllSubcategories, moveItem}) {
 
     const [isItemHovering, setIsItemHovering] = useState(false);
     const [isMoveToHovering, setMoveToHovering] = useState(false);
@@ -79,7 +79,7 @@ export default function NavigationMenuItem(
                 setSubcategories([]);
             } else {
                 setActiveClickCategory(id);
-                setSubcategories(subcategories.filter(item => item.categoryId === id));
+                setSubcategories(AllSubcategories.filter(item => item.categoryId === id));
             }
         }
     }
@@ -180,7 +180,7 @@ export default function NavigationMenuItem(
                                             )}
                                             {(activeClickCategory === c.id && itemType === "team") && (
                                                 <div className="dropDown-subcategories">
-                                                    {subcategories.filter(item => item.id !== item.subcategoryId)
+                                                    {subcategories.filter(element => element.id !== item.subcategoryId)
                                                         .map((s, index) =>
                                                             <div className="dropDown-menu-element" key={index}
                                                                  onClick={(e) => handleSubcategoryClick(e, s.id)}>
