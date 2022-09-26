@@ -159,6 +159,8 @@ export default function InformationArchitecturePage() {
             movedItem = {...currentItem.item, subcategoryId: item.id, orderIndex: newOrderIndex};
         } else if (itemType === "category") {
             movedItem = {...currentItem.item, categoryId: item.id, orderIndex: newOrderIndex};
+            setTeams([])
+            setActiveSubcategory({id: -1, index: -1})
         }
 
         itemsStates[currentItem.type].setItems(itemsStates[currentItem.type].items
@@ -347,7 +349,7 @@ export default function InformationArchitecturePage() {
                                     <NavigationMenuItem key={index} item = {x} itemType="team" isOverDrag = {dragOverItemId === x.id}
                                                         onPressChangeVisibility={() => changeItemVisibility("team", x)}
                                                         isStartDrag={currentItem !== {} ? currentItem.item.id === x.id : false}
-                                                        categories={categories} subcategories = {subcategories}
+                                                        categories={categories} AllSubcategories = {subcategories}
                                                         moveItem = {moveItem} changeDraggable = {setIsDragAvailable}/>
                                 </div>
                             )}
