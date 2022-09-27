@@ -87,7 +87,7 @@ export default function AdminTeamsLayout(){
     useEffect(() => {
         if (teamsButtonText !== "Save")
             setSelectedSubCategory({name:"All"})
-    }, [selectedCategory]);
+    }, [selectedCategory, teamsButtonText]);
 
     function SetDefaultFields() {
         setSelectedCategory({name: "All"});
