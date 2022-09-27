@@ -37,7 +37,6 @@ export default class TeamService {
     editTeam(data){
         const method = "PUT";
         return this.request(urls.teamsEndpoint, method, data)
-            .then(res => {if (!res.ok) return Promise.reject(res.status)})
-            .catch(error => console.log(error));
+            .then(res => res.ok ? res.ok : Promise.reject(res.status))
     }
 }

@@ -34,6 +34,7 @@ export default function AdminTeamsLayout(){
     const [selectedSubCategory, setSelectedSubCategory] = useState({name: "All"});
     const [selectedLocation, setSelectedLocation] = useState("All");
     const [selectedTeamName, setSelectedTeamName] = useState("");
+    const [previousSelectedCategory, setPreviousSelectedCategory] = useState();
 
     useEffect(() => {
         (async () => {
@@ -83,11 +84,16 @@ export default function AdminTeamsLayout(){
             setSuggestions(temp);
         }
     }, [teams]);
-
+    console.log(selectedSubCategory.name)
     useEffect(() => {
         if (teamsButtonText !== "Save")
             setSelectedSubCategory({name:"All"})
-    }, [selectedCategory, teamsButtonText]);
+        else if(selectedCategory.id !== previousSelectedCategory.id) {
+            setSelectedSubCategory({name: "All"});
+            setPreviousSelectedCategory(selectedCategory);
+
+        }
+    }, [selectedCategory, teamsButtonText, previousSelectedCategory]);
 
     function SetDefaultFields() {
         setSelectedCategory({name: "All"});
@@ -208,7 +214,7 @@ export default function AdminTeamsLayout(){
                    <p className={"create-team-cancel-button"} style={{opacity: teamsButtonText === "Apply" ? "0.5" : "1", cursor: teamsButtonText === "Apply" ? "auto" : "pointer" }} onClick={() => {SetDefaultFields(); setTeamsButtonText("Apply")}}>Cancel</p>
                </div>
            </div>
-            <TeamTable setIsShownImage={setIsShownImage} setIsFilePicked={setIsFilePicked} setFile={setFile} setImage={setImage} teamService={teamService} setSelectedTeamId={setSelectedTeamId} setTeamsButtonText={setTeamsButtonText} teamsButtonText={teamsButtonText} fullTeamInfo={fullTeamInfo} setSelectedTeamName={setSelectedTeamName} setSelectedLocation={setSelectedLocation} setSelectedSubCategory={setSelectedSubCategory} setSelectedCategory={setSelectedCategory}/>
+            <TeamTable setPreviousSelectedCategory={setPreviousSelectedCategory} setIsShownImage={setIsShownImage} setIsFilePicked={setIsFilePicked} setFile={setFile} setImage={setImage} teamService={teamService} setSelectedTeamId={setSelectedTeamId} setTeamsButtonText={setTeamsButtonText} teamsButtonText={teamsButtonText} fullTeamInfo={fullTeamInfo} setSelectedTeamName={setSelectedTeamName} setSelectedLocation={setSelectedLocation} setSelectedSubCategory={setSelectedSubCategory} setSelectedCategory={setSelectedCategory}/>
        </div>
     )
 }
