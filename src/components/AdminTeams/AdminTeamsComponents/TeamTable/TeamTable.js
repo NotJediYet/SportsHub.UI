@@ -36,7 +36,7 @@ export default function TeamTable({setIsShownImage, setIsFilePicked, setFile, se
         setIsFilePicked(false);
         setIsShownImage(false);
         if (item.teamLogo){
-            setImage(`data:${item.teamLogo.fileExtension};base64,${item.teamLogo.bytes}`);
+            setImage(`data:teamLogo/${item.teamLogo.fileExtension.slice(1)};base64,${item.teamLogo.bytes}`);
             setIsFilePicked(true);
             setIsShownImage(true);
         }
