@@ -34,15 +34,13 @@ export default class TeamService {
         const method = 'POST';
 
         return this.request(urls.teamsEndpoint, method, data)
-            .then(res => {if (!res.ok) return Promise.reject(res.status)})
-            .catch(error => console.log(error));
+            .then(res => {if (!res.ok) return Promise.reject(res.status)});
     }
 
     editTeam(data) {
         const method = 'PUT';
 
         return this.request(urls.teamsEndpoint, method, data)
-            .then(res => {if (!res.ok) return Promise.reject(res.status)})
-            .catch(error => console.log(error));
+            .then(res => {if (!res.ok) return Promise.reject(res.status)});
     }
 }
