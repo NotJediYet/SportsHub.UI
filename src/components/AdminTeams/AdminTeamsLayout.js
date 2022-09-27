@@ -91,7 +91,6 @@ export default function AdminTeamsLayout(){
         else if(selectedCategory.id !== previousSelectedCategory.id) {
             setSelectedSubCategory({name: "All"});
             setPreviousSelectedCategory(selectedCategory);
-
         }
     }, [selectedCategory, teamsButtonText, previousSelectedCategory]);
 
