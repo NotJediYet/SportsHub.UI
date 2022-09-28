@@ -78,12 +78,12 @@ export default function ArticleActionMenu() {
                             <BsFillCaretRightFill />
                         </a>
                         <ul>
-                            <li tabindex="1"><a href='/#'>Delete</a></li>
-                            <li tabindex="1"><a href='/#'>Delete</a></li>
-                            <li tabindex="1"><a href='/#'>Delete</a></li>
-                            <li tabindex="1"><a href='/#'>Delete</a></li>
-                            <li tabindex="1"><a href='/#'>Delete</a></li>
-                            <li tabindex="1"><a href='/#'>Delete</a></li>
+                            <li tabindex="1"><a href='/#'>NFL</a></li>
+                            <li tabindex="1"><a href='/#'>MLB</a></li>
+                            <li tabindex="1"><a href='/#'>NHL</a></li>
+                            <li tabindex="1"><a href='/#'>CBB</a></li>
+                            <li tabindex="1"><a href='/#'>CFB</a></li>
+                            <li tabindex="1"><a href='/#'>NASCAR</a></li>
                         </ul>
                     </li>
                 </ul>
