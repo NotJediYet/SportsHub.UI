@@ -1,4 +1,4 @@
-const baseURL =  process.env.REACT_APP_SERVER_URL_LOCAL;
+const baseURL =  process.env.REACT_APP_SERVER_URL;
 
 export const urls = {
     categoriesEndpoint: `${baseURL}api/Categories`,
