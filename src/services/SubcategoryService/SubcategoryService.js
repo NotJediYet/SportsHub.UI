@@ -43,4 +43,11 @@ export default class SubcategoryService {
         return this.request(urls.subcategoriesEndpoint, method, data)
             .then(res => {if (!res.ok) return Promise.reject(res.status)});
     }
+
+    getSubcategoriesByCategoryId(categoryId) {
+        const method = 'GET';
+        return this.request(urls.subcategoriesEndpoint, method).then(res => res.json()
+            .then(data => data.filter(item => item.categoryId === categoryId).reverse())
+        );
+    }
 }
