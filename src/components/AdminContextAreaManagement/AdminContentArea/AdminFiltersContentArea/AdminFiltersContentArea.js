@@ -10,8 +10,8 @@ import TeamService from "../../../../services/TeamService/TeamService";
 
 
 function AdminFiltersContentArea()  {
-    const categoryId = "7550c17f-69c4-4e69-e5ce-08da98a86b2f";
-    const categoryName = "Category1";
+    const categoryId = "0c4fc852-b12d-45a4-5dbd-08daa11db074";
+    const categoryName = "sub";
     const objArticlesStatus = [
         { name: 'Published', id: '1' },
         { name: 'Unpublished', id: '2' },
@@ -56,7 +56,9 @@ function AdminFiltersContentArea()  {
                     if (filterSubcategoriesValue === "All Subcategories") {
                         teamService.getTeams().then(teams => {setTeams(filterTeams(teams, subcategories));
                             filterArticlesService.getFilterArticles(categoryName,filterSubcategoriesValue, filterTeamsValue, filterStatusValue)
-                                .then(articlesOld => {setFilteredArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue));
+                                .then(articlesOld => {
+                                    console.log("--all");  console.log(articlesOld);
+                                    setFilteredArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue));
                                 setArticles(getNewArticles(articlesOld,subcategories,teams,filterSubcategoriesValue, filterTeamsValue))})
                         });
                     } else {
@@ -147,7 +149,7 @@ function AdminFiltersContentArea()  {
         this.content = articlesOld.content;
         this.isPublished = articlesOld.isPublished;
         this.isShowComments = articlesOld.isShowComments;
-        this.image = articlesOld.image;
+        this.image = `data:ArticleImage/${articlesOld.image.fileExtension.slice(1)};base64,${articlesOld.image.bytes}`;
         this.subcategoryName = subcategoryName;
         this.teamName = teamName;
     }
