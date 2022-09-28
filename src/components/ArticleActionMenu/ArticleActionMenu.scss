@@ -1,11 +1,13 @@
 .article-action-menu-container {
     position: absolute;
-    z-index: 2;
 
     display: block;
     background: #FFFFFF;
     box-shadow: 0px 0px 37px 0px #00000017;
     width: 110px;
+    top: -16px;
+    left: -42px;
+    
 
     ul {
         padding: 0;
@@ -17,7 +19,7 @@
             width: inherit;
             position: relative;
             
-            a {
+            label {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -55,7 +57,7 @@
                     top: 0;
                     left: 110px;
 
-                    a  {
+                    label  {
                         display: block;
                         overflow: hidden;
                         white-space: nowrap;

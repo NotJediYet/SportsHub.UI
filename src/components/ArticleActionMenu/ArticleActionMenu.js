@@ -11,14 +11,14 @@ import SuccessToast from "../Toasts/SuccessToast/SuccessToast";
 import FailureToast from "../Toasts/FailureToast/FailureToast";
 import { toast } from "react-hot-toast";
 
-export default function ArticleActionMenu() {
+export default function ArticleActionMenu({article}) {
     const [ modalOpen, setModalOpen ] = useState(false);
     const [ articleService, setArticleService ] = useState(null);
     const { getAccessTokenSilently } = useAuth0();
     const closeModal = () => setModalOpen(false);
     const openModal = () => setModalOpen(true);
     const deleteArticle = () => {
-        articleService.delete("0e745e78-22d0-4eb0-e034-08da8cbda82b")
+        articleService.delete(article.id)
         .then(
             (res) => toast.custom(
                 (t) => <SuccessToast
@@ -28,7 +28,7 @@ export default function ArticleActionMenu() {
                 />
             )
         )
-        .catch(
+        .catch((error) =>
             toast.custom(
                 (t) => <FailureToast
                     t={t}
@@ -70,20 +70,20 @@ export default function ArticleActionMenu() {
                     </IconContext.Provider>
                 </div>
                 <ul>
-                    <li tabindex="1"><a href='/#'>Unpublish</a></li>
-                    <li tabindex="1"><a href='/#' onClick={() => (modalOpen ? closeModal() : openModal())}>Delete</a></li>
-                    <li tabindex="1">
-                        <a href='/#'>
+                    <li tabIndex="1"><label>Unpublish</label></li>
+                    <li tabIndex="1"><label onClick={() => (modalOpen ? closeModal() : openModal())}>Delete</label></li>
+                    <li tabIndex="1">
+                        <label>
                             Move
                             <BsFillCaretRightFill />
-                        </a>
+                        </label>
                         <ul>
-                            <li tabindex="1"><a href='/#'>NFL</a></li>
-                            <li tabindex="1"><a href='/#'>MLB</a></li>
-                            <li tabindex="1"><a href='/#'>NHL</a></li>
-                            <li tabindex="1"><a href='/#'>CBB</a></li>
-                            <li tabindex="1"><a href='/#'>CFB</a></li>
-                            <li tabindex="1"><a href='/#'>NASCAR</a></li>
+                            <li tabindex="1"><label>NFL</label></li>
+                            <li tabindex="1"><label>MLB</label></li>
+                            <li tabindex="1"><label>NHL</label></li>
+                            <li tabindex="1"><label>CBB</label></li>
+                            <li tabindex="1"><label>CFB</label></li>
+                            <li tabindex="1"><label>NASCAR</label></li>
                         </ul>
                     </li>
                 </ul>
