@@ -34,15 +34,13 @@ export default class SubcategoryService {
         const method = 'POST';
 
         return this.request(urls.subcategoriesEndpoint, method, data)
-            .then(res => {if (!res.ok) return Promise.reject(res.status)})
-            .catch(error => console.log(error));
+            .then(res => {if (!res.ok) return Promise.reject(res.status)});
     }
 
     editSubcategory(data) {
         const method = 'PUT';
 
         return this.request(urls.subcategoriesEndpoint, method, data)
-            .then(res => {if (!res.ok) return Promise.reject(res.status)})
-            .catch(error => console.log(error));
+            .then(res => {if (!res.ok) return Promise.reject(res.status)});
     }
 }

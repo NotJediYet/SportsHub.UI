@@ -6,7 +6,7 @@ import DropDown from "../DropDown/DropDown";
 import {BsChevronLeft, BsChevronRight} from "react-icons/bs";
 import {FaTrash} from "react-icons/fa"
 
-export default function TeamTable({setIsShownImage, setIsFilePicked, setFile, setImage, teamService, setSelectedTeamId, setTeamsButtonText, teamsButtonText, fullTeamInfo, setSelectedTeamName, setSelectedLocation, setSelectedSubCategory, setSelectedCategory}){
+export default function TeamTable({setPreviousSelectedCategory, setIsShownImage, setIsFilePicked, setFile, setImage, teamService, setSelectedTeamId, setTeamsButtonText, teamsButtonText, fullTeamInfo, setSelectedTeamName, setSelectedLocation, setSelectedSubCategory, setSelectedCategory}){
     const [idOfHoveredElement, setIdOfHoveredElement] = useState();
     function renderTeams(teams) {
         let newTeams;
@@ -36,12 +36,13 @@ export default function TeamTable({setIsShownImage, setIsFilePicked, setFile, se
         setIsFilePicked(false);
         setIsShownImage(false);
         if (item.teamLogo){
-            setImage(`data:${item.teamLogo.fileExtension};base64,${item.teamLogo.bytes}`);
+            setImage(`data:teamLogo/${item.teamLogo.fileExtension.slice(1)};base64,${item.teamLogo.bytes}`);
             setIsFilePicked(true);
             setIsShownImage(true);
         }
         setTeamsButtonText("Save");
         setSelectedTeamId(item.id);
+        setPreviousSelectedCategory(item.category)
         setFile(item.teamLogo);
         setSelectedTeamName(item.name);
         setSelectedCategory(item.category);

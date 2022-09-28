@@ -33,15 +33,13 @@ export default class CategoryService {
         const method = 'POST';
 
         return this.request(urls.categoriesEndpoint, method, data)
-            .then(res =>  {if (!res.ok) return Promise.reject(res.status)})
-            .catch(error => console.log(error));
+            .then(res =>  {if (!res.ok) return Promise.reject(res.status)});
     }
 
     editCategory(data) {
         const method = 'PUT';
 
         return this.request(urls.categoriesEndpoint, method, data)
-            .then(res =>  {if (!res.ok) return Promise.reject(res.status)})
-            .catch(error => console.log(error));
+            .then(res =>  {if (!res.ok) return Promise.reject(res.status)});
     }
 }

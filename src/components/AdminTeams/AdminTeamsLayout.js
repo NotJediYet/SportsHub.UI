@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import "./AdminTeamLayout.scss"
 import {useAuth0} from "@auth0/auth0-react";
-import CategoryService from "../../services/CategoryServices/CategoryServices";
-import SubcategoryService from "../../services/SubCategoryServices/SubCategoryServices";
-import TeamService from "../../services/TeamServices/TeamServices";
+import CategoryService from "../../services/CategoryService/CategoryService";
+import SubcategoryService from "../../services/SubcategoryService/SubcategoryService";
+import TeamService from "../../services/TeamService/TeamService";
 import {MdPhotoCamera} from 'react-icons/md';
 import Map from "./AdminTeamsComponents/Map/Map";
 import DropDown from "./AdminTeamsComponents/DropDown/DropDown";
@@ -34,6 +34,7 @@ export default function AdminTeamsLayout(){
     const [selectedSubCategory, setSelectedSubCategory] = useState({name: "All"});
     const [selectedLocation, setSelectedLocation] = useState("All");
     const [selectedTeamName, setSelectedTeamName] = useState("");
+    const [previousSelectedCategory, setPreviousSelectedCategory] = useState();
 
     useEffect(() => {
         (async () => {
@@ -41,7 +42,7 @@ export default function AdminTeamsLayout(){
                 const categoryService = new CategoryService(token);
                 const subCategoryService = new SubcategoryService(token);
                 const teamService = new TeamService(token);
-                subCategoryService.getSubCategories().then(data => setSubCategories(data));
+                subCategoryService.getSubcategories().then(data => setSubCategories(data));
                 categoryService.getCategories().then(data => setCategories(data));
                 teamService.getTeams().then(data => setTeams(data));
                 setSubCategoryService(subCategoryService);
@@ -72,7 +73,7 @@ export default function AdminTeamsLayout(){
                     subcategory: subCategories.find((item) => item.id === key.subcategoryId),
                     teamLogo: key.teamLogo
                 })
-            ));
+            ).reverse());
         }
     }, [teams, categories, subCategories]);
 
@@ -85,8 +86,13 @@ export default function AdminTeamsLayout(){
     }, [teams]);
 
     useEffect(() => {
-        setSelectedSubCategory({name:"All"})
-    }, [selectedCategory]);
+        if (teamsButtonText !== "Save")
+            setSelectedSubCategory({name:"All"})
+        else if(selectedCategory.id !== previousSelectedCategory.id) {
+            setSelectedSubCategory({name: "All"});
+            setPreviousSelectedCategory(selectedCategory);
+        }
+    }, [selectedCategory, teamsButtonText, previousSelectedCategory]);
 
     function SetDefaultFields() {
         setSelectedCategory({name: "All"});
@@ -127,7 +133,7 @@ export default function AdminTeamsLayout(){
             )
             .then(() => {
                 teamService.getTeams().then(data => setTeams(data));
-                subCategoryService.getSubCategories().then(data => setSubCategories(data));
+                subCategoryService.getSubcategories().then(data => setSubCategories(data));
                 categoryService.getCategories().then(data => setCategories(data));});
     }
 
@@ -159,7 +165,7 @@ export default function AdminTeamsLayout(){
             )
             .then(() => {
                 teamService.getTeams().then(data => setTeams(data));
-                subCategoryService.getSubCategories().then(data => setSubCategories(data));
+                subCategoryService.getSubcategories().then(data => setSubCategories(data));
                 categoryService.getCategories().then(data => setCategories(data));});
     }
 
@@ -207,7 +213,7 @@ export default function AdminTeamsLayout(){
                    <p className={"create-team-cancel-button"} style={{opacity: teamsButtonText === "Apply" ? "0.5" : "1", cursor: teamsButtonText === "Apply" ? "auto" : "pointer" }} onClick={() => {SetDefaultFields(); setTeamsButtonText("Apply")}}>Cancel</p>
                </div>
            </div>
-            <TeamTable setIsShownImage={setIsShownImage} setIsFilePicked={setIsFilePicked} setFile={setFile} setImage={setImage} teamService={teamService} setSelectedTeamId={setSelectedTeamId} setTeamsButtonText={setTeamsButtonText} teamsButtonText={teamsButtonText} fullTeamInfo={fullTeamInfo} setSelectedTeamName={setSelectedTeamName} setSelectedLocation={setSelectedLocation} setSelectedSubCategory={setSelectedSubCategory} setSelectedCategory={setSelectedCategory}/>
+            <TeamTable setPreviousSelectedCategory={setPreviousSelectedCategory} setIsShownImage={setIsShownImage} setIsFilePicked={setIsFilePicked} setFile={setFile} setImage={setImage} teamService={teamService} setSelectedTeamId={setSelectedTeamId} setTeamsButtonText={setTeamsButtonText} teamsButtonText={teamsButtonText} fullTeamInfo={fullTeamInfo} setSelectedTeamName={setSelectedTeamName} setSelectedLocation={setSelectedLocation} setSelectedSubCategory={setSelectedSubCategory} setSelectedCategory={setSelectedCategory}/>
        </div>
     )
 }
