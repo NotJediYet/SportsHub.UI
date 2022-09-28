@@ -7,9 +7,9 @@ import "./MultiSelectDropdown.scss";
 
 export default function MultiSelectDropdown({optionName, options, optionKeyToShow, optionKeyToSelect, optionKeyToDisable, setOptionsToUpdate}) {
     const [isExpanded, setIsExpanded] = useState(true);
+    const [tmpOptions, setTmpOptions] = useState(options);
     const [optionsToShow, setOptionsToShow] = useState(options);
     const [selectedOptions, setSelectedOptions] = useState(optionsToShow.filter(option => { return option[optionKeyToSelect] }));
-    const [tmpOptions, setTmpOptions] = useState(options);
 
     useEffect(() => {
         setOptionsToUpdate(tmpOptions)

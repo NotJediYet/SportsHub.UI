@@ -10,6 +10,7 @@ export default function LCHeader(){
     const [ modalOpen, setModalOpen ] = useState(false);
     const closeModal = () => setModalOpen(false);
     const openModal = () => setModalOpen(true);
+    
     return(
         <>
             <AnimatePresence
