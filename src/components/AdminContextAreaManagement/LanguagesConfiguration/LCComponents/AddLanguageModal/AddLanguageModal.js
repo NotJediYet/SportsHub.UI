@@ -1,9 +1,14 @@
+import "./AddLanguageModal.scss";
 import { motion } from "framer-motion";
 import Backdrop from "../../../../Backdrop/Backdrop";
-import "./AddLanguageModal.scss";
 import MultiSelectDropdown from "../MultiSelectDropdown/MultiSelectDropdown";
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Context } from "../../../../ContextProvider/ContextProvider";
+import LanguageService from "../../../../../services/Languages/LanguageService";
+import FailureToast from "../../../../Toasts/FailureToast/FailureToast";
+import SuccessToast from "../../../../Toasts/SuccessToast/SuccessToast";
+import { toast } from "react-hot-toast";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const dropIn = {
     hidden: {
@@ -21,8 +26,59 @@ const dropIn = {
 };
 
 export default function AddLanguageModal({ handleClose }) {
+    const { getAccessTokenSilently } = useAuth0();
+    const [ languageService, setLanguageService ] = useState({});
     const { languages, setLanguages } = useContext(Context);
-    const [ updatedLanguages, setUpdatedLanguages ] = useState([]);
+    const [ languagesToUpdate, setLanguagesToUpdate ] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            getAccessTokenSilently()
+            .then(token => {
+                const languageService = new LanguageService(token);
+                setLanguageService(languageService);
+            });
+        })();
+    }, [getAccessTokenSilently]);
+
+    const updateLanguages = () => {
+        languagesToUpdate.forEach(languageToUpdate => {
+            if (!Array.from(languages).includes(languageToUpdate)) {
+                if (!languageToUpdate.isAdded && !languageToUpdate.isHidden) {
+                    languageToUpdate.isHidden = true;
+                } 
+                languageService.put(languageToUpdate)
+                .then(
+                    (res) => {
+                        languageToUpdate.isAdded ?
+                        toast.custom((t) =>
+                            <SuccessToast
+                                t={t}
+                                message="Language successfully added!"
+                                details="You have successfully added a new language to the Sports Hub web site!"
+                            />
+                        ) :
+                        toast.custom((t) =>
+                            <SuccessToast
+                                t={t}
+                                message="Deleted!"
+                                details="The language is successfully deleted."
+                            />
+                        )
+                    }
+                )
+                .catch((error) =>
+                    toast.custom(
+                        (t) => <FailureToast
+                            t={t}
+                            handleRetry={updateLanguages}
+                        />
+                    )
+                );
+            }
+        });
+        setLanguages(languagesToUpdate);
+    }
 
     return (
         <Backdrop onClick={handleClose}>
@@ -44,7 +100,7 @@ export default function AddLanguageModal({ handleClose }) {
                             optionKeyToShow="name"
                             optionKeyToSelect="isAdded"
                             optionKeyToDisable="isDefault"
-                            setOptionsToUpdate={updatedLanguages => {setUpdatedLanguages(updatedLanguages)}}
+                            setOptionsToUpdate={optionsToUpdate => {setLanguagesToUpdate(optionsToUpdate)}}
                         />
                     </div>
                     <div className="modal-action-menu">
@@ -56,9 +112,9 @@ export default function AddLanguageModal({ handleClose }) {
                         </button>
                         <button
                             className="btn-action"
-                            onClick={ (e) => {
+                            onClick={(e) => {
                                 e.stopPropagation();
-                                setLanguages(updatedLanguages);
+                                updateLanguages();
                                 handleClose();
                             }}
                         >
