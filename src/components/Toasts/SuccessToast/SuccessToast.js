@@ -23,11 +23,12 @@ const dropIn = {
 
 export default function SuccessToast({ t, message, details }) {
     return (
-        <motion.div className="toast-container"
-                    variants={dropIn}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
+        <motion.div
+            className="toast-container"
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
         >
             <div className="success-toast-sign">
                 <IconContext.Provider value={{ size: 22 }}>

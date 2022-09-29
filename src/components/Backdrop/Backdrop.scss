@@ -1,0 +1,17 @@
+.backdrop {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #4D4B4B66;
+    backdrop-filter: blur(28px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body .backdrop {
+    position: fixed;
+}
