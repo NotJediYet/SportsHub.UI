@@ -140,6 +140,17 @@
   cursor: pointer;
   user-select: none;
 }
+.admin-teams-table .table-item td:nth-child(7){
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #D72130;
+  cursor: pointer;
+  user-select: none;
+}
 
 .admin-teams-table .table-item td:nth-child(7){
   margin-left: 35px;

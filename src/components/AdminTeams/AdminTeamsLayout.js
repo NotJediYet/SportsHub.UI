@@ -169,6 +169,31 @@ export default function AdminTeamsLayout(){
                 categoryService.getCategories().then(data => setCategories(data));});
     }
 
+    const DeleteTeamRequest = (id) => {
+        teamService.delete(id)
+            .then(
+                (res) => toast.custom(
+                    (t) => <SuccessToast
+                        t={t}
+                        message="Deleted!"
+                        details={"The team is successfully deleted."}
+                    />
+                )
+            )
+            .catch((error) =>
+                toast.custom(
+                    (t) => <FailureToast
+                        t={t}
+                        handleRetry={DeleteTeamRequest}
+                    />
+                )
+            )
+            .then(() => {
+                teamService.getTeams().then(data => setTeams(data));
+                subCategoryService.getSubcategories().then(data => setSubCategories(data));
+                categoryService.getCategories().then(data => setCategories(data));});
+    }
+
     useEffect(() => {
         if (teamsButtonText !== "Save")
             SetDefaultFields();
@@ -213,7 +238,7 @@ export default function AdminTeamsLayout(){
                    <p className={"create-team-cancel-button"} style={{opacity: teamsButtonText === "Apply" ? "0.5" : "1", cursor: teamsButtonText === "Apply" ? "auto" : "pointer" }} onClick={() => {SetDefaultFields(); setTeamsButtonText("Apply")}}>Cancel</p>
                </div>
            </div>
-            <TeamTable setPreviousSelectedCategory={setPreviousSelectedCategory} setIsShownImage={setIsShownImage} setIsFilePicked={setIsFilePicked} setFile={setFile} setImage={setImage} teamService={teamService} setSelectedTeamId={setSelectedTeamId} setTeamsButtonText={setTeamsButtonText} teamsButtonText={teamsButtonText} fullTeamInfo={fullTeamInfo} setSelectedTeamName={setSelectedTeamName} setSelectedLocation={setSelectedLocation} setSelectedSubCategory={setSelectedSubCategory} setSelectedCategory={setSelectedCategory}/>
+            <TeamTable DeleteTeamRequest={DeleteTeamRequest} setPreviousSelectedCategory={setPreviousSelectedCategory} setIsShownImage={setIsShownImage} setIsFilePicked={setIsFilePicked} setFile={setFile} setImage={setImage} teamService={teamService} setSelectedTeamId={setSelectedTeamId} setTeamsButtonText={setTeamsButtonText} teamsButtonText={teamsButtonText} fullTeamInfo={fullTeamInfo} setSelectedTeamName={setSelectedTeamName} setSelectedLocation={setSelectedLocation} setSelectedSubCategory={setSelectedSubCategory} setSelectedCategory={setSelectedCategory}/>
        </div>
     )
 }
