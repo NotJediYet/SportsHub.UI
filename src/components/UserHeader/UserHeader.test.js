@@ -3,14 +3,17 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserHeader from "./UserHeader";
 import LayoutSwitch from "../SwitchLayout/SwitchLayout.js"
+import { ContextProvider } from "../ContextProvider/ContextProvider";
 
 test("logo item should be rendered", () => {
     render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<UserHeader />}/>
-            </Routes>
-        </BrowserRouter>
+        <ContextProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="*" element= {<UserHeader />}/>
+                </Routes>
+            </BrowserRouter>
+        </ContextProvider>
     );
     const logoElement = screen.getByText("Sports Hub");
     expect(logoElement).toBeInTheDocument();
@@ -18,11 +21,13 @@ test("logo item should be rendered", () => {
 
 test("Search should be rendered", () => {
     render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<UserHeader />}/>
-            </Routes>
-        </BrowserRouter>
+        <ContextProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="*" element= {<UserHeader />}/>
+                </Routes>
+            </BrowserRouter>
+        </ContextProvider>
     );
     const searchElement = screen.getByText("Search");
     expect(searchElement).toBeInTheDocument();
@@ -30,11 +35,13 @@ test("Search should be rendered", () => {
 
 test("Social media should be rendered", () => {
     render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<UserHeader />}/>
-            </Routes>
-        </BrowserRouter>
+        <ContextProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="*" element= {<UserHeader />}/>
+                </Routes>
+            </BrowserRouter>
+        </ContextProvider>
     );
     const socialMediaElement = screen.getByText("Social media");
     expect(socialMediaElement).toBeInTheDocument();
@@ -42,11 +49,13 @@ test("Social media should be rendered", () => {
 
 test("Switch button should be rendered", () => {
     render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="*" element= {<UserHeader />}/>
-            </Routes>
-        </BrowserRouter>
+        <ContextProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="*" element= {<UserHeader />}/>
+                </Routes>
+            </BrowserRouter>
+        </ContextProvider>
     );
 
     const tooltips = jest.fn();
