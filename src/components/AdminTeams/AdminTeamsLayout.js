@@ -193,7 +193,7 @@ export default function AdminTeamsLayout(){
                    <AutoComplete suggestions={suggestions} setSelectedTeamName={setSelectedTeamName} selectedTeamName={selectedTeamName} teamsButtonText={teamsButtonText}/>
                    <div style={{display: teamsButtonText === "Apply" ? "none" : "flex"}} className={"upload-team-logo-container"} onMouseLeave={() => {if (isFilePicked){setIsShownImage(true)}}}>
                        <input id={"create-team-logo-input"} style={{display: "none"}} type="file" onChange={handleTeamLogoChange} accept="image/jpeg, image/png, image/svg+xml"/>
-                       <div style={{display: isShownImage === true ? "none" : "flex"}} className={"create-team-logo-input-button"} type="button" onClick={() => document.getElementById('create-team-logo-input').click()}>
+                       <div style={{display: isShownImage === true ? "none" : "flex"}} className={"create-team-logo-input-button"} type="button" onClick={() => {setIsFilePicked(false);setIsShownImage(false); document.getElementById('create-team-logo-input').click()}}>
                            <div className={"create-team-logo-input-svg"}>
                                <MdPhotoCamera/>
                            </div>
