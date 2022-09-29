@@ -1,0 +1,113 @@
+.wrapper-dropdown {
+    position: absolute;
+    width: inherit;
+
+    .btn-expand-options {
+        display: flex;
+        align-items: center;
+        padding: 0.3rem 0.5rem;
+        border: 1px solid #D4D9E2;
+        cursor: pointer;
+        
+        .selected-options-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+            
+            .label-selected-option {
+                display: flex;
+                align-items: center;
+                padding: 0.3rem 0.5rem;
+                background: #DAE9FD;
+                border-radius: 2px;
+                font-weight: 600;
+                font-size: 12px;
+                gap: 0.3rem;
+                
+                .btn-deselect-option {
+                    display: flex;
+                    align-items: center;
+                    padding: 0;
+                    border: 0;
+                    color: #7F8899;
+                    background: transparent;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .collapse-arrow {
+            height: 100%;
+            margin-left: auto;
+        }
+
+        span {
+            padding: 0.3rem 0.5rem;
+            font-weight: 600;
+            font-size: 12px;
+            color: #7F7B7B;
+        }
+    }
+
+    .wrapper-options {
+        background: #FFFFFF;
+        box-shadow: 3px 2px 14px 0px #00000017;
+
+        .search-option {
+            padding: 1rem 1rem 0 1rem;
+            
+            input {
+                width: 100%;
+                border: 1px solid #D4D9E2;
+                padding: 0.5rem 1rem;
+
+                &:focus {
+                    outline: none !important;
+                }
+            }
+        }
+
+        ul {
+            padding: 0;
+            margin: 0.5rem 0;
+            max-height: 5rem;
+            direction: rtl;
+            overflow-y: scroll;
+            overflow: overlay;
+
+            li {
+                width: inherit;
+                padding: 0.5rem 1rem 0.5rem 1.75rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                direction: ltr;
+                
+                &:hover {
+                    background-color: #D721301C;
+                    transition: background-color 200ms linear;
+                }
+
+                input[type="checkbox"] {
+                    cursor: pointer;
+                    accent-color: #D72130;
+
+                    &:disabled {
+                        cursor: default;
+                    }
+                }
+            }
+
+            &::-webkit-scrollbar {
+                width: 1rem;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                border: solid 0.3rem transparent;
+                border-radius: 0.5rem;
+                background-color: #C4C4C4;
+                background-clip: padding-box;
+            }
+        }
+    }
+}

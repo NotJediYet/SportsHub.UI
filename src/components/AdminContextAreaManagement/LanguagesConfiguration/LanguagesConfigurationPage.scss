@@ -1,0 +1,17 @@
+.content-area {
+    display: flex;
+    flex-direction: column;
+    margin: 280px 160px 50px;
+    padding: 2% 6px 0 6px;
+    height: auto;
+    width: calc(100% - 200px);
+    background: #FFFEFE;
+}
+
+.table-section {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 90%px;
+}
