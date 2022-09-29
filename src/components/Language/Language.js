@@ -29,6 +29,15 @@ const Language = () => {
 		}
 	}, [isComponentVisible,setIsComponentVisible]);
 
+	useEffect(() => {
+		if (!isDataLoading) {
+				var defaultLanguage = Array
+						.from(languages, (language) => language)
+						.find(({isDefault}) => isDefault === true);
+				setSelectedLanguage(defaultLanguage)
+		}
+	}, [pathname, isDataLoading]);
+
 	return (
 		<div className="navbar-dropDown">
 			<div className="navbar-btn" onClick={() => {setIsLangOpen(!isLangOpen)}}>
