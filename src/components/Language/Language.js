@@ -36,6 +36,7 @@ const Language = () => {
 						.find(({isDefault}) => isDefault === true);
 				setSelectedLanguage(defaultLanguage)
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pathname, isDataLoading]);
 
 	return (
