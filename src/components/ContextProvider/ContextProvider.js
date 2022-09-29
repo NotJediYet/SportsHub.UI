@@ -10,21 +10,20 @@ export const ContextProvider = ({ children }) => {
     const [teamsButtonText, setTeamsButtonText] = useState("Apply");
     const [AISaveButtonClicked, setAISaveButtonClicked] = useState(false);
 
-    const getLanguages = async () => {
-        setIsDataLoading(true);
-        getAccessTokenSilently()
-        .then(token => {
-            const languageServices = new LanguageService(token);
-            languageServices.get().then(languagesData => {
-                setLanguages(languagesData);
-                setIsDataLoading(false);
-            });
-        });
-    };
-
     React.useEffect(() => {
+        const getLanguages = async () => {
+            setIsDataLoading(true);
+            getAccessTokenSilently()
+            .then(token => {
+                const languageServices = new LanguageService(token);
+                languageServices.get().then(languagesData => {
+                    setLanguages(languagesData);
+                    setIsDataLoading(false);
+                });
+            });
+        };
         getLanguages();
-    }, []);
+    }, [getAccessTokenSilently]);
 
     return (
         <Context.Provider value={{
