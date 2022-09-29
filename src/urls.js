@@ -5,5 +5,6 @@ export const urls = {
     subcategoriesEndpoint:`${baseURL}api/Subcategories`,
     teamsEndpoint: `${baseURL}api/Teams`,
     getFilterArticles: `${baseURL}api/FilterArticles`,
-    articlesEndpoint: `${baseURL}api/Articles`
+    articlesEndpoint: `${baseURL}api/Articles`,
+    languagesEndpoint: `${baseURL}api/Languages`
 }

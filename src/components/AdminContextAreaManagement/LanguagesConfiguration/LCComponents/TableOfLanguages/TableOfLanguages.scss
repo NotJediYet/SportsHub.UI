@@ -1,0 +1,83 @@
+table {
+    border-collapse: collapse;
+
+    td {
+        text-align: left;
+        padding: 1rem 1.2rem;
+    }
+    
+    thead {
+        background-color: #F2F2F2;
+        border: 1px solid #F2F2F2;
+
+        td {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #434C5D;
+        }
+    }
+
+    tbody {
+        tr {
+            justify-content: center;
+            border: 1px solid #D4D9E2;
+
+            &:hover {
+                background: #FFFFFF;
+                box-shadow: 3px 2px 14px 0px #00000017;
+                border: 1px solid #FFFFFF;
+                transition: background-color 200ms linear;
+                transition: box-shadow 200ms linear;
+                transition: border 200ms linear;
+
+                .btn-delete {
+                    visibility: visible;
+                }
+            }
+
+            .language-cell {
+                width: 146px;
+            }
+
+            .switch-container {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .switch-toggle {
+                    display: flex;
+                    height: fit-content;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid #D4D9E2;
+                    border-radius: 16px;
+                }
+            }
+
+            .btn-delete {
+                visibility: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                background: none;
+                color: #D4D9E2;
+                font-size: large;
+                cursor: pointer;
+
+                &:hover {
+                    color: #B2B2B2;
+                    transition: color 200ms linear;
+                }
+
+                &:active, &:focus {
+                    color: #D72130;
+                    transition: color 200ms linear;
+                }
+            }
+        }
+    }
+}

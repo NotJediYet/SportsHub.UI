@@ -39,8 +39,21 @@ export default function Modal({ handleAction, handleClose, icon, message, detail
                     <p>{details}</p>
                 </div>
                 <div className="modal-action-menu">
-                    <button className="btn-cancel" onClick={handleClose}>Cancel</button>
-                    <button className="btn-action" onClick={handleAction}>{actionButtonText}</button>
+                    <button
+                        className="btn-cancel"
+                        onClick={handleClose}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        className="btn-action"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleAction();
+                        }}
+                    >
+                        {actionButtonText}
+                    </button>
                 </div>
             </motion.div>
         </Backdrop>
