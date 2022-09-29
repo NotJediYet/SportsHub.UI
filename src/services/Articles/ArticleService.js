@@ -18,6 +18,7 @@ export default class ArticleService {
         if (data) {
             options.body = JSON.stringify(data);
         }
+
         return fetch(url, options);
     }
 
@@ -27,6 +28,7 @@ export default class ArticleService {
         if (id) {
             url = `${url}/${id}`;
         }
+
         return this.request(url, method).then(res => res.json());
     }
 
@@ -36,6 +38,7 @@ export default class ArticleService {
         if (id) {
             url = `${url}/${id}`;
         }
+        
         return this.request(url, method).then(res => res.ok ? res.json() : Promise.reject(res.status));
     }
 }
