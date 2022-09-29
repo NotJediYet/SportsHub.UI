@@ -24,11 +24,12 @@ const dropIn = {
 
 export default function FailureToast({ t, handleRetry }) {
     return (
-        <motion.div className="toast-container"
-                    variants={dropIn}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
+        <motion.div
+            className="toast-container"
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
         >
             <div className="failure-toast-sign">
                 <IconContext.Provider value={{ size: 22 }}>

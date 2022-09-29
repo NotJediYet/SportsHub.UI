@@ -16,7 +16,7 @@ export const VerticalMenuElements = [
     {
         title: "Languages",
         icon: <BiGlobe/>,
-        link: ""
+        link: "languages"
     },
     {
         title: "Footer",

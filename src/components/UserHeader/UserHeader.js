@@ -8,12 +8,12 @@ import {Link} from "react-router-dom";
 export default function UserHeader() {
     let isAdminLoggedIn = false;
     const {user} = useAuth0();
-
+    
     if (user) {
         const role = user['https://sportshub.com/roles'];
         role === 'User' ? isAdminLoggedIn = false : isAdminLoggedIn = true;
     }
-
+    
     return (
         <div className="header">
             <nav className="header-navbar">

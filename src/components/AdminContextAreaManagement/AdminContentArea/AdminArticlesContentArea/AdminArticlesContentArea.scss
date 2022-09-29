@@ -1,4 +1,5 @@
 .article{
+  position: relative;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -56,4 +57,10 @@
 
 .status-text{
   padding-left: 10px;
+}
+
+.article-action-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
