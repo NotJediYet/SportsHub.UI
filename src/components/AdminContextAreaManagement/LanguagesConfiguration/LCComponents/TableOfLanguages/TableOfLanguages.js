@@ -69,7 +69,7 @@ export default function TableOfLanguages() {
     }
 
     return (
-        <>
+        <div className="table-wrapper">
             <AnimatePresence
                 inital={false}
                 exitBeforeEnter={true}
@@ -130,6 +130,6 @@ export default function TableOfLanguages() {
                     )}
                 </tbody>
             </table>
-        </>
+        </div>
     )
 }
