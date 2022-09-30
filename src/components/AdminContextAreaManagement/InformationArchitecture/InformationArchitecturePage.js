@@ -58,6 +58,8 @@ export default function InformationArchitecturePage() {
             if (index > -1) {
                 if (element.method === "edit") {
                     items[index] = element.item;
+                } else if (element.method === "delete") {
+                    items.splice(index, 1);
                 }
             }
         })
@@ -116,7 +118,12 @@ export default function InformationArchitecturePage() {
             setUpdates(updates => {
                 let index = updates.findIndex(element => element.item.id === item.id)
                 if (index > -1) {
-                    updates[index].item = item;
+                    if (method === "edit") {
+                        updates[index].item = item;
+                    } else if (method === "delete") {
+                        updates.splice(index, 1);
+                        updates.push({type: itemType, method: method, item: item});
+                    }
                 } else {
                     updates.push({type: itemType, method: method, item: item});
                 }
@@ -151,14 +158,42 @@ export default function InformationArchitecturePage() {
         addItemsToUpdates(item, itemType, "edit");
     }
 
-    const moveItemToAnotherParent = (item, itemType) => {
-        let movedItem;
-        let newOrderIndex = Math.max(...itemsStates[itemType].items.map(item => item.orderIndex)) + 1;
+    const editItemName = (itemType, item, newName) => {
+        item.name = newName;
 
-        if (itemType === "subcategory") {
-            movedItem = {...currentItem.item, subcategoryId: item.id, orderIndex: newOrderIndex};
-        } else if (itemType === "category") {
-            movedItem = {...currentItem.item, categoryId: item.id, orderIndex: newOrderIndex};
+        itemsStates[itemType].setItems(items => {
+            items[items.findIndex(element => element.id === item.id)] = item;
+            return [...items]
+        });
+
+        addItemsToUpdates(item, itemType, "edit");
+    }
+
+    const deleteItem = (itemType, item) => {
+        itemsStates[itemType].setItems(items => {
+            return [...items.filter(element => element.id !== item.id)]
+        });
+
+        addItemsToUpdates(item, itemType, "delete");
+
+        if (itemType === "category") {
+            setActiveCategory({id: -1, index: -1});
+            setSubcategories([]);
+            setTeams([]);
+        } else if (itemType === "subcategory") {
+            setActiveSubcategory({id: -1, index: -1});
+            setTeams([]);
+        } else {
+        }
+    }
+
+    const moveItemToAnotherParent = (item, childType, parentType) => {
+        let movedItem;
+
+        if (parentType === "subcategory") {
+            movedItem = {...currentItem.item, subcategoryId: item.id};
+        } else if (parentType === "category") {
+            movedItem = {...currentItem.item, categoryId: item.id};
             setTeams([])
             setActiveSubcategory({id: -1, index: -1})
         }
@@ -167,6 +202,7 @@ export default function InformationArchitecturePage() {
             .filter(element => element.id !== currentItem.item.id));
         addItemsToUpdates(movedItem, currentItem.type, "edit");
     }
+
 
     const dragStartHandler = (e, item, itemType) => {
         setCurrentItem({item: item, type: itemType});
@@ -187,7 +223,8 @@ export default function InformationArchitecturePage() {
     }
 
     const dropHandler = (e, item, itemType, index) => {
-        if (currentItem.item.id !== item) {
+        console.log(currentItem.item.orderIndex);
+        if (currentItem.item.id !== item.id) {
             let firstElement;
             let secondElement;
             e.preventDefault();
@@ -208,14 +245,21 @@ export default function InformationArchitecturePage() {
                     setActiveCategory({id: secondElement.id, index: index});
                     setActiveSubcategory({id: -1, index: -1});
                 }
-                else if (currentItem.type === "subcategory") setActiveSubcategory({id: secondElement.id, index: index});
-            } else if ((currentItem.type === "team" && itemType === "subcategory") ||
-                (currentItem.type === "subcategory" && itemType === "category")) {
-                moveItemToAnotherParent(item, itemType);
-            }
+                else if (currentItem.type === "subcategory") {
+                    setActiveSubcategory({id: secondElement.id, index: index});
+                }
 
-            addItemsToUpdates(firstElement, itemType, "edit");
-            addItemsToUpdates(secondElement, itemType, "edit");
+                addItemsToUpdates(firstElement, itemType, "edit");
+                addItemsToUpdates(secondElement, itemType, "edit");
+            } else if (currentItem.type === "team" && itemType === "subcategory") {
+                if (currentItem.item.subcategoryId !== item.id) {
+                    moveItemToAnotherParent(item, currentItem.type, itemType);
+                }
+            } else if (currentItem.type === "subcategory" && itemType === "category") {
+                if (currentItem.item.categoryId !== item.id) {
+                    moveItemToAnotherParent(item, currentItem.type, itemType);
+                }
+            }
         }
         setDragOverItemId("");
         setCurrentItem({item: {}, type: ""});
@@ -261,15 +305,28 @@ export default function InformationArchitecturePage() {
             teamService.editTeam(formData);
         }
 
-       if (AISaveButtonClicked) {
+        const deleteCategory = (category) => {
+            categoryService.deleteCategory(category.id);
+        }
+
+        const deleteSubcategory = (team) => {
+            subcategoryService.deleteSubcategory(team.id);
+        }
+
+        const deleteTeam = (subcategory) => {
+            teamService.deleteTeam(subcategory.id);
+        }
+
+        if (AISaveButtonClicked) {
            if (updates.length > 0) {
-               const updateMethods = {
-                   category: {edit: editCategory},
-                   subcategory: {edit: editSubcategory},
-                   team: {edit: editTeam}
+               const methods = {
+                   category: {edit: editCategory, delete: deleteCategory},
+                   subcategory: {edit: editSubcategory, delete: deleteSubcategory},
+                   team: {edit: editTeam, delete: deleteTeam}
                };
                updates.forEach(update => {
-                   if (update.method === "edit") updateMethods[update.type].edit(update.item);
+                   if (update.method === "edit") methods[update.type].edit(update.item);
+                   else if (update.method === "delete") methods[update.type].delete(update.item);
                })
                setUpdates([]);
                setSubcategories([]);
@@ -281,8 +338,7 @@ export default function InformationArchitecturePage() {
                )
            }
            setAISaveButtonClicked(!AISaveButtonClicked)
-       }
-    }, [AISaveButtonClicked, updates, setAISaveButtonClicked, categoryService, subcategoryService, teamService]);
+        }}, [AISaveButtonClicked, updates, setAISaveButtonClicked, categoryService, subcategoryService, teamService]);
 
     return (
         <div className="content-area">
@@ -305,7 +361,7 @@ export default function InformationArchitecturePage() {
                                                 item = {x} onPressLoadItems={() => loadSubcategories(x.id, index)}
                                                 isOverDrag = {dragOverItemId === x.id} changeDraggable = {setIsDragAvailable}
                                                 isStartDrag = {currentItem !== {} ? currentItem.item.id === x.id : false}
-                            />
+                                                editName={editItemName} deleteItemName = {deleteItem}/>
                         </div>
                     )}
                 </div>
@@ -326,8 +382,9 @@ export default function InformationArchitecturePage() {
                                                         onPressChangeVisibility={() => changeItemVisibility("subcategory", x)}
                                                         itemType="subcategory" onPressLoadItems={() => loadTeams(x.id, index)}
                                                         isOverDrag = {dragOverItemId === x.id } categories={categories}
-                                                        isStartDrag = {currentItem.item.id === x.id}
-                                                        moveItem = {moveItem} changeDraggable = {setIsDragAvailable}/>
+                                                        isStartDrag = {currentItem.item.id === x.id} editName={editItemName}
+                                                        moveItem = {moveItem} changeDraggable = {setIsDragAvailable}
+                                                        deleteItemName = {deleteItem}/>
                                 </div>
                             )}
                         </div>
@@ -350,7 +407,8 @@ export default function InformationArchitecturePage() {
                                                         onPressChangeVisibility={() => changeItemVisibility("team", x)}
                                                         isStartDrag={currentItem !== {} ? currentItem.item.id === x.id : false}
                                                         categories={categories} AllSubcategories = {subcategories}
-                                                        moveItem = {moveItem} changeDraggable = {setIsDragAvailable}/>
+                                                        moveItem = {moveItem} changeDraggable = {setIsDragAvailable}
+                                                        editName={editItemName} deleteItemName = {deleteItem}/>
                                 </div>
                             )}
                         </div>

@@ -50,4 +50,14 @@ export default class SubcategoryService {
             .then(data => data.filter(item => item.categoryId === categoryId).reverse())
         );
     }
+
+    deleteSubcategory(id) {
+        const method = 'DELETE';
+        let url = urls.subcategoriesEndpoint;
+        if (id) {
+            url = `${url}/${id}`;
+        }
+
+        return this.request(url, method).then(res => res.ok ? res.json() : Promise.reject(res.status));
+    }
 }

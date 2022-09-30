@@ -31,7 +31,7 @@ export default class CategoryService {
 
     createCategory(data) {
         const method = 'POST';
-
+        console.log(data)
         return this.request(urls.categoriesEndpoint, method, data)
             .then(res =>  {if (!res.ok) return Promise.reject(res.status)});
     }
@@ -41,5 +41,15 @@ export default class CategoryService {
 
         return this.request(urls.categoriesEndpoint, method, data)
             .then(res =>  {if (!res.ok) return Promise.reject(res.status)});
+    }
+
+    deleteCategory(id) {
+        const method = 'DELETE';
+        let url = urls.categoriesEndpoint;
+        if (id) {
+            url = `${url}/${id}`;
+        }
+
+        return this.request(url, method).then(res => res.ok ? res.json() : Promise.reject(res.status));
     }
 }

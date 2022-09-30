@@ -1,0 +1,105 @@
+.popup-window {
+  z-index: 1000;
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(77, 75, 75, 0.4);
+  backdrop-filter: blur(28px);
+}
+
+.popup-inner-window {
+  position:relative;
+  top: 20%;
+  margin: auto;
+  max-width: 458px;
+  height: 260px;
+  background-color: #FFF;
+  box-shadow: 0 4px 28px #818181;
+}
+
+.popup-inner-window > h2 {
+  padding-top: 42px;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  color: #000000;
+}
+
+.popup-inner-window > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-inner-window > form > label {
+  margin-left: 11.4%;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 11px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: #434C5D;
+}
+
+.popup-inner-window > form > input {
+  margin: 8px auto auto;
+  width: 90%;
+  max-width: 354px;
+  height: 36px;
+  border: 1px solid #D4D9E2;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #434C5D;
+  outline: none;
+}
+
+.popup-inner-window > form > input::placeholder {
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #C6CCD7;
+}
+
+
+.popup-button {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 37px;
+  width: 25%;
+  max-width: 107px;
+  height: 32px;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.close-button {
+  @extend .popup-button;
+  right: 159px;
+  color: #D72130;
+  background-color: #FFF;
+  border: 1px solid #FFF;
+}
+
+.add-button {
+  @extend .popup-button;
+  right: 52px;
+  color: #FFFFFF;
+  background: #D72130;
+  border: 1px solid #C63638;
+}

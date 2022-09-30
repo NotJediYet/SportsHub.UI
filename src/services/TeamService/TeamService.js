@@ -44,7 +44,7 @@ export default class TeamService {
             .then(res => {if (!res.ok) return Promise.reject(res.status)});
     }
 
-    delete(id) {
+    deleteTeam(id) {
         const method = 'DELETE';
         let url = urls.teamsEndpoint;
         if (id) {
