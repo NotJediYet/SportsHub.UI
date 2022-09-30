@@ -4,9 +4,10 @@ import {BiDotsVertical} from "react-icons/bi";
 import {BsThreeDots} from "react-icons/bs";
 import "./NavigationMenuItem.scss"
 import {GoTriangleRight} from "react-icons/go";
+import EditItemWindow from "../EditItemWindow/EditItemWindow";
 
 export default function NavigationMenuItem(
-    {itemType, isActive, onPressChangeVisibility, item, onPressLoadItems,
+    {itemType, isActive, onPressChangeVisibility, item, onPressLoadItems, editName, deleteItemName,
         isOverDrag, isStartDrag, changeDraggable, categories, AllSubcategories, moveItem}) {
 
     const [isItemHovering, setIsItemHovering] = useState(false);
@@ -16,6 +17,7 @@ export default function NavigationMenuItem(
     const [activeHoverCategory, setActiveHoverCategory] = useState(-1);
     const [activeClickCategory, setActiveClickCategory] = useState("");
     const [subcategories, setSubcategories] = useState([]);
+    const [buttonPopup, setButtonPopup] = useState(false);
 
     const styleClasses = {category: "category-name", subcategory: "subcategory-team-name", team: "subcategory-team-name"};
     const menuRef = useRef(null);
@@ -113,7 +115,12 @@ export default function NavigationMenuItem(
     }
 
     const filterCategories = (item, realId) => {
-        return !item.isStatic && item.id !== realId
+        if (itemType === "subcategory") {
+            return !item.isStatic && item.id !== realId
+        } else {
+            return item.id !== realId
+        }
+
     }
 
     return (
@@ -197,12 +204,14 @@ export default function NavigationMenuItem(
                                 <h2>{item.isHidden ? "Show" : "Hide"}</h2>
                             </div>
                             { showMenuItem() && (
-                                <div className="dropDown-menu-element">
+                                <div className="dropDown-menu-element" onClick={() => {
+                                    deleteItemName(itemType, item); setIsMenuOpen(false);}}>
                                     <h2>Delete</h2>
                                 </div>
                             )}
                             { showMenuItem() && (
-                                <div className="dropDown-menu-element">
+                                <div className="dropDown-menu-element" onClick={() => {
+                                    setButtonPopup(true); setIsMenuOpen(false);}}>
                                     <h2>Edit</h2>
                                 </div>
                             )}
@@ -210,6 +219,8 @@ export default function NavigationMenuItem(
                     )}
                 </div>
             </div>
+            <EditItemWindow trigger={buttonPopup} setTrigger={setButtonPopup} itemType = {itemType}
+                              onPress = {(value) => editName(itemType, item, value)} />
         </div>
     );
 }

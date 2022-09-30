@@ -1,11 +1,11 @@
 import React, {useState} from "react"
-import "./CreateItemWindow.scss"
+import "./EditItemWindow.scss"
 
-export default function CreateItemWindow(props) {
+export default function EditItemWindow(props) {
     const [itemName, setItemName] = useState("");
     const [isPending, setIsPending] = useState(false);
 
-    const titles = {category: "Add new category", subcategory: "Add new subcategory", team: "Add new team"};
+    const titles = {category: "Edit category name", subcategory: "Edit subcategory name", team: "Edit team name"};
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -25,7 +25,7 @@ export default function CreateItemWindow(props) {
                     <input type="text" className="item-name-input" placeholder="Name your menu item" value={itemName}
                     onChange={e => setItemName(e.target.value)}/>
                     <button className="add-button" type="submit" disabled={isPending}>
-                        Add
+                        Edit
                     </button>
                 </form>
                 <button className="close-button" onClick={() => {props.setTrigger(false); setItemName("");}}>

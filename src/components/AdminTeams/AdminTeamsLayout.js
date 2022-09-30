@@ -170,7 +170,7 @@ export default function AdminTeamsLayout(){
     }
 
     const DeleteTeamRequest = (id) => {
-        teamService.delete(id)
+        teamService.deleteTeam(id)
             .then(
                 (res) => toast.custom(
                     (t) => <SuccessToast
